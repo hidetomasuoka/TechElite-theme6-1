@@ -68,6 +68,16 @@ p, dl, dd, dt, ul {
   padding: 0;
 }
 
+h2.title {
+  /* 既存のスタイルを維持 */
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
+
 ul, li {
   list-style: none;
 }
@@ -158,9 +168,9 @@ br.sp {
 .subtitle {
   display: inline-block;
   position: relative;
-  padding: 0 50px;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 5px;
+  font-size: 18px; 
   text-align: center;
 }
 
@@ -170,7 +180,7 @@ br.sp {
   content: "";
   display: inline-block;
   height: 1px;
-  position: absolute;
+  position: flexbox;
   top: 50%;
   width: 40px;
 }
@@ -292,6 +302,7 @@ br.sp {
 .kv__subtitle {
   font-size: 28px;
   font-weight: 500;
+  padding: 30px 0 10px 0;
 }
 
 .kv__title {
@@ -348,7 +359,7 @@ br.sp {
 .overview__desc {
   font-size: 1.4rem;
   font-weight: 500;
-  margin-top: 30px;
+  margin-top: 56px;
   line-height: 2.5rem;
 }
 
@@ -398,7 +409,7 @@ br.sp {
 
 .summary__detail__table__column .box {
   padding: 5px 10px;
-  border: 1px solid var(--color-accent);
+  border: 0.35px solid var(--color-accent);
   border-radius: var(--border-radius-pill);
   display: block;
   color: var(--color-accent);
