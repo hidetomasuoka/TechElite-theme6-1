@@ -11,29 +11,29 @@
                     <img src="../img/kv.svg" alt="フリーランスサミット">
                 </h1>
                 <div class="kv__date">
-                    3/4 <small class="kv__date--small">Sat</small> 10:00-18:00
+                    3/4 <small class="kv__date__small">Sat</small> 10:00-18:00
                 </div>
                 <div class="kv__location">
                     東京国際フォーラム ホールE2
                 </div>
-                <div class="kv__apply-button-container">
-                    <a href="#" target="_blank" class="button button--apply"><span class="button__text">事前申し込みはこちら（無料）</span><img src="../img/LINE_Brand_icon.png" alt="" class="button__icon"></a>
+                <div class="apply">
+                    <a href="#" target="_blank"><span class="apply__title">事前申し込みはこちら（無料）</span><img src="../img/LINE_Brand_icon.png" alt=""></a>
                 </div>
             </div>
         </section>
     <div class="back2">
             <section class="overview">
-                <div class="layout--limited-width"> <!-- Renamed for layout -->
-                    <h2 class="overview__title title"> <!-- Added block name -->
+                <div class="limited-width">
+                    <h2 class="title">
                         Freelance Summit
                     </h2>
-                    <div class="overview__subtitle subtitle"> <!-- Added block name -->
+                    <div class="subtitle">
                         フリーランスサミットとは？
                     </div>
-                    <div class="overview__description"> <!-- Renamed element -->
+                    <div class="overview__desc">
                         「FREELANCE SUMMIT」は、StockSun株式会社が主催する<br>日本最大規模のフリーランスイベントです。
                     </div>
-                    <div class="overview__details"> <!-- Renamed element -->
+                    <div class="overview__detail">
                         各業界でTOPクラスのフリーランスが集結するイベント。有名企業が集結する60ブースもの出展エリアに加え、各領域で圧倒的に結果を出し続ける精鋭フリーランス達が、自身のノウハウを語ります。他のイベントでは味わえない、新たな体験と出会える充実したコンテンツを用意しています。
                     </div>
                 </div>
@@ -148,81 +148,79 @@
                         </div>
                     </div>
                 </div>
-                <div class="contents__apply-button-container">
-                    <a href="#" target="_blank" class="button button--apply"><span class="button__text">事前申し込みはこちら（無料）</span><img src="./img/LINE_Brand_icon.png" alt="" class="button__icon"></a>
+                <div class="apply">
+                    <a href="#" target="_blank"><span class="apply__title">事前申し込みはこちら（無料）</span><img src="./img/LINE_Brand_icon.png" alt=""></a>
                 </div>
             </div>
         </section>
 
 
         <section class="pickup">
-            <div class="layout--limited-width"> <!-- Use layout class -->
-                <h2 class="pickup__title title"> <!-- Added block name -->
+            <div class="limited-width">
+                <h2 class="title">
                     Pick Up
                 </h2>
-                <div class="pickup__subtitle subtitle"> <!-- Added block name -->
+                <div class="subtitle">
                     注目の企業
                 </div>
-                <div class="pickup__list"> <!-- Added list container -->
-                    <div class="pickup__item"> <!-- Renamed element -->
-                        <div class="pickup__item-image"> <!-- Renamed element -->
-                            <a href="https://oplan.co.jp/" target="_blank" rel="noopener noreferrer"><img src="../img/oplan.png" alt="オープラン株式会社" class="logo logo--oplan"></a> <!-- Use logo component -->
+                <div class="pickup__list__box">
+                        <div class="pickup__list__box__image">
+                            <a href="https://oplan.co.jp/" target="_blank" rel="noopener noreferrer"><img src="../img/oplan.png" alt="オープラン株式会社" class="logo-oplan"></a>
                         </div>
-                        <div class="pickup__item-description"> <!-- Renamed element -->
+                        <div class="pickup__list__box__desc">
                             フリーランスの方も高単価案件希望なら【オープラン】！1000件以上の高単価案件参画実績！単価も公開し、営業も親身に相談できる会社です。新規自社サービス【CAREEBLE】も展開中！
                         </div>
                     </div>
 
-                    <div class="pickup__item"> <!-- Renamed element -->
-                        <div class="pickup__item-image"> <!-- Renamed element -->
-                            <a href="https://pe-bank.co.jp/" target="_blank" rel="noopener noreferrer"><img src="./img/PE-BANK.png" alt="pe-bank" class="logo logo--pebank"></a> <!-- Use logo component -->
-                        </div>
-                        <div class="pickup__item-description"> <!-- Renamed element -->
-                            ITフリーランスの仕事探しなら【PE-BANK】へ。Web・SE系を中心に毎月1,000件以上のご紹介。
+                 <div class="pickup__list__box">
+                    <div class="pickup__list__box__image">
+                        <a href="https://pe-bank.co.jp/" target="_blank" rel="noopener noreferrer"><img src="./img/PE-BANK.png" alt="pe-bank" class="logo-pebank"></a>
+                    </div>
+                    <div class="pickup__list__box__desc">
+                        ITフリーランスの仕事探しなら【PE-BANK】へ。Web・SE系を中心に毎月1,000件以上のご紹介。
+                    </div>
+                </div>
+                 <div class="pickup__list__box">
+                    <div class="pickup__list__box__image">
+                        <a href="https://boc-japan.com/" target="_blank" rel="noopener noreferrer"><img src="./img/BOCjapan.png" alt="boc-japan" class="logo-bocjapan"></a>
+                    </div>
+                    <div class="pickup__list__box__desc">
+                        <div class="picup_text">台湾の「食文化」の導入により、日本の飲食業をクリエイティブに。</div>
+                    </div>
+                </div>
+                <div class="pickup__list__box">
+                    <div class="pickup__list__box__image">
+                        <a href="https://sucsak.com/"><img src="./img/creava.png" alt="creava" class="logo-creava"></a>
+                    </div>
+                    <div class="pickup__list__box__desc">
+                        月額制システム開発チームレンタルSucSak(サクサク)を運営している東京新宿のシステム開発会社です。
+                        <div class="sucsak_container">
+                            <img src="./img/sucsak.png" alt="sucsak" class="logo-sucsak">
+                            <a href="https://sucsak.com/" class="sucsak_url">：https://sucsak.com/</a>
                         </div>
                     </div>
-                    <div class="pickup__item"> <!-- Renamed element -->
-                        <div class="pickup__item-image"> <!-- Renamed element -->
-                            <a href="https://boc-japan.com/" target="_blank" rel="noopener noreferrer"><img src="./img/BOCjapan.png" alt="boc-japan" class="logo logo--boc"></a> <!-- Use logo component (assuming boc=bocjapan) -->
-                        </div>
-                        <div class="pickup__item-description"> <!-- Renamed element -->
-                            <div class="pickup__text--special">台湾の「食文化」の導入により、日本の飲食業をクリエイティブに。</div> <!-- Added modifier for specific text -->
-                        </div>
+                </div>
+                <div class="pickup__list__box">
+                    <div class="pickup__list__box__image">
+                        <div class="quartet"><a href="https://quartetcom.co.jp/"><img src="./img/QUARTET.png" alt="quartet" class="logo-quartet"></a></div>
                     </div>
-                    <div class="pickup__item"> <!-- Renamed element -->
-                        <div class="pickup__item-image"> <!-- Renamed element -->
-                            <a href="https://sucsak.com/"><img src="./img/creava.png" alt="creava" class="logo logo--creava"></a> <!-- Use logo component (assuming creava) -->
-                        </div>
-                        <div class="pickup__item-description"> <!-- Renamed element -->
-                            月額制システム開発チームレンタルSucSak(サクサク)を運営している東京新宿のシステム開発会社です。
-                            <div class="pickup__sucsak-info"> <!-- Renamed element -->
-                                <img src="./img/sucsak.png" alt="sucsak" class="logo logo--sucsak"> <!-- Use logo component -->
-                                <a href="https://sucsak.com/" class="pickup__sucsak-link">：https://sucsak.com/</a> <!-- Renamed element -->
-                            </div>
-                        </div>
+                    <div class="pickup__list__box__desc">
+                        1000業種以上の圧倒的運用実績！リスティング、Facebook・TwitterなどのSNS広告もおまかせ。
                     </div>
-                    <div class="pickup__item"> <!-- Renamed element -->
-                        <div class="pickup__item-image"> <!-- Renamed element -->
-                            <div class="pickup__image-wrapper--quartet"><a href="https://quartetcom.co.jp/"><img src="./img/QUARTET.png" alt="quartet" class="logo logo--quartet"></a></div> <!-- Added wrapper, use logo component -->
-                        </div>
-                        <div class="pickup__item-description"> <!-- Renamed element -->
-                            1000業種以上の圧倒的運用実績！リスティング、Facebook・TwitterなどのSNS広告もおまかせ。
-                        </div>
-                    </div>
-                </div> <!-- End pickup__list -->
-            </div> <!-- End layout--limited-width -->
-        <!-- Removed extra closing div -->
+                </div>   
+            </div>
+        </div>  
     </section>   
     <section class="exhibitor">
-            <div class="layout--limited-width"> <!-- Use layout class -->
-                <h2 class="exhibitor__title title"> <!-- Added block name -->
+            <div class="limited-width">
+                <h2 class="title">
                     About Exhibitors
                 </h2>
-                <div class="exhibitor__subtitle subtitle"> <!-- Added block name -->
+                <div class="subtitle">
                     出展企業一覧
                 </div>
                 <div class="exhibitor__list">
-                    <div class="exhibitor__list-column exhibitor__list-column--left"> <!-- Added BEM classes -->
+                    <div class="exhibitor__list__left">
                         オープラン株式会社<br>
                         株式会社ビズリンク<br>
                         株式会社カルテットコミュニケーションズ<br>
@@ -230,25 +228,24 @@
                         株式会社グラントホープ<br>
                         Modis株式会社<br>
                         INTLOOP株式会社<br>
-                        Langdemy株式会社<br> <!-- Corrected typo -->
+                    L    angdemy株式会社<br>
                         BOCジャパン合同会社<br>
                     </div>
-                    <div class="exhibitor__list-column exhibitor__list-column--right"> <!-- Added BEM classes -->
-                        株式会社アユザック<br>
-                        株式会社HandAid<br>
-                        株式会社J-Proach<br>
-                        ラーメン協会<br>
-                        株式会社おウチdeお肉<br>
-                        株式会社LifeCoach<br>
-                        株式会社スポーツ＆ライフイノベーション<br>
-                        株式会社iGO<br>
-                        株式会社エドモンド<br>
+                    <div class="exhibitor__list__right">
+                    株式会社アユザック<br>
+                    株式会社HandAid<br>
+                    株式会社J-Proach<br>
+                    ラーメン協会<br>
+                    株式会社おウチdeお肉<br>
+                    株式会社LifeCoach<br>
+                    株式会社スポーツ＆ライフイノベーション<br>
+                    株式会社iGO<br>
+                    株式会社エドモンド<br>
                     </div>
                 </div>
-                <div class="exhibitor__note"> <!-- Renamed element -->
+                <div class="exhibitor__desc">
                     （順不同、一部企業のみ掲載）
                 </div>
-                <!-- Removed the exhibit button section as it's not present in the current HTML -->
             </div>
         </section>
         <section class="schedule">
@@ -450,48 +447,70 @@
         </section>
 
         <section class="faq">
-            <div class="faq__decoration polygon-small"></div> <!-- Added block name -->
-            <div class="layout--limited-width-small"> <!-- Use layout class -->
-                <h2 class="faq__title title"> <!-- Added block name -->
+            <div class="polygon-small"></div>
+            <div class="limited-width-small">
+                <h2 class="title">
                     FAQ
                 </h2>
-                <div class="faq__subtitle subtitle"> <!-- Added block name -->
+                <div class="subtitle">
                     よくある質問
                 </div>
-                <dl class="faq__list"> <!-- Changed to definition list for semantics -->
-                    <div class="faq__item"> <!-- Wrapper for each Q/A pair -->
-                        <dt class="faq__question"> <!-- Question element -->
-                            <span class="faq__mark faq__mark--question">Q</span> <!-- Mark element -->
-                            <span class="faq__content">再入場はできますか？</span> <!-- Content element -->
-                        </dt>
-                        <dd class="faq__answer"> <!-- Answer element -->
-                            <span class="faq__mark faq__mark--answer">A</span> <!-- Mark element -->
-                            <span class="faq__content">できます。</span> <!-- Content element -->
-                        </dd>
+                <div class="faq__list">
+                    <div class="faq__list__box">
+                        <div class="faq__list__box__a">
+                            <div class="faq__list__box__a__mark">
+                                Q
+                            </div>
+                            <div class="faq__list__box__a__content">
+                                再入場はできますか？
+                            </div>
+                        </div>
+                        <div class="faq__list__box__q">
+                            <div class="faq__list__box__q__mark">
+                                A
+                            </div>
+                            <div class="faq__list__box__q__content">
+                                できます。
+                            </div>
+                        </div>
                     </div>
-                    <div class="faq__item"> <!-- Wrapper for each Q/A pair -->
-                        <dt class="faq__question"> <!-- Question element -->
-                            <span class="faq__mark faq__mark--question">Q</span> <!-- Mark element -->
-                            <span class="faq__content">入場にお金はかかりますか？</span> <!-- Content element -->
-                        </dt>
-                        <dd class="faq__answer"> <!-- Answer element -->
-                            <span class="faq__mark faq__mark--answer">A</span> <!-- Mark element -->
-                            <span class="faq__content">一切かかりません。</span> <!-- Content element -->
-                        </dd>
+                    <div class="faq__list__box">
+                        <div class="faq__list__box__a">
+                            <div class="faq__list__box__a__mark">
+                                Q
+                            </div>
+                            <div class="faq__list__box__a__content">
+                                入場にお金はかかりますか？
+                            </div>
+                        </div>
+                        <div class="faq__list__box__q">
+                            <div class="faq__list__box__q__mark">
+                                A
+                            </div>
+                            <div class="faq__list__box__q__content">
+                                一切かかりません。
+                            </div>
+                        </div>
                     </div>
-                    <div class="faq__item"> <!-- Wrapper for each Q/A pair -->
-                        <dt class="faq__question"> <!-- Question element -->
-                            <span class="faq__mark faq__mark--question">Q</span> <!-- Mark element -->
-                            <span class="faq__content">出展を希望する企業はどこから問い合わせれば良いですか？</span> <!-- Content element -->
-                        </dt>
-                        <dd class="faq__answer"> <!-- Answer element -->
-                            <span class="faq__mark faq__mark--answer">A</span> <!-- Mark element -->
-                            <span class="faq__content">
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdphU7Vu9xdSpRV0xaVSt9C6MpHUYG3OsTh7Vuqj8sGyInYqA/viewform" target="_blank" class="faq__link">こちら</a>からお願いします。 <!-- Link element -->
-                            </span>
-                        </dd>
+                    <div class="faq__list__box">
+                        <div class="faq__list__box__a">
+                            <div class="faq__list__box__a__mark">
+                                Q
+                            </div>
+                            <div class="faq__list__box__a__content">
+                                出展を希望する企業はどこから問い合わせれば良いですか？
+                            </div>
+                        </div>
+                        <div class="faq__list__box__q">
+                            <div class="faq__list__box__q__mark">
+                                A
+                            </div>
+                            <div class="faq__list__box__q__content">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdphU7Vu9xdSpRV0xaVSt9C6MpHUYG3OsTh7Vuqj8sGyInYqA/viewform" target="_blank">こちら</a>からお願いします。
+                            </div>
+                        </div>
                     </div>
-                </dl>
+                </div>
             </div>
         </section>
 
