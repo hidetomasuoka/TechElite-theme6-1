@@ -1,18 +1,3 @@
-/*
- * ========================================================================
- * フリーランスサミット - メインスタイルシート
- * ========================================================================
- * 統合版：app.css, faq-style.css, logo-sizes.css, reset.css, style-refactored.css, style.css
- * 
- * 目次:
- * 1. リセット/ベース - 基本的なリセットとベーススタイル
- * 2. 変数 - 色、フォント、ブレークポイントなどのCSS変数
- * 3. タイポグラフィ - テキスト関連のスタイル
- * 4. レイアウト - グリッドやコンテナなどのレイアウトスタイル
- * 5. コンポーネント - ボタン、カード、セクションなど
- * 6. ユーティリティクラス - 再利用可能な小さなユーティリティ
- */
-
 /* ========================================================================
  * 1. リセット/ベース
  * ========================================================================
@@ -414,6 +399,7 @@ br.sp {
 .kv {
   background-image: url("../img/background.png");
   background-size: cover;
+  color: #FFF;
   background-position: center;
   padding: 20px 30px 60px 30px;
   display: flex;
@@ -430,20 +416,29 @@ br.sp {
   left: 20px;
   margin-bottom: 0;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .kv__logo img {
   width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.kv__logo img:hover {
+  transform: scale(1.05);
 }
 
 .kv__title {
   color: var(--color-white);
-  margin-bottom: 10px;
+  margin-top: 40px;
 }
 
 .kv__subtitle {
   color: var(--color-white);
   margin-bottom: 30px;
+  font-size: 27.2px;
 }
 
 .kv__date {
@@ -522,7 +517,7 @@ br.sp {
 }
 
 .overview .title {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin-bottom: 10px;
 }
 
@@ -552,7 +547,7 @@ br.sp {
 }
 
 .summary .title {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin-bottom: 10px;
 }
 
@@ -592,7 +587,7 @@ br.sp {
 }
 
 .contents .title {
-  color: var(--color-primary);
+  color: var(--color-accent);
   margin-bottom: 10px;
 }
 
@@ -632,7 +627,7 @@ br.sp {
 }
 
 .pickup .title {
-  color: var(--color-primary);
+  color: var(--color-accent);
   margin-bottom: 10px;
 }
 
