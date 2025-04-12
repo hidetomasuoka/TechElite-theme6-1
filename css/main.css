@@ -428,6 +428,10 @@ br.sp {
   margin-bottom: 20px;
 }
 
+.kv__logo img {
+  width: 150px;
+}
+
 .kv__title {
   color: var(--color-white);
   margin-bottom: 10px;
@@ -1316,4 +1320,3 @@ br.sp {
  * 各コンポーネントセクションの下部に「レスポンシブ対応 - コンポーネント名」として
  * メディアクエリが配置されています。
  */
-
