@@ -1,73 +1,9 @@
-/* ========================================================================
- * 1. リセット/ベース
- * ========================================================================
- * ブラウザのデフォルトスタイルをリセットし、基本的なHTML要素のスタイルを設定します。
- * フォントファミリー、リンク、リスト、テーブルなどの基本スタイルが含まれています。
- */
+/* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-/* ブラウザのデフォルトスタイルをリセット */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* HTML5の要素をブロックとして表示 */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, main, menu, nav, section {
-  display: block;
-}
-
-/* フォントのベースとなる設定 */
-body {
-  line-height: 1.5;
-  font-family: 'Noto Sans JP', sans-serif;
-  color: #444545;
-  position: relative;
-}
-
-/* リスト項目のマーカーを非表示 */
-ol, ul {
-  list-style: none;
-}
-
-/* テーブルの境界線を結合してスペースを削除 */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* 画像の最大幅を親要素に制限 */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* リンクスタイルの基本設定 */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-h1, h2, h3, p, dl, dd, dt, ul {
-  margin-bottom: 0;
-}
-
-li {
-  list-style: none;
-}
-
-/* ========================================================================
- * 2. 変数
- * ========================================================================
- * サイト全体で使用される色、フォント、ブレークポイント、スペーシングなどの
- * CSS変数を定義します。これにより、一貫したデザインと簡単なテーマ変更が可能になります。
- */
+/*******************
+ * CSS Variables
+ *******************/
 :root {
   /* Colors */
   --color-primary: #00A8F0;
@@ -80,49 +16,142 @@ li {
   --color-dark-gray: #333333;
   --color-light-gray: #F1F1F4;
   --color-line-gray: #C4C4C4;
-  --color-green: #06C755;
   
   /* Font families */
   --font-primary: 'Noto Sans JP', sans-serif;
   --font-secondary: 'Roboto', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+  --spacing-xl: 40px;
+  --spacing-xxl: 60px;
+  
+  /* Border radius */
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px;
+  --border-radius-pill: 9999px;
+  
+  /* Container widths */
+  --container-width-regular: 960px;
+  --container-width-small: 800px;
   
   /* Breakpoints */
   --breakpoint-xs: 390px;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 991px;
-  
-  /* Spacing */
-  --space-section: 80px;
-  --space-title: 60px;
-  --space-content: 40px;
 }
 
-/* ========================================================================
- * 3. タイポグラフィ
- * ========================================================================
- * サイト全体のテキストスタイルを定義します。タイトル、サブタイトル、本文テキストの
- * フォントサイズ、ウェイト、行の高さなどが含まれています。
- */
-/* タイトルスタイル */
-.title {
-  font-family: var(--font-secondary);
-  font-style: italic;
-  font-size: 60px;
-  font-weight: 700;
+/*******************
+ * Reset & Base Styles
+ *******************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
   color: var(--color-text);
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6,
+p, dl, dd, dt, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utility classes */
+.red {
+  color: var(--color-red);
+}
+
+.limited-width {
+  max-width: var(--container-width-regular);
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.limited-width-small {
+  max-width: var(--container-width-small);
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+/* Responsive line breaks */
+br.sp {
+  display: none;
+}
+
+/*******************
+ * Typography
+ *******************/
+/* Title fonts */
 .title-en {
   font-family: var(--font-secondary);
   font-size: 60px;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .title-jp {
   font-family: var(--font-primary);
   font-size: 18px;
   font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Body text styles */
+.text-large {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  line-height: 1.8;
+}
+
+.text-medium {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.text-regular {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Common headings */
+.title {
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
 }
 
 .subtitle {
@@ -131,7 +160,7 @@ li {
   padding: 0 50px;
   font-weight: 500;
   margin-top: 10px;
-  font-family: var(--font-primary);
+  text-align: center;
 }
 
 .subtitle::before, 
@@ -153,176 +182,50 @@ li {
   right: 0;
 }
 
-/* 本文テキストサイズ */
-.text-large {
-  font-family: var(--font-primary);
-  font-size: 22px;
-  line-height: 1.8;
+/*******************
+ * Buttons & Links
+ *******************/
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  border-radius: var(--border-radius-pill);
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+  border: 2px solid var(--color-white);
 }
 
-.text-medium {
-  font-family: var(--font-primary);
-  font-size: 20px;
-  line-height: 1.7;
+.btn:hover {
+  opacity: 0.8;
+  text-decoration: none;
 }
 
-.text-regular {
-  font-family: var(--font-primary);
-  font-size: 18px;
-  line-height: 1.6;
+.btn-line {
+  background-color: #06C755;
+  color: var(--color-white);
 }
 
-/* テキスト色 */
-.red {
-  color: var(--color-red);
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
 }
 
-/* レスポンシブ対応 - タイポグラフィ */
-@media (max-width: var(--breakpoint-lg)) {
-  .text-large {
-    font-size: 20px;
-  }
-  
-  .text-medium {
-    font-size: 18px;
-  }
-  
-  .text-regular {
-    font-size: 16px;
-  }
+.btn-outline {
+  border: 1px solid currentColor;
+  background-color: transparent;
 }
 
-@media (max-width: var(--breakpoint-md)) {
-  .title {
-    font-size: 2rem;
-  }
-  
-  .title-en {
-    font-size: 40px;
-  }
-  
-  .title-jp {
-    font-size: 16px;
-  }
-  
-  .subtitle {
-    padding: 0 40px;
-  }
-  
-  .subtitle::before, 
-  .subtitle::after {
-    width: 30px;
-  }
-  
-  .text-large {
-    font-size: 18px;
-  }
-  
-  .text-medium {
-    font-size: 16px;
-  }
-  
-  .text-regular {
-    font-size: 14px;
-  }
+.btn-icon {
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: var(--breakpoint-xs)) {
-  .title {
-    font-size: 1.8rem;
-  }
-  
-  .title-en {
-    font-size: 32px;
-  }
-  
-  .title-jp {
-    font-size: 14px;
-  }
-  
-  .subtitle {
-    padding: 0 30px;
-    font-size: 14px;
-  }
-  
-  .subtitle::before, 
-  .subtitle::after {
-    width: 20px;
-  }
+.btn-icon img {
+  margin-left: var(--spacing-sm);
 }
 
-/* ========================================================================
- * 4. レイアウト
- * ========================================================================
- * ページ全体のレイアウト構造を定義します。コンテナ、グリッド、背景スタイルなど、
- * コンテンツの配置と構造に関するスタイルが含まれています。
- */
-/* コンテナスタイル */
-.limited-width {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.limited-width-small {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-/* レスポンシブ表示制御 */
-br.sp {
-  display: none;
-}
-
-/* 背景スタイル */
-.back2 {
-  background-image: url("../img/back2.svg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* コンテナ */
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* レスポンシブ対応 - レイアウト */
-@media (max-width: var(--breakpoint-lg)) {
-  .limited-width,
-  .limited-width-small {
-    width: 100%;
-    padding: 0 15px;
-  }
-}
-
-@media (max-width: var(--breakpoint-md)) {
-  br.sp {
-    display: inherit;
-  }
-  
-  .back2 {
-    background-image: none;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-}
-
-/* ========================================================================
- * 5. コンポーネント
- * ========================================================================
- * このセクションには、ウェブサイト全体で使用される再利用可能なコンポーネントが含まれています。
- * 各コンポーネントは独自のサブセクションに整理されています。
- */
-/* --- 5.1 共通コンポーネント -------------------------------------------
- * 複数のセクションで使用される共通のボタンスタイルとコンポーネント。
- * 申し込みボタンと出展者ボタンのスタイルが含まれています。
- */
-/* ボタンスタイル */
 .apply__title,
 .exhibit__title {
   padding: 10px;
@@ -342,21 +245,6 @@ br.sp {
 .exhibit a {
   width: 385px;
   max-width: 100%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-white);
-  border-radius: 9999px;
-  border: 2px solid var(--color-white);
-  padding: 0 30px;
-  text-decoration: none;
-}
-
-.apply a:hover,
-.exhibit a:hover {
-  color: var(--color-white);
-  text-decoration: none;
-  opacity: 0.8;
 }
 
 .apply a img,
@@ -364,98 +252,1051 @@ br.sp {
   width: 40px;
 }
 
-.apply a {
-  background-color: var(--color-green);
-}
-
-.exhibit a {
-  background-color: var(--color-accent);
-}
-
-/* レスポンシブ対応 - ボタン */
-@media (max-width: var(--breakpoint-md)) {
-  .apply {
-    display: none;
-  }
-  
-  .exhibit a {
-    padding: 0 20px;
-  }
-  
-  /* ナビゲーション */
-  .scrollPc {
-    display: none;
-  }
-  
-  .scrollSp {
-    display: block;
-  }
-}
-
-/* --- 5.2 キービジュアル -------------------------------------------
- * サイトのメインビジュアルセクション。背景画像、ロゴ、タイトル、日付、
- * 場所情報などが含まれています。
- */
+/*******************
+ * Layout Components
+ *******************/
+/* Key Visual (KV) */
 .kv {
+  padding: 20px 30px 60px 30px;
+  color: var(--color-white);
   background-image: url("../img/background.png");
   background-size: cover;
-  color: #FFF;
   background-position: center;
-  padding: 20px 30px 60px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  position: relative;
-}
-
-.kv__logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  margin-bottom: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .kv__logo img {
   width: 150px;
-  transition: transform 0.3s ease;
-}
-
-.kv__logo img:hover {
-  transform: scale(1.05);
-}
-
-.kv__title {
-  color: var(--color-white);
-  margin-top: 40px;
 }
 
 .kv__subtitle {
-  color: var(--color-white);
-  margin-bottom: 30px;
-  font-size: 27.2px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.kv__title {
+  margin-top: 40px;
+}
+
+.kv__title img {
+  width: 562px;
+  height: 342.337px;
 }
 
 .kv__date {
-  color: var(--color-white);
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 45.874px;
+  font-weight: 500;
+  font-style: italic;
+  text-shadow: 0 3px 6px #000c4d;
+}
+
+.kv__date .kv__date__small {
+  font-weight: 500;
+  font-size: 33.36px;
 }
 
 .kv__location {
+  margin-top: 5px;
+  font-size: 29.193px;
+  font-weight: 500;
+  text-shadow: 0 3px 6px #000c4d;
+}
+
+.kv .apply,
+.kv .exhibit {
+  margin-top: 30px;
+}
+
+/* Background styles */
+.back2 {
+  background-image: url("../img/back2.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overview Section */
+.overview {
+  text-align: center;
+  padding: 0px 0 40px 0;
+}
+
+.overview .title {
+  color: var(--color-secondary);
+}
+
+.overview__desc {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 30px;
+  line-height: 2.5rem;
+}
+
+.overview__detail {
+  margin-top: 30px;
+  text-align: left;
+  font-size: 1.15rem;
+  line-height: 2.4rem;
+}
+
+/* Summary Section */
+.summary {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.summary .title {
+  color: var(--color-secondary);
+}
+
+.summary__detail {
+  margin-top: 40px;
+}
+
+.summary__detail__table {
+  width: 100%;
+  text-align: left;
+}
+
+.summary__detail__table td {
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 30px;
+  padding-right: 0;
+  border-bottom: 1px dashed var(--color-line-gray);
+}
+
+.summary__detail__table tr:last-child td {
+  border-bottom: none;
+}
+
+.summary__detail__table__column {
+  width: 180px;
+  padding-right: 20px;
+  vertical-align: top;
+}
+
+.summary__detail__table__column .box {
+  padding: 5px 10px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius-pill);
+  display: block;
+  color: var(--color-accent);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.summary__detail__table__access {
+  display: flex;
+}
+
+.summary__detail__table__access .station {
+  width: 50%;
+}
+
+.summary__detail__table__access .station ul {
+  font-size: 0.9rem;
+}
+
+.summary__detail__table__access .station ul li {
+  list-style-type: disc;
+  color: var(--color-accent);
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.summary__detail__table__access .station ul li .line {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.summary__detail__table__access .station ul .detail {
+  font-weight: 300;
+}
+
+.summary__detail__table__access .map {
+  width: 50%;
+}
+
+.summary__detail__table__access .map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.summary__detail .sp {
+  display: none;
+}
+
+/* Contents Section */
+.contents {
+  text-align: center;
+  background-color: #FFF6DE;
+  padding: 50px 0;
+}
+
+.contents .title {
+  color: var(--color-accent);
+}
+
+.contents__wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.contents__wrap__box {
+  width: 44%;
+  border: 3px solid var(--color-accent);
+  border-radius: var(--border-radius-medium);
+  margin-top: 30px;
+}
+
+.contents__wrap__box__title {
+  background-color: var(--color-accent);
   color: var(--color-white);
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.contents__wrap__box__detail {
+  background-color: var(--color-white);
+  border-bottom-right-radius: var(--border-radius-medium);
+  border-bottom-left-radius: var(--border-radius-medium);
+  padding: 15px 30px;
+}
+
+.contents__wrap__box__detail .ribbon {
+  width: 260px;
+}
+
+.contents__wrap__box__detail__appeal {
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.contents__wrap__box__detail__appeal .number {
+  font-size: 2rem;
+  font-style: italic;
+  margin-right: 5px;
+  line-height: 1rem;
+}
+
+.contents__wrap__box__detail .scenery {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contents .apply {
+  margin-top: 40px;
+}
+
+/* Pickup Section */
+.pickup {
+  padding: 50px 0;
+  text-align: center;
+  border-left: 50px solid var(--color-accent);
+  border-right: 50px solid var(--color-accent);
+}
+
+.pickup .title {
+  color: var(--color-accent);
+}
+
+.pickup__list {
+  margin-top: 50px;
+}
+
+.pickup__list__box {
+  display: flex;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.pickup__list__box__image {
+  width: 320px;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pickup__list__box__image img {
+  max-width: 100%;
+  max-height: 30px;
+}
+
+.pickup__list__box__image img.pe {
+  max-height: 20px;
+}
+
+.pickup__list__box__image img.creava {
+  max-height: 40px;
+}
+
+.pickup__list__box__image img.quartet {
+  max-height: 50px;
+}
+
+.pickup__list__box__image img.granthope {
+  max-height: 75px;
+}
+
+.pickup__list__box__image img.woogway {
+  max-height: 60px;
+}
+
+.pickup__list__box__image img.astar {
+  max-height: 80px;
+}
+
+.pickup__list__box__desc {
+  width: calc(100% - 320px);
+}
+
+.pickup__list__box__desc a {
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+.pickup__list__box__desc a:hover {
+  color: var(--color-black);
+}
+
+.pickup__list__box__desc__inner {
+  display: flex;
+  align-items: baseline;
+}
+
+.pickup__list__box__desc__inner a {
+  text-decoration: none;
+}
+
+.pickup__list__box__desc__inner img.inner {
+  width: 100px;
+}
+
+.pickup__continue {
+  margin-top: 10px;
+  display: none;
+}
+
+.pickup__continue__btn {
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+  cursor: pointer;
+  padding: 5px 10px;
+  font-style: italic;
+}
+
+.pickup__desc {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Exhibitor Section */
+.exhibitor {
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.exhibitor .title {
+  color: var(--color-secondary);
+}
+
+.exhibitor__list {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  line-height: 2;
+  text-align: left;
+}
+
+.exhibitor__continue {
+  margin-top: 10px;
+  display: none;
+}
+
+.exhibitor__continue__btn {
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+  cursor: pointer;
+  padding: 5px 10px;
+  font-style: italic;
+}
+
+.exhibitor__desc {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Schedule Section */
+.schedule {
+  background-image: url("../img/timeschedule_background.png");
+  background-size: cover;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.schedule .title {
+  color: var(--color-primary);
+}
+
+.schedule .subtitle {
+  color: var(--color-white);
+}
+
+.schedule .subtitle::before, 
+.schedule .subtitle::after {
+  background-color: var(--color-white);
+}
+
+.schedule__wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-height: 450px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.schedule__wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.schedule__wrap.opened {
+  max-height: 3000px;
+  height: auto;
+}
+
+.schedule__wrap.opened::after {
+  display: none;
+}
+
+.schedule__wrap__padbox {
+  width: 33.333%;
+  margin-top: 30px;
+  padding: 0 8px;
+  height: auto;
+}
+
+.schedule__wrap__padbox__box {
+  background-color: rgba(241, 251, 255, 0.6);
+  border-radius: var(--border-radius-small);
+  padding: 20px;
+  position: relative;
+}
+
+.schedule__wrap__padbox__box.mc {
+  height: 168px;
+}
+
+.schedule__wrap__padbox__box.mc .schedule__readbox__wrap__box__contents {
+  justify-content: center;
+}
+
+.schedule__wrap__padbox__box .time {
+  position: absolute;
+  left: -4px;
+  top: 10px;
+}
+
+.schedule__wrap__padbox__box .start {
+  position: absolute;
+  left: 5px;
+  top: 11px;
+  font-weight: 700;
+}
+
+.schedule__wrap__padbox__box__contents {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+}
+
+.schedule__wrap__padbox__box__contents__image {
+  height: 134px;
+}
+
+.schedule__wrap__padbox__box__contents__image img {
+  height: 134px;
+}
+
+.schedule__wrap__padbox__box__contents__image img.long2,
+.schedule__wrap__padbox__box__contents__image img.long3 {
+  height: auto;
+  max-height: 110px;
+  margin-top: 19px;
+  max-width: 100%;
+}
+
+.schedule__wrap__padbox__box__contents__image img.long3 {
+  margin-top: 25px;
+}
+
+.schedule__wrap__padbox__box__contents__image img.longmc {
+  height: auto;
+  max-height: 110px;
+  margin-top: 19px;
+  max-width: 100%;
+}
+
+.schedule__wrap__padbox__box__contents__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  text-align: left;
+}
+
+.schedule__wrap__padbox__box__contents__title.takahara {
+  font-size: 1.05rem;
+}
+
+.schedule__continue {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.schedule__continue__btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: transparent;
+  color: var(--color-white);
+  text-align: center;
+  font-family: var(--font-secondary);
   font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border: 1px solid var(--color-white);
+  transition: all 0.3s ease;
+}
+
+.schedule__continue__btn:hover {
+  background-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* FAQ Section */
+.faq {
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 50px 0 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq::before,
+.faq::after,
+.faq .polygon-small {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.faq::before {
+  top: 48%;
+  left: 0%;
+  width: 137.38px;
+  height: 133px;
+  background-image: url("../img/Polygon 5-1.svg");
+}
+
+.faq::after {
+  top: 0.5%;
+  left: 85.5%;
+  width: 205.88px;
+  height: 198.91px;
+  background-image: url("../img/Polygon 6.svg");
+}
+
+.faq .polygon-small {
+  top: 30%;
+  left: 90.5%;
+  width: 67.49px;
+  height: 65.17px;
+  background-image: url("../img/Polygon 5.svg");
+}
+
+.faq .title {
+  color: var(--color-accent);
+}
+
+.faq__list {
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.faq__list__box {
+  font-weight: 500;
+  padding: 15px 10px;
+}
+
+.faq__list__box__a,
+.faq__list__box__q {
+  display: flex;
+  align-items: center;
+}
+
+.faq__list__box__q {
+  margin-top: 10px;
+}
+
+.faq__list__box__a__mark,
+.faq__list__box__q__mark {
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.faq__list__box__a__mark {
+  background-color: var(--color-primary);
+}
+
+.faq__list__box__q__mark {
+  background-color: var(--color-accent);
+}
+
+.faq__list__box__a__content,
+.faq__list__box__q__content {
+  width: calc(100% - 30px);
+  text-align: left;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  padding: 20px 0 30px;
+}
+
+.footer__exhibit {
+  text-align: center;
+  padding-bottom: 40px;
+  border-bottom: 0.5px solid var(--color-white);
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
-/* レスポンシブ対応 - キービジュアル */
-@media (max-width: var(--breakpoint-md)) {
+.footer__exhibit a {
+  color: var(--color-white);
+  padding: 8px 35px;
+  border: 1px solid var(--color-white);
+  border-radius: var(--border-radius-pill);
+}
+
+.footer__exhibit a:hover {
+  color: var(--color-white);
+}
+
+.footer__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__wrap__company {
+  margin-right: 10px;
+}
+
+.footer__wrap__policy {
+  margin-left: 20px;
+  color: var(--color-white);
+}
+
+.footer__wrap__policy:hover {
+  color: var(--color-white);
+}
+
+.footer__wrap img {
+  width: 150px;
+}
+
+/* Fixed navigation */
+.scrollPc {
+  position: fixed;
+  bottom: 50%;
+  right: 0;
+  padding: 10px;
+  padding-right: 0;
+  text-align: center;
+  display: block;
+  background-image: url("../img/side_button.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
+  width: 70px;
+  height: 200px;
+}
+
+.scrollSp {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: var(--color-light-gray);
+  display: none;
+}
+
+/*******************
+ * Additional Styles
+ *******************/
+/* FAQ Additional Styles */
+.faq__contact {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.faq__contact__link {
+  display: inline-block;
+  padding: 15px 20px;
+  background-color: var(--color-white);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.faq__contact__link:hover {
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+
+/* Mobile Navigation */
+.application-icon {
+  position: fixed;
+  right: 0%; 
+  top: 27%;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.application-icon_sub {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+}
+
+.pre-register-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #06C755;
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 19.6px;
+  font-weight: 700;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.pre-register-button:hover {
+  background-color: #218838;
+}
+
+.line-icon {
+  width: 46.55px;
+  height: 46.55px;
+  margin-left: 8px;
+}
+
+/* Polygon Decorations */
+.hexagon {
+  position: absolute;
+  display: none;
+}
+
+.hexagon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/*******************
+ * Responsive Styles
+ *******************/
+/* Tablets and smaller screens */
+@media (max-width: 991px) {
+  /* Typography */
+  .title-en {
+    font-size: 50px;
+  }
+  
+  .text-large {
+    font-size: 20px;
+  }
+  
+  .text-medium {
+    font-size: 18px;
+  }
+  
+  .text-regular {
+    font-size: 16px;
+  }
+  
+  /* Layout */
+  .limited-width,
+  .limited-width-small {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* Schedule */
+  .schedule__wrap__padbox__box__contents__title.takahara {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small screens */
+@media (max-width: 576px) {
+  /* Layout */
+  .pickup {
+    border-left: 10px solid var(--color-accent);
+    border-right: 10px solid var(--color-accent);
+  }
+  
+  /* Typography */
+  .title {
+    font-size: 30px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* FAQ */
+  .faq__list__box__a__mark,
+  .faq__list__box__q__mark {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .faq__list__box__a__content,
+  .faq__list__box__q__content {
+    font-size: 14px;
+  }
+  
+  /* Schedule */
+  .schedule__wrap__padbox {
+    width: 100%;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    height: auto;
+    margin-top: 30px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 390px) {
+  /* KV */
+  .kv__date {
+    font-size: 1.7rem;
+  }
+  
+  .kv__date .kv__date__small {
+    font-size: 1.3rem;
+  }
+  
+  /* Schedule */
+  .schedule__wrap__padbox__box__contents__title {
+    max-width: 248px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.95rem;
+  }
+  
+  /* Container */
+  .container {
+    background-image: url("../img/fv_bg.png");
+    max-width: 390px;
+    width: 100%;
+    height: 462px;
+  }
+  
+  /* Show hexagons for mobile */
+  .hexagon {
+    display: block;
+  }
+  
+  .header_1 {
+    width: 31.5px;
+    height: 31.44px;
+    top: 71%;
+    left: 6%;
+  }
+  
+  .header_2 {
+    width: 77px;
+    height: 76.6px;
+    top: 81%;
+    left: 0%;
+  }
+  
+  .header_3 {
+    width: 98.62px;
+    height: 97.5px;
+    top: 0%;
+    left: 88%;
+  }
+  
+  .header_4 {
+    width: 121.33px;
+    height: 119.95px;
+    top: 0%;
+    left: 85%;
+  }
+  
+  .header_5 {
+    width: 37.81px;
+    height: 37.62px;
+    top: 49%;
+    left: 94.4%;
+  }
+  
+  .header_6 {
+    width: 93.4px;
+    height: 92.344px;
+    top: 64.5%;
+    left: 78.8%;
+  }
+  
+  /* Sections spacing */
+  .section {
+    padding-top: 30px;
+    margin-bottom: 13px;
+  }
+  
+  .content h1, 
+  .content h4, 
+  .content h5, 
+  .content h6 {
+    margin-bottom: 11px;
+  }
+  
+  /* Mobile app banner */
+  .application-icon_sub {
+    right: 6%;
+  }
+  
+  /* Footer */
+  .footer_container {
+    padding-top: 38px;
+    padding-bottom: 0;
+    height: 273px;
+  }
+  
+  .footer_logo {
+    max-width: 296.5px;
+    margin: 0 auto;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+  /* Typography */
+  .title-en {
+    font-size: 40px;
+  }
+  
+  .title-jp {
+    font-size: 16px;
+  }
+  
+  .text-large {
+    font-size: 18px;
+  }
+  
+  .text-medium {
+    font-size: 16px;
+  }
+  
+  .text-regular {
+    font-size: 14px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    padding: 0 40px;
+  }
+  
+  .subtitle::before, 
+  .subtitle::after {
+    width: 30px;
+  }
+  
+  /* Show/hide elements */
+  br.sp {
+    display: inherit;
+  }
+  
+  .apply {
+    display: none;
+  }
+  
+  /* KV Section */
   .kv {
     padding: 5px 10px 25px 10px;
     background-image: url("../img/sp/background_sp.png");
@@ -501,821 +1342,251 @@ br.sp {
     height: 25px;
   }
   
+  .kv__date {
+    font-size: 1.7rem;
+  }
+  
+  .kv__date .kv__date__small {
+    font-size: 1.3rem;
+  }
+  
   .kv__location {
     font-size: 1.3rem;
   }
-}
-
-/* --- 5.3 イベント概要 -------------------------------------------
- * イベントの概要を表示するセクション。タイトルと説明文を含む
- * シンプルなレイアウトで構成されています。
- */
-.overview {
-  background-color: var(--color-white);
-  padding: var(--space-section) 0;
-  text-align: center;
-}
-
-.overview .title {
-  color: var(--color-secondary);
-  margin-bottom: 10px;
-}
-
-.overview__content {
-  margin-top: var(--space-title);
-  text-align: left;
-}
-
-/* レスポンシブ対応 - イベント概要 */
-@media (max-width: var(--breakpoint-md)) {
+  
+  /* Background */
+  .back2 {
+    background-image: none;
+  }
+  
+  /* Overview */
   .overview {
     padding: 60px 0 30px 0;
     background-image: url("../img/sp/back2.svg");
     background-size: contain;
     background-repeat: no-repeat;
   }
-}
-
-/* --- 5.4 イベント詳細 -------------------------------------------
- * イベントの詳細情報を表示するセクション。日時、場所、参加費などの
- * 具体的な情報をテーブルレイアウトで表示します。
- */
-.summary {
-  background-color: var(--color-light-gray);
-  padding: var(--space-section) 0;
-  text-align: center;
-}
-
-.summary .title {
-  color: var(--color-secondary);
-  margin-bottom: 10px;
-}
-
-.summary__detail {
-  margin-top: var(--space-title);
-  text-align: left;
-}
-
-.summary__detail__table {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.summary__detail__table__column {
-  width: 150px;
-  padding-right: 20px;
-  font-weight: 700;
-  vertical-align: top;
-}
-
-/* レスポンシブ対応 - イベント詳細 */
-@media (max-width: var(--breakpoint-lg)) {
+  
+  .overview__desc {
+    display: none;
+  }
+  
+  .overview__detail {
+    font-size: 1.05rem;
+  }
+  
+  /* Summary */
+  .summary {
+    padding: 30px 0;
+  }
+  
+  .summary__detail__table td {
+    font-size: 0.95rem;
+    padding: 15px 10px;
+  }
+  
   .summary__detail__table__column {
     width: 115px;
     padding-right: 10px;
   }
-}
-
-/* --- 5.5 コンテンツセクション -------------------------------------------
- * イベントのコンテンツ情報を表示するセクション。複数のコンテンツボックスを
- * フレックスレイアウトで表示します。
- */
-.contents {
-  background-color: var(--color-white);
-  padding: var(--space-section) 0;
-  text-align: center;
-}
-
-.contents .title {
-  color: var(--color-accent);
-  margin-bottom: 10px;
-}
-
-.contents__list {
-  margin-top: var(--space-title);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.contents__list__box {
-  width: 30%;
-  margin-bottom: 40px;
-  text-align: left;
-}
-
-.contents__list__box__title {
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-/* レスポンシブ対応 - コンテンツセクション */
-@media (max-width: var(--breakpoint-md)) {
-  .contents__list__box {
+  
+  .summary__detail__table__column .box {
+    font-size: 0.75rem;
+  }
+  
+  .summary__detail__table__access {
+    display: block;
+  }
+  
+  .summary__detail__table__access .station,
+  .summary__detail__table__access .map {
     width: 100%;
   }
-}
-
-/* --- 5.6 ピックアップセクション -------------------------------------------
- * 特集コンテンツやスポンサー情報を表示するセクション。カード形式の
- * レイアウトでコンテンツを表示します。
- */
-.pickup {
-  background-color: var(--color-light-gray);
-  padding: var(--space-section) 0;
-  text-align: center;
-}
-
-.pickup .title {
-  color: var(--color-accent);
-  margin-bottom: 10px;
-}
-
-.pickup__list {
-  margin-top: var(--space-title);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.pickup__list__box {
-  width: 30%;
-  margin-bottom: 30px;
-  background-color: var(--color-white);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.pickup__list__box__title {
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.pickup__list__box__image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  padding: 10px;
-}
-
-.pickup__desc {
-  margin-top: 20px;
-  text-align: right;
-  font-style: italic;
-}
-
-/* レスポンシブ対応 - ピックアップセクション */
-@media (max-width: var(--breakpoint-md)) {
+  
+  .summary__detail__table__access .map {
+    display: none;
+  }
+  
+  .summary__detail .sp {
+    display: block;
+  }
+  
+  /* Contents */
+  .contents {
+    padding: 30px 0;
+  }
+  
+  .contents__wrap {
+    display: block;
+  }
+  
+  .contents__wrap__box {
+    width: 100%;
+  }
+  
+  /* Pickup */
+  .pickup__list {
+    margin-top: 30px;
+  }
+  
   .pickup__list__box {
+    display: block;
+  }
+  
+  .pickup__list__box__image {
     width: 100%;
   }
-}
-
-/* 企業ロゴの固定サイズ設定 */
-.logo-oplan {
-  width: 110.25px;
-  height: 30px;
-  flex-shrink: 0;
-  object-fit: contain;
-}
-
-.logo-pebank {
-  width: 223px;
-  height: 19px;
-  flex-shrink: 0;
-  object-fit: contain;
-}
-
-.logo-bocjapan {
-  width: 266.786px;
-  height: 30px;
-  flex-shrink: 0;
-  object-fit: contain;
-}
-
-.logo-creava {
-  width: 124px;
-  height: 57px;
-  flex-shrink: 0;
-  object-fit: contain;
-}
-
-.logo-sucsak {
-  width: 95px;
-  height: 21px;
-  flex-shrink: 0;
-  object-fit: contain;
-}
-
-.logo-quartet {
-  width: 103px;
-  height: 42px;
-  flex-shrink: 0;
-  object-fit: contain;
-}
-
-/* --- 5.7 出展者セクション -------------------------------------------
- * イベントの出展者情報を表示するセクション。背景画像の上に
- * 出展者リストを表示します。
- */
-.exhibitor {
-  background-image: url("../img/bg.png");
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: var(--space-section) 0;
-}
-
-.exhibitor .title {
-  color: var(--color-secondary);
-  margin-bottom: 10px;
-}
-
-.exhibitor__list {
-  margin-top: var(--space-title);
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  line-height: 2;
-  text-align: left;
-}
-
-.exhibitor__continue {
-  margin-top: 10px;
-  display: none;
-}
-
-.exhibitor__continue__btn {
-  border: 1px solid var(--color-black);
-  color: var(--color-black);
-  cursor: pointer;
-  padding: 5px 10px;
-  font-style: italic;
-}
-
-.exhibitor__desc {
-  margin-top: 20px;
-  text-align: right;
-}
-
-/* レスポンシブ対応 - 出展者セクション */
-@media (max-width: var(--breakpoint-md)) {
+  
+  .pickup__list__box__desc {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .pickup__continue {
+    display: block;
+  }
+  
+  /* Exhibitor */
+  .exhibitor {
+    background-image: url("../img/bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 30px 0;
+  }
+  
   .exhibitor__list {
-    flex-direction: column;
+    margin-top: 30px;
+    display: block;
+    text-align: center;
   }
-}
-
-/* --- 5.8 スケジュールセクション -------------------------------------------
- * イベントのタイムスケジュールを表示するセクション。アコーディオン機能を使用して
- * 表示/非表示を切り替えることができます。
- */
-.schedule {
-  background-image: url("../img/timeschedule_background.png");
-  background-size: cover;
-  text-align: center;
-  padding: var(--space-section) 0;
-}
-
-.schedule .title {
-  color: var(--color-primary);
-  margin-bottom: 10px;
-}
-
-.schedule .subtitle {
-  color: var(--color-white);
-}
-
-.schedule .subtitle::before,
-.schedule .subtitle::after {
-  background-color: var(--color-white);
-}
-
-.schedule__wrap {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  max-height: 450px;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  position: relative;
-}
-
-.schedule__wrap::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
-  pointer-events: none;
-}
-
-.schedule__wrap.opened {
-  max-height: 3000px;
-  height: auto;
-}
-
-.schedule__wrap.opened::after {
-  display: none;
-}
-
-.schedule__wrap__padbox {
-  width: 33.333%;
-  margin-top: 30px;
-  padding: 0 8px;
-}
-
-.schedule__wrap__padbox__box {
-  background-color: var(--color-white);
-  border-radius: 10px;
-  overflow: hidden;
-  height: 100%;
-}
-
-.schedule__wrap__padbox__box__time {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: 10px;
-  font-weight: 700;
-}
-
-.schedule__wrap__padbox__box__contents {
-  padding: 15px;
-  text-align: left;
-}
-
-.schedule__wrap__padbox__box__contents__title {
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.schedule__wrap__padbox__box__contents__speaker {
-  font-size: 14px;
-  color: var(--color-text);
-  margin-bottom: 10px;
-}
-
-.schedule__wrap__padbox__box__contents__desc {
-  font-size: 14px;
-  color: var(--color-text);
-}
-
-.schedule__continue {
-  margin-top: 20px;
-}
-
-.schedule__continue__btn {
-  background-color: var(--color-white);
-  border: none;
-  color: var(--color-primary);
-  cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: 700;
-}
-
-/* レスポンシブ対応 - スケジュールセクション */
-@media (max-width: var(--breakpoint-lg)) {
-  .schedule__wrap__padbox__box__contents__title.takahara {
-    font-size: 1.2rem;
+  
+  .exhibitor__continue {
+    display: block;
   }
-}
-
-@media (max-width: var(--breakpoint-md)) {
-  .schedule__wrap__padbox {
+  
+  /* Schedule */
+  .schedule {
+    padding: 30px 0;
+  }
+  
+  .schedule__wrap {
+    margin-top: 30px;
+    display: block;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+  
+  .schedule__wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    height: 40px;
     width: 100%;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
+    background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
   }
-}
-
-/* --- 5.9 FAQセクション -------------------------------------------
- * よくある質問と回答を表示するセクション。Q&A形式のレイアウトで
- * 質問と回答を表示します。背景に装飾的な多角形要素があります。
- */
-.faq {
-  background-color: var(--color-white);
-  padding: var(--space-section) 0;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Polygon background elements */
-.faq::before {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  width: 150px;
-  height: 150px;
-  background-image: url("../img/Polygon 5.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 1;
-  opacity: 0.9;
-}
-
-.faq::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 250px;
-  background-image: url("../img/Polygon 6.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 1;
-  opacity: 0.9;
-}
-
-.faq .polygon-small {
-  position: absolute;
-  top: 30%;
-  left: 90.5%;
-  width: 67.49px;
-  height: 65.17px;
-  background-image: url("../img/Polygon 5.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 1;
-  opacity: 0.9;
-}
-
-.faq .title {
-  color: var(--color-accent);
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 2;
-}
-
-.faq .subtitle {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 40px;
-}
-
-.faq__list {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq__contact {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 30px auto 0;
-  text-align: center;
-}
-
-/* レスポンシブ対応 - FAQセクション */
-@media (max-width: var(--breakpoint-lg)) {
+  
+  .schedule__wrap.opened {
+    max-height: none;
+    height: auto;
+  }
+  
+  .schedule__wrap.opened::after {
+    display: none;
+  }
+  
+  .schedule__wrap__padbox {
+    width: 48%;
+    margin-top: 15px;
+  }
+  
+  .schedule__wrap__padbox__box {
+    padding: 15px 10px;
+  }
+  
+  .schedule__wrap__padbox__box.mc {
+    height: 117px;
+  }
+  
+  .schedule__wrap__padbox__box__contents {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: auto;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image {
+    height: 87px;
+    margin-left: 7px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img {
+    height: 87px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img.long2,
+  .schedule__wrap__padbox__box__contents__image img.long3 {
+    max-width: 156px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img.longmc {
+    max-width: 156px;
+    margin-top: 0;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title.takahara {
+    font-size: 0.9rem;
+  }
+  
+  .schedule__continue {
+    margin-top: 10px;
+  }
+  
+  /* FAQ */
   .faq {
-    padding: 60px 0;
-  }
-  
-  .faq::before {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .faq::after {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .faq .polygon-small {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-@media (max-width: var(--breakpoint-md)) {
-  .faq {
-    padding: 50px 0;
-  }
-  
-  .faq .title {
-    font-size: 40px;
-  }
-  
-  .faq .subtitle {
-    font-size: 16px;
-    margin-bottom: 30px;
+    padding: 30px 0;
   }
   
   .faq::before,
-  .faq::after {
-    display: none;
-  }
-  
+  .faq::after,
   .faq .polygon-small {
     display: none;
-  }
-  
-  .faq__list__box {
-    width: 100%;
-  }
-  
-  .faq__list__box__q {
-    padding: 15px;
-  }
-  
-  .faq__list__box__a {
-    padding: 15px;
   }
   
   .faq__list__box__a__content,
   .faq__list__box__q__content {
     font-size: 16px;
   }
-}
-
-@media (max-width: var(--breakpoint-xs)) {
-  .faq__list__box__q__mark,
-  .faq__list__box__a__mark {
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    font-size: 14px;
+  
+  /* Footer */
+  .footer {
+    padding-bottom: 75px;
   }
   
-  .faq__list__box__q__text,
-  .faq__list__box__a__text {
-    width: calc(100% - 35px);
-    padding-left: 10px;
+  /* Fixed navigation */
+  .scrollPc {
+    display: none;
+  }
+  
+  .scrollSp {
+    display: block;
+  }
+  
+  .scrollSp .apply {
+    display: block;
+  }
+  
+  .scrollSp .apply .apply__title {
+    font-size: 1rem;
   }
 }
-
-.faq__contact__link {
-  display: inline-block;
-  padding: 15px 20px;
-  background-color: var(--color-white);
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  color: var(--color-black);
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 1.5;
-  transition: all 0.3s ease;
-}
-
-.faq__contact__link:hover {
-  background-color: #f8f8f8;
-  border-color: #ccc;
-}
-
-.faq__list__box {
-  margin-bottom: 30px;
-}
-
-.faq__list__box__a {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.faq__list__box__a__mark {
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  color: var(--color-white);
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: var(--font-secondary);
-  font-weight: 500;
-  margin-right: 15px;
-  flex-shrink: 0;
-}
-
-.faq__list__box__a__content {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--color-black);
-  text-align: left;
-}
-
-.faq__list__box__q {
-  display: flex;
-  align-items: center;
-}
-
-.faq__list__box__q__mark {
-  background-color: var(--color-accent);
-  border-radius: 50%;
-  color: var(--color-white);
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: var(--font-secondary);
-  font-weight: 500;
-  margin-right: 15px;
-  flex-shrink: 0;
-}
-
-.faq__list__box__q__content {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--color-black);
-  text-align: left;
-}
-
-.faq__list__box__q__content a {
-  color: var(--color-black);
-  text-decoration: underline;
-}
-
-/* --- 5.10 フッター -------------------------------------------
- * サイトのフッターセクション。会社情報、著作権表示などの
- * 情報を表示します。
- */
-.footer {
-  background-color: var(--color-dark-gray);
-  color: var(--color-white);
-  padding: 40px 0;
-  text-align: center;
-}
-
-.footer__wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.footer__wrap__logo {
-  margin-bottom: 20px;
-}
-
-.footer__wrap__company {
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-
-.footer__wrap__copyright {
-  font-size: 12px;
-}
-
-/* --- 5.11 ナビゲーション -------------------------------------------
- * 固定位置のナビゲーションボタン。PCとモバイルで異なる表示方法を
- * 使用しています。
- */
-.scrollPc {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 100;
-  display: block;
-}
-
-.scrollSp {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  display: none;
-  background-color: var(--color-white);
-  padding: 10px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ========================================================================
- * 6. ユーティリティクラス
- * ========================================================================
- * 再利用可能な小さなユーティリティクラスのコレクション。表示/非表示の制御、
- * テキスト配置、マージン、アコーディオン機能用のクラスなどが含まれています。
- */
-/* 表示・非表示制御 */
-.d-none {
-  display: none !important;
-}
-
-.d-block {
-  display: block !important;
-}
-
-.d-flex {
-  display: flex !important;
-}
-
-/* レスポンシブ表示制御 */
-.d-none-sm {
-  display: none !important;
-}
-@media (min-width: 576px) {
-  .d-none-sm {
-    display: block !important;
-  }
-}
-
-.d-none-md {
-  display: none !important;
-}
-@media (min-width: 768px) {
-  .d-none-md {
-    display: block !important;
-  }
-}
-
-/* テキスト配置 */
-.text-center {
-  text-align: center !important;
-}
-
-.text-left {
-  text-align: left !important;
-}
-
-.text-right {
-  text-align: right !important;
-}
-
-/* マージン */
-.mt-0 {
-  margin-top: 0 !important;
-}
-
-.mt-1 {
-  margin-top: 0.25rem !important;
-}
-
-.mt-2 {
-  margin-top: 0.5rem !important;
-}
-
-.mt-3 {
-  margin-top: 1rem !important;
-}
-
-.mt-4 {
-  margin-top: 1.5rem !important;
-}
-
-.mt-5 {
-  margin-top: 3rem !important;
-}
-
-/* アコーディオン機能用クラス */
-.hidden {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
-.hidden.show {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 300px;
-  width: 100%;
-  height: 254px;
-  border-radius: 5px;
-  background: rgba(241, 251, 255, 0.6);
-}
-
-.time_schedule_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  column-gap: 30px;
-  row-gap: 22px;
-}
-
-.accordion_button {
-  display: none;
-  border: 1px solid var(--color-white);
-  width: 123px;
-  height: 33px;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  font-family: var(--font-secondary);
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 18px;
-  text-align: center;    
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-.accordion-open {
-  margin-bottom: 30px;
-}
-
-/* 注意: レスポンシブスタイルは各セクションに直接含まれています。
- * 各コンポーネントセクションの下部に「レスポンシブ対応 - コンポーネント名」として
- * メディアクエリが配置されています。
- */
