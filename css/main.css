@@ -1597,20 +1597,18 @@ ul {
   }
 }
 
+/* == Media Queries == */
+
+/* Utility Classes */
 /* .d-none-md: Hide element on screens md (768px) and larger */
-/* Base style (mobile): Element is visible */
 @media (min-width: var(--breakpoint-md)) { /* 768px and up */
   .d-none-md {
     display: none !important;
   }
 }
+
 /* Typography */
 /* Base styles (mobile) are already defined */
-/* .title-en: 60px base, 40px below md */
-/* .title-jp: 18px base, 16px below md */
-
-/* No min-width needed as base styles cover larger screens */
-/* Apply smaller sizes below md */
 @media (max-width: calc(var(--breakpoint-md) - 1px)) { /* Up to 767px */
   .title-en {
     font-size: 40px;
@@ -1619,6 +1617,7 @@ ul {
     font-size: 16px;
   }
 }
+
 /* Component: Key Visual (KV) */
 @media (max-width: calc(var(--breakpoint-md) - 1px)) { /* Up to 767px */
   .kv {
@@ -1639,9 +1638,38 @@ ul {
     display: none; /* Hide desktop image */
   }
   .kv__title::before { /* Mobile logo */
-/* == Media Queries == */
+    content: '';
+    display: block;
+    background-image: url("../img/sp/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+  .kv__title::after { /* Mobile subtitle image */
+    content: '';
+    display: block;
+    background-image: url("../img/sp/sub_title.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 25px;
+  }
+  .kv__location {
+    font-size: 1.3rem;
+  }
+}
 
-/* Component: Key Visual (KV) - Mobile First */
+@media (max-width: calc(var(--breakpoint-xs) - 1px)) { /* Up to 389px */
+  .kv__date--small {
+    font-size: 1.3rem; /* Apply smaller size */
+  }
+}
+
+/* Component: Key Visual (KV) - Tablet */
 @media (min-width: var(--breakpoint-md)) { /* 768px and up */
   .kv {
     padding: 10px 20px 40px 20px; /* Tablet padding */
@@ -1650,7 +1678,7 @@ ul {
   .kv__logo img {
     width: 150px; /* Desktop logo size */
   }
-   .kv__subtitle {
+  .kv__subtitle {
     margin-top: 0; /* Reset mobile margin */
     font-size: 28px; /* Desktop subtitle font size */
   }
@@ -1670,14 +1698,15 @@ ul {
     margin-top: 10px; /* Desktop margin */
     font-size: 36px; /* Tablet date size */
   }
-   .kv__date--small {
-     font-size: 33.36px; /* Desktop small date size */
-   }
+  .kv__date--small {
+    font-size: 33.36px; /* Desktop small date size */
+  }
   .kv__location {
     font-size: 24px; /* Tablet location size */
   }
 }
 
+/* Component: Key Visual (KV) - Desktop */
 @media (min-width: var(--breakpoint-lg)) { /* 991px and up */
   .kv {
     padding: 20px 30px 60px 30px; /* Desktop padding */
@@ -1689,7 +1718,12 @@ ul {
   .kv__date {
     font-size: 45.874px; /* Desktop date size */
   }
-/* Component: Buttons - Mobile First */
+  .kv__location {
+    font-size: 29.193px; /* Desktop location size */
+  }
+}
+
+/* Component: Buttons - Tablet and up */
 @media (min-width: var(--breakpoint-md)) { /* 768px and up */
   /* Show Apply buttons on desktop */
   .kv__apply-button-container,
@@ -1704,7 +1738,33 @@ ul {
     padding: 10px 30px; /* Restore desktop padding */
   }
   .button--apply .button__text,
-/* Component: Summary - Mobile First */
+  .button--exhibit .button__text {
+    font-size: 24px; /* Restore desktop font size */
+  }
+  .button__icon {
+    width: 40px; /* Restore desktop icon size */
+  }
+}
+
+/* Component: Overview - Tablet and up */
+@media (min-width: var(--breakpoint-md)) { /* 768px and up */
+  .overview {
+    padding: 0px 0 40px 0; /* Restore desktop padding */
+    background-image: none; /* Remove mobile background */
+  }
+  .overview__description {
+    display: block; /* Show description on desktop */
+    font-size: 1.4rem; /* Restore desktop font size */
+  }
+  .overview__details {
+    font-size: 1.15rem; /* Restore desktop font size */
+  }
+  .overview__title {
+    margin-bottom: 0; /* Reset mobile margin */
+  }
+}
+
+/* Component: Summary - Tablet and up */
 @media (min-width: var(--breakpoint-md)) { /* 768px and up */
   .summary {
     padding: 40px 0; /* Restore desktop padding */
@@ -1729,7 +1789,23 @@ ul {
   }
   .summary__detail__table__access .station {
     width: 50%; /* Restore desktop width */
-/* Component: Contents - Mobile First */
+  }
+  .summary__detail__table__access .map {
+    width: 50%; /* Restore desktop width */
+    display: block; /* Show map on desktop */
+  }
+  .summary__detail .sp {
+    display: none; /* Hide SP map container on desktop */
+  }
+  .summary__detail__table__content .red {
+    font-size: 1rem; /* Restore desktop font size */
+  }
+  .summary__map iframe {
+    height: 400px; /* Restore desktop height */
+  }
+}
+
+/* Component: Contents - Tablet and up */
 @media (min-width: var(--breakpoint-md)) { /* 768px and up */
   .contents {
     padding: 50px 0; /* Restore desktop padding */
@@ -1758,94 +1834,4 @@ ul {
   .contents__wrap__box__detail__appeal .number {
     font-size: 2rem; /* Restore desktop font size */
   }
-  /* No need to restore .contents__wrap__box__detail__text as it doesn't exist */
 }
-
-
-  }
-  .summary__detail__table__access .map {
-    width: 50%; /* Restore desktop width */
-    display: block; /* Show map on desktop */
-  }
-  .summary__detail .sp {
-    display: none; /* Hide SP map container on desktop */
-  }
-  .summary__detail__table__content .red {
-    font-size: 1rem; /* Restore desktop font size */
-  }
-  .summary__map iframe {
-    height: 400px; /* Restore desktop height */
-  }
-}
-
-
-/* Component: Overview - Mobile First */
-@media (min-width: var(--breakpoint-md)) { /* 768px and up */
-  .overview {
-    padding: 0px 0 40px 0; /* Restore desktop padding */
-    background-image: none; /* Remove mobile background */
-  }
-  .overview__description {
-    display: block; /* Show description on desktop */
-    font-size: 1.4rem; /* Restore desktop font size */
-  }
-  .overview__details {
-    font-size: 1.15rem; /* Restore desktop font size */
-  }
-  .overview__title {
-     margin-bottom: 0; /* Reset mobile margin */
-  }
-}
-
-
-  .button--exhibit .button__text {
-     font-size: 24px; /* Restore desktop font size */
-  }
-  .button__icon {
-    width: 40px; /* Restore desktop icon size */
-  }
-}
-
-
-  .kv__location {
-    font-size: 29.193px; /* Desktop location size */
-  }
-}
-
-
-    content: '';
-    display: block;
-    background-image: url("../img/sp/logo.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 100%;
-    height: 120px;
-    margin-bottom: 15px;
-  }
-  .kv__title::after { /* Mobile subtitle image */
-    content: '';
-    display: block;
-    background-image: url("../img/sp/sub_title.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 100%;
-    height: 25px;
-  }
-  .kv__location {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: calc(var(--breakpoint-xs) - 1px)) { /* Up to 389px */
-  .kv__date {
-    /* Base style is 45.874px, no specific smaller size defined in original CSS for this breakpoint */
-    /* Keep base style or adjust if needed based on visual comparison */
-  }
-  .kv__date--small {
-    font-size: 1.3rem; /* Apply smaller size */
-  }
-}
-
-/* Note: The min-width: 769px rule for .kv__title img was removed as it's covered by base styles */
