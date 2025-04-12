@@ -415,7 +415,7 @@ br.sp {
   background-image: url("../img/background.png");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  padding: 20px 30px 60px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -425,7 +425,11 @@ br.sp {
 }
 
 .kv__logo {
-  margin-bottom: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin-bottom: 0;
+  z-index: 10;
 }
 
 .kv__logo img {
