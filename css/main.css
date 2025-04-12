@@ -419,10 +419,21 @@ ul {
 }
           .kv__date {
     margin-top: 10px;
-    font-size: 45.874px;
+    font-size: 1.7rem; /* Mobile base font size from app.css @media (max-width: 390px) */
     font-weight: 500;
     font-style: italic;
-    text-shadow: 0 3px 6px #000c4d; /* TODO: Consider variable */ }
+    text-shadow: 0 3px 6px #000c4d; /* TODO: Consider variable */
+  }
+  .kv__date--small {
+      font-weight: 500;
+      font-size: 1.3rem; /* Mobile base font size from app.css @media (max-width: 390px) */
+  }
+  .kv__location {
+    margin-top: 5px;
+    font-size: 1.3rem; /* Mobile base font size from app.css @media (max-width: 768px) */
+    font-weight: 500;
+    text-shadow: 0 3px 6px #000c4d;
+  }
     /* -- Component: Button -- */
 .button {
   display: inline-flex; /* Use flex for alignment */
@@ -1687,8 +1698,8 @@ ul {
   }
   .kv__title img {
     display: block; /* Show desktop image */
-    width: 450px; /* Tablet title image size */
-    height: auto; /* Maintain aspect ratio */
+    width: 562px; /* Use original Desktop title image size */
+    height: 342.337px; /* Use original Desktop title image height */
   }
   .kv__title::before,
   .kv__title::after {
@@ -1696,32 +1707,19 @@ ul {
   }
   .kv__date {
     margin-top: 10px; /* Desktop margin */
-    font-size: 36px; /* Tablet date size */
+    font-size: 45.874px; /* Use original Desktop date size */
   }
   .kv__date--small {
-    font-size: 33.36px; /* Desktop small date size */
+    font-size: 33.36px; /* Use original Desktop small date size */
   }
   .kv__location {
-    font-size: 24px; /* Tablet location size */
+    font-size: 29.193px; /* Use original Desktop location size */
   }
 }
 
 /* Component: Key Visual (KV) - Desktop */
-@media (min-width: var(--breakpoint-lg)) { /* 991px and up */
-  .kv {
-    padding: 20px 30px 60px 30px; /* Desktop padding */
-  }
-  .kv__title img {
-    width: 562px; /* Desktop title image size */
-    height: 342.337px;
-  }
-  .kv__date {
-    font-size: 45.874px; /* Desktop date size */
-  }
-  .kv__location {
-    font-size: 29.193px; /* Desktop location size */
-  }
-}
+/* Styles for lg breakpoint are now covered by the md breakpoint query above */
+/* @media (min-width: var(--breakpoint-lg)) { ... } - This block can be removed or kept for lg-specific overrides if needed later */
 
 /* Component: Buttons - Tablet and up */
 @media (min-width: var(--breakpoint-md)) { /* 768px and up */
