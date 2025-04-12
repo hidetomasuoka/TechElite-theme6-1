@@ -147,6 +147,7 @@ br.sp {
 
 /* Common headings */
 .title {
+  font-family: var(--font-secondary);
   font-style: italic;
   font-size: 60px;
   font-weight: 700;
@@ -245,6 +246,17 @@ br.sp {
 .exhibit a {
   width: 385px;
   max-width: 100%;
+  width: 385px;
+  max-width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  background-color: #06C755;
+  border-radius: 9999px;
+  border: 2px solid #FFF;
+  font-size: 24px;
+
 }
 
 .apply a img,
@@ -257,16 +269,24 @@ br.sp {
  *******************/
 /* Key Visual (KV) */
 .kv {
-  padding: 20px 30px 60px 30px;
+  padding: 13px 40px 60px 40px;
   color: var(--color-white);
   background-image: url("../img/background.png");
-  background-size: cover;
-  background-position: center;
+  background-size: 100% 100%; /* Both width and height at 100% */
+  background-position: center center;
+  background-repeat: no-repeat;
   text-align: center;
+  max-width: 1440px; /* Restrict container width */
+  margin: 0 auto; /* Center the container */
+  height: 841.108px;
+}
+/* Add this CSS to your main.css file */
+.kv__logo {
+  text-align: left;
 }
 
 .kv__logo img {
-  width: 150px;
+  width: 183px;
 }
 
 .kv__subtitle {
@@ -360,7 +380,7 @@ br.sp {
 
 .summary__detail__table td {
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 22px;
   padding: 30px;
   padding-right: 0;
   border-bottom: 1px dashed var(--color-line-gray);
@@ -383,7 +403,10 @@ br.sp {
   display: block;
   color: var(--color-accent);
   text-align: center;
-  font-size: 1rem;
+  font-size: 22px;
+  width: 170px;
+  height: 55px;
+
 }
 
 .summary__detail__table__access {
@@ -617,6 +640,7 @@ br.sp {
   align-items: flex-start;
   line-height: 2;
   text-align: left;
+  font-size: 22px;
 }
 
 .exhibitor__continue {
@@ -906,6 +930,7 @@ br.sp {
   background-color: var(--color-dark-gray);
   color: var(--color-white);
   padding: 20px 0 30px;
+  height: 279px;
 }
 
 .footer__exhibit {
@@ -921,6 +946,7 @@ br.sp {
   padding: 8px 35px;
   border: 1px solid var(--color-white);
   border-radius: var(--border-radius-pill);
+  width: 301px;height: 50px;
 }
 
 .footer__exhibit a:hover {
@@ -1302,7 +1328,12 @@ br.sp {
     background-image: url("../img/sp/background_sp.png");
   }
   
+  .kv__logo {
+
+  }
+
   .kv__logo img {
+
     width: 100px;
   }
   
@@ -1458,6 +1489,8 @@ br.sp {
     margin-top: 30px;
     display: block;
     text-align: center;
+    font-size: 22px;
+
   }
   
   .exhibitor__continue {
