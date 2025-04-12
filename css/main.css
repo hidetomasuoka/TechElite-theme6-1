@@ -1,0 +1,1851 @@
+/* TechElite Theme 6 - Refactored CSS */
+/* Consolidated and refactored by Devin */
+/* == Variables == */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  /* Colors */
+  --color-primary: #00A8F0;
+  --color-secondary: #81D7FC;
+  --color-accent: #FDD35C;
+  --color-text: #444545;
+  --color-white: #FFF;
+  --color-black: #000;
+  --color-red: #E30000;
+  --color-dark-gray: #333333;
+  --color-light-gray: #F1F1F4;
+  --color-line-gray: #C4C4C4;
+  --color-line-green: #06C755; /* Added for floating buttons */
+  
+  /* Font families */
+  --font-primary: 'Noto Sans JP', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+  
+  /* Breakpoints */
+  --breakpoint-xs: 390px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 991px;
+}
+
+/* == Reset / Base == */
+/* reset.css - Bootstrapの代わりに使用する基本スタイルリセット */
+
+/* ブラウザのデフォルトスタイルをリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML5の要素をブロックとして表示 */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* フォントのベースとなる設定 */
+body {
+  line-height: 1.5;
+  font-family: var(--font-primary); /* Use variable */
+  color: var(--color-text); /* Use variable */
+}
+
+/* リスト項目のマーカーを非表示 */
+ol, ul {
+  list-style: none;
+}
+
+/* テーブルの境界線を結合してスペースを削除 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 画像の最大幅を親要素に制限 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* リンクスタイルの基本設定 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* グリッドシステム（Bootstrapの簡易版） */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* == Typography == */
+/* Title fonts */
+.title-en {
+  font-family: var(--font-secondary);
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.title-jp {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Body text */
+.text-large {
+  font-family: var(--font-primary);
+  font-size: 18px; /* Mobile base */
+  line-height: 1.8;
+}
+.text-medium {
+  font-family: var(--font-primary);
+  font-size: 16px; /* Mobile base */
+  line-height: 1.7;
+}
+.text-regular {
+  font-family: var(--font-primary);
+  font-size: 14px; /* Mobile base */
+  line-height: 1.6;
+}
+/* Generic Headings (used by components) */
+.title {
+  font-style: italic;
+  font-size: 2rem; /* Mobile base */
+}
+.subtitle {
+  display: inline-block;
+  position: relative;
+  padding: 0 40px; /* Mobile base padding */
+  font-weight: 500;
+  margin-top: 10px;
+}
+.subtitle::before,
+.subtitle::after {
+  background-color: var(--color-black);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 30px; /* Mobile base width */
+}
+.subtitle::before {
+  left: 0;
+}
+.subtitle::after {
+  right: 0;
+}
+
+
+/* == Layout == */
+/* Limited width containers */
+.layout--limited-width {
+  /* max-width applied via media query */
+  width: 100%; /* Ensure full width on mobile */
+  margin: 0 auto;
+  padding: 0 15px; /* Mobile base padding */
+}
+.limited-width-small {
+  /* max-width applied via media query */
+  width: 100%; /* Ensure full width on mobile */
+  margin: 0 auto;
+  padding: 0 15px; /* Mobile base padding */
+}
+/* Backgrounds (if applicable as layout elements) */
+.back2 {
+  background-image: none; /* Mobile base */
+  background-size: cover;
+  background-position: center;
+}
+/* Responsive line breaks */
+br.sp {
+  display: inherit; /* Shown on mobile by default */
+}
+
+/* == Utilities == */
+/* Flexbox Utilities */
+.d-flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+
+/* Text Alignment Utilities */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+/* Spacing Utilities (Margin & Padding) */
+.m-0 { margin: 0 !important; }
+.mt-1 { margin-top: 0.25rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+.p-0 { padding: 0 !important; }
+.pt-1 { padding-top: 0.25rem !important; }
+.pt-2 { padding-top: 0.5rem !important; }
+.pt-3 { padding-top: 1rem !important; }
+.pt-4 { padding-top: 1.5rem !important; }
+.pt-5 { padding-top: 3rem !important; }
+.pb-1 { padding-bottom: 0.25rem !important; }
+.pb-2 { padding-bottom: 0.5rem !important; }
+.pb-3 { padding-bottom: 1rem !important; }
+.pb-4 { padding-bottom: 1.5rem !important; }
+.pb-5 { padding-bottom: 3rem !important; }
+
+/* Responsive Display Utilities */
+
+
+
+
+/* Flexbox Utilities */
+.d-flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+
+/* Text Alignment Utilities */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+/* Spacing Utilities (Margin & Padding) */
+.m-0 { margin: 0 !important; }
+.mt-1 { margin-top: 0.25rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+.p-0 { padding: 0 !important; }
+.pt-1 { padding-top: 0.25rem !important; }
+.pt-2 { padding-top: 0.5rem !important; }
+.pt-3 { padding-top: 1rem !important; }
+.pt-4 { padding-top: 1.5rem !important; }
+.pt-5 { padding-top: 3rem !important; }
+.pb-1 { padding-bottom: 0.25rem !important; }
+.pb-2 { padding-bottom: 0.5rem !important; }
+.pb-3 { padding-bottom: 1rem !important; }
+.pb-4 { padding-bottom: 1.5rem !important; }
+.pb-5 { padding-bottom: 3rem !important; }
+
+/* Responsive Display Utilities */
+/* Color Utilities */
+.red {
+  color: var(--color-red);
+}
+
+
+/* Flexbox Utilities */
+.d-flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+
+/* Text Alignment Utilities */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+/* Spacing Utilities (Margin & Padding) */
+.m-0 { margin: 0 !important; }
+.mt-1 { margin-top: 0.25rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+.p-0 { padding: 0 !important; }
+.pt-1 { padding-top: 0.25rem !important; }
+.pt-2 { padding-top: 0.5rem !important; }
+.pt-3 { padding-top: 1rem !important; }
+.pt-4 { padding-top: 1.5rem !important; }
+.pt-5 { padding-top: 3rem !important; }
+.pb-1 { padding-bottom: 0.25rem !important; }
+.pb-2 { padding-bottom: 0.5rem !important; }
+.pb-3 { padding-bottom: 1rem !important; }
+.pb-4 { padding-bottom: 1.5rem !important; }
+.pb-5 { padding-bottom: 3rem !important; }
+
+/* Responsive Display Utilities */
+/******************
+* Reset adjust
+******************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+dt,
+ul {
+  margin-bottom: 0;
+}
+
+/******************
+* Buttons & Links
+******************/
+
+/* Mobile Base Styles */
+.kv {
+  padding: 5px 10px 25px 10px; /* Mobile padding */
+  color: var(--color-white);
+  background-image: url("../img/sp/background_sp.png"); /* Mobile background */
+  background-size: cover; /* Keep cover */
+  background-position: center;
+}
+    /* Mobile Base Styles */
+    .kv__logo img {
+    width: 100px; /* Mobile width */
+}
+      .kv .layout--limited-width {
+    text-align: center; }
+  /* Mobile Base Styles */
+  .kv__subtitle {
+    margin-top: 20px; /* Mobile margin */
+    font-size: 1.15rem; /* Mobile font size */
+    font-weight: 500;
+}
+      /* Mobile Base Styles */
+      .kv__title {
+    margin-top: 30px; /* Mobile margin */
+}
+      /* Mobile pseudo-elements for logo/subtitle */
+      .kv__title::before {
+        content: '';
+        display: block;
+        background-image: url("../img/sp/logo.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 100%;
+        height: 120px;
+        margin-bottom: 15px;
+      }
+      .kv__title::after {
+        content: '';
+        display: block;
+        background-image: url("../img/sp/sub_title.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 100%;
+        height: 25px;
+      }
+    /* Hide desktop image by default (mobile first) */
+    .kv__title img {
+      display: none;
+      /* Desktop width/height will be added in min-width media query */
+}
+          .kv__date {
+    margin-top: 10px;
+    font-size: 45.874px;
+    font-weight: 500;
+    font-style: italic;
+    text-shadow: 0 3px 6px #000c4d; /* TODO: Consider variable */ }
+    /* -- Component: Button -- */
+.button {
+  display: inline-flex; /* Use flex for alignment */
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 9999px; /* Pill shape */
+  border: 2px solid var(--color-white);
+  padding: 10px 30px; /* Base padding (adjust vertical as needed) */
+  text-decoration: none;
+  color: var(--color-white);
+  transition: opacity 0.3s ease; /* Add transition */
+  cursor: pointer; /* Add cursor */
+  font-weight: 500; /* Common font weight */
+  line-height: 1.2; /* Adjust line-height for vertical alignment */
+}
+
+.button:hover {
+  color: var(--color-white); /* Ensure color stays on hover */
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button__text {
+  /* padding is handled by parent .button */
+  margin-right: 10px; /* Add space if icon follows */
+}
+.button__icon + .button__text { /* If icon comes first */
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+
+.button__icon {
+  /* width: 40px; /* Desktop icon size - will be added in media query */
+  width: 30px; /* Mobile icon size */
+  height: auto;
+  vertical-align: middle; /* Align icon nicely */
+}
+
+/* Modifier: Apply Button */
+.button--apply {
+  /* width: 385px; /* Desktop width - will be added in media query */
+  background-color: #06C755; /* Specific background */
+}
+
+.button--apply .button__text {
+   /* font-size: 24px; /* Desktop font size - will be added in media query */
+}
+
+/* Modifier: Exhibit Button (Mobile Base Styles) */
+.button--exhibit {
+   /* width: 385px; /* Desktop width - will be added in media query */
+   width: auto; /* Mobile: Allow width to adjust */
+   padding: 8px 20px; /* Mobile padding */
+   background-color: var(--color-accent); /* Specific background */
+}
+
+.button--exhibit .button__text {
+   /* font-size: 24px; /* Desktop font size - will be added in media query */
+   font-size: 18px; /* Mobile font size */
+}
+
+/* Button Containers (Mobile Base: Hidden) */
+.kv__apply-button-container,
+.contents__apply-button-container {
+    display: none; /* Hide by default (mobile first) */
+    margin-top: 30px; /* Keep margin for desktop */
+    text-align: center; /* Center button */
+}
+/* Keep specific margin for contents button container for desktop */
+.contents__apply-button-container {
+     margin-top: 40px;
+}
+
+/* Responsive adjustments for buttons */
+
+
+        font-size: 1.7rem; } }
+    /* Mobile Base Styles */
+    .kv__date--small {
+      font-weight: 500;
+      font-size: 1.3rem; /* Mobile font size */
+    }
+      /* Mobile Base Styles */
+      .kv__location {
+    margin-top: 5px;
+    font-size: 1.3rem; /* Mobile font size */
+    font-weight: 500;
+    text-shadow: 0 3px 6px #000c4d; /* TODO: Consider variable */
+}
+    /* -- Component: Overview -- */
+/* Mobile Base Styles */
+.overview {
+  text-align: center;
+  padding: 60px 0 30px 0; /* Mobile padding */
+  background-image: url("../img/sp/back2.svg"); /* Mobile background */
+  background-size: contain; /* Specific size for mobile */
+  background-repeat: no-repeat; /* Specific repeat for mobile */
+}
+.overview__title { /* Inherits .title styles */
+  color: var(--color-secondary);
+}
+.overview__subtitle { /* Inherits .subtitle styles */
+  /* Specific overrides if needed */
+}
+/* Mobile Base Styles */
+.overview__description {
+  display: none; /* Hide description on mobile */
+  /* Desktop styles will be added in media query */
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 30px;
+  line-height: 2.5rem;
+}
+/* Mobile Base Styles */
+.overview__details {
+  margin-top: 30px;
+  text-align: left;
+  font-size: 1.05rem; /* Mobile font size */
+  line-height: 2.4rem;
+}
+
+/* Overview Responsive */
+
+/* Mobile Base Styles */
+.summary {
+  text-align: center;
+  padding: 30px 0; /* Mobile padding */
+}
+    /* Mobile Base Styles */
+    .summary .title {
+    color: var(--color-secondary); /* Updated */
+    margin-bottom: 30px; /* Mobile margin */
+}
+  .summary__detail {
+    margin-top: 40px; }
+    .summary__detail__table {
+      width: 100%;
+      text-align: left; }
+      /* Mobile Base Styles */
+      .summary__detail__table td {
+        font-weight: 500;
+        font-size: 0.95rem; /* Mobile font size */
+        padding: 15px 10px; /* Mobile padding */
+        border-bottom: 1px dashed var(--color-line-gray); /* Updated */
+}
+              .summary__detail__table tr:last-child td {
+        border-bottom: none; }
+      /* Mobile Base Styles */
+      .summary__detail__table__column {
+        width: 115px; /* Mobile width */
+        padding-right: 10px; /* Mobile padding */
+        vertical-align: top;
+}
+                /* Mobile Base Styles */
+                .summary__detail__table__column .box {
+          padding: 5px 10px;
+          border: 1px solid var(--color-accent); /* Updated */
+          border-radius: 9999px;
+          display: block;
+          color: var(--color-accent); /* Updated */
+          text-align: center;
+          font-size: 0.75rem; /* Mobile font size */
+}
+                /* Mobile Base Styles */
+                .summary__detail__table__access {
+        display: block; /* Mobile display */
+}
+                /* Mobile Base Styles */
+                .summary__detail__table__access .station {
+          width: 100%; /* Mobile width */
+}
+                    .summary__detail__table__access .station ul {
+            font-size: 0.9rem; }
+            .summary__detail__table__access .station ul li {
+              list-style-type: disc;
+              color: var(--color-accent); /* Updated */
+              font-weight: 400;
+              margin-top: 5px; }
+              .summary__detail__table__access .station ul li .line {
+                color: var(--color-text); /* Updated */
+                font-weight: 500; }
+            .summary__detail__table__access .station ul .detail {
+              font-weight: 300; }
+        /* Mobile Base Styles */
+        .summary__detail__table__access .map {
+          width: 100%; /* Mobile width */
+          display: none; /* Hide map on mobile */
+}
+                    .summary__detail__table__access .map iframe {
+            width: 100%;
+            height: 100%; }
+    /* Mobile Base Styles */
+    .summary__detail .sp {
+      display: block; /* Show SP map container on mobile */
+}
+            .summary__detail .sp iframe {
+        width: 100%; }
+
+/* Mobile Base Styles */
+.contents {
+  text-align: center;
+  background-color: #FFF6DE; /* TODO: Consider variable */
+  padding: 30px 0; /* Mobile padding */
+}
+    /* Mobile Base Styles */
+    .contents .title {
+    color: var(--color-accent); /* Updated */
+    margin-bottom: 30px; /* Mobile margin */
+}
+  /* Mobile Base Styles */
+  .contents__wrap {
+    display: block; /* Mobile display */
+    /* Desktop flex styles will be added in media query */
+}
+        /* Mobile Base Styles */
+        .contents__wrap__box {
+      width: 100%; /* Mobile width */
+      border: 3px solid var(--color-accent); /* Updated */
+      border-radius: 10px;
+      margin-top: 20px; /* Mobile margin */
+}
+            /* Mobile Base Styles */
+            .contents__wrap__box__title {
+        background-color: var(--color-accent); /* Updated */
+        color: var(--color-white); /* Updated */
+        font-weight: 500;
+        font-size: 1rem; /* Mobile font size */
+        text-align: center;
+        padding: 5px;
+}
+      /* Mobile Base Styles */
+      .contents__wrap__box__detail {
+        background-color: var(--color-white); /* Updated */
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding: 15px 10px; /* Mobile padding */
+}
+        /* Mobile Base Styles */
+        .contents__wrap__box__detail .ribbon {
+          width: 100%; /* Mobile width */
+          max-width: 260px; /* Add max-width for safety */
+}
+        .contents__wrap__box__detail__appeal {
+          color: var(--color-accent); /* Updated */
+          font-size: 1.2rem;
+          font-weight: 500; }
+          /* Mobile Base Styles */
+          .contents__wrap__box__detail__appeal .number {
+            font-size: 1.5rem; /* Mobile font size */
+            font-style: italic;
+            margin-right: 5px;
+            line-height: 1rem;
+}
+        .contents__wrap__box__detail .scenery {
+          width: 100%;
+          margin-top: 10px; }
+
+.pickup {
+  padding: 30px 0; /* Mobile padding */
+  text-align: center;
+  border-left: 10px solid var(--color-accent); /* Mobile border */
+  border-right: 10px solid var(--color-accent); /* Mobile border */ }
+  .pickup .title {
+    color: var(--color-accent); /* Updated */ }
+  .pickup__list {
+    margin-top: 30px; /* Mobile margin */ }
+    .pickup__item {
+      display: block; /* Mobile display */
+      text-align: left;
+      margin-top: 30px; }
+      .pickup__item-image {
+        width: 100%; /* Mobile width */
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .pickup__item-description {
+        width: 100%; /* Mobile width */
+        margin-top: 10px; /* Mobile margin */
+        padding-left: 0; /* Mobile padding */
+        box-sizing: border-box;
+      }
+        .pickup__item-description a { /* General links within description */
+          color: var(--color-primary); /* Use primary color for links */
+          text-decoration: underline;
+        }
+          .pickup__item-description a:hover {
+            color: var(--color-secondary); /* Slightly lighter on hover */
+            text-decoration: none;
+          }
+
+        /* Styles for the specific sucsak link moved to its own block */
+
+        /* Styles for the 'read more' button if needed */
+        .pickup__continue {
+          margin-top: 10px;
+          display: block; /* Mobile display */
+        }
+          .pickup__continue__btn { /* Style as a button or link */
+            border: 1px solid var(--color-black);
+            color: var(--color-black);
+            cursor: pointer;
+            padding: 5px 10px;
+            font-style: italic;
+            background: none;
+            display: inline-block;
+          }
+          .pickup__continue__btn:hover {
+              background-color: var(--color-light-gray);
+          }
+
+        /* General description text alignment */
+        .pickup__description-footer { /* New class if needed for alignment */
+          margin-top: 20px;
+          text-align: right;
+        }
+
+
+/* -- Component: Exhibitor -- */
+.exhibitor {
+  padding: 30px 0; /* Mobile padding */
+  text-align: center;
+  background-image: url("../img/bg.png"); /* Path from original app.css */
+  background-size: contain; /* Mobile background-size */
+  background-repeat: no-repeat; /* Mobile background-repeat */
+  background-position: center;
+}
+.exhibitor__title { /* Inherits .title */
+  color: var(--color-secondary); /* Color from original app.css */
+}
+.exhibitor__subtitle { /* Inherits .subtitle */
+  /* Specific overrides if needed */
+}
+.exhibitor__list {
+  margin-top: 30px; /* Mobile margin */
+  display: block; /* Mobile display (stack columns) */
+  line-height: 2;
+  text-align: center; /* Mobile text-align */
+}
+.exhibitor__list-column {
+  width: 100%; /* Mobile width */
+}
+/* Add margin for the right column when stacked on mobile */
+.exhibitor__list-column--right {
+    margin-top: 1em;
+}
+.exhibitor__note { /* Replaced .exhibitor__desc */
+  margin-top: 20px;
+  text-align: center; /* Mobile text-align */
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+
+/* Styles for the 'read more' button if needed (from original app.css) */
+/* Note: This button doesn't seem to exist in the current HTML, keeping styles commented out for now */
+/*
+.exhibitor__continue {
+  margin-top: 10px;
+  display: none;
+}
+  .exhibitor__continue__btn {
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
+    cursor: pointer;
+    padding: 5px 10px;
+    font-style: italic;
+    background: none;
+    display: inline-block;
+  }
+  .exhibitor__continue__btn:hover {
+      background-color: var(--color-light-gray);
+  }
+@media (max-width: 575px) {
+  .exhibitor__continue {
+     display: block;
+  }
+}
+*/
+
+/* -- Component: Schedule -- */
+.schedule {
+  padding: 30px 0; /* Mobile padding */
+  background-image: url("../img/timeschedule_background.png"); /* Keep original image */
+  background-size: cover; /* Keep cover for mobile? Original didn't specify */
+  text-align: center;
+  background-position: center; /* Added from previous attempt, seems reasonable */
+}
+.schedule__title { /* Inherits .title */
+  color: var(--color-primary);
+}
+.schedule__subtitle { /* Inherits .subtitle */
+  color: var(--color-white);
+}
+  .schedule__subtitle::before,
+  .schedule__subtitle::after {
+    background-color: var(--color-white);
+  }
+
+.schedule__list { /* Replaced .schedule__wrap */
+  display: block; /* Mobile display (stack items) */
+  margin-top: 30px; /* Mobile margin */
+  max-height: 400px; /* Mobile height limit */
+  overflow: hidden;
+  transition: max-height 0.5s ease; /* Smooth transition */
+  position: relative; /* For pseudo-element */
+}
+  .schedule__list::after { /* Fade-out effect */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Mobile fade height */
+    background: linear-gradient(to top, var(--color-white), rgba(255, 255, 255, 0)); /* Use variable */
+    pointer-events: none; /* Allow clicks through */
+    z-index: 2; /* Ensure it's above content */
+  }
+  .schedule__list.is-expanded { /* State when expanded */
+    max-height: 3000px; /* Large enough height */
+  }
+  .schedule__list.is-expanded::after {
+    display: none; /* Hide fade when expanded */
+  }
+
+.schedule__item { /* Replaced .schedule__wrap__padbox */
+  width: 100%; /* Mobile width */
+  margin-top: 15px; /* Mobile margin */
+  padding: 0; /* Mobile padding */
+  box-sizing: border-box;
+}
+.schedule__item-box { /* Replaced .schedule__wrap__padbox__box */
+  background-color: rgba(241, 251, 255, 0.6); /* TODO: Consider variable */
+  border-radius: 5px;
+  padding: 10px; /* Mobile padding */
+  position: relative; /* For potential absolute elements inside */
+  height: 100%; /* Make boxes equal height if needed */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Mobile direction */
+  align-items: center; /* Mobile alignment */
+}
+.schedule__item-icon { /* Replaced .time */
+  width: 20px; /* Adjust size */
+  height: auto;
+  position: static; /* Mobile position */
+  margin-right: 10px; /* Mobile margin */
+}
+.schedule__item-time { /* Replaced .start */
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-align: left;
+  margin-bottom: 0; /* Mobile margin */
+  padding-left: 0; /* Mobile padding */
+  margin-right: 15px; /* Mobile margin */
+  flex-shrink: 0; /* Mobile flex-shrink */
+}
+.schedule__item-content { /* Replaced .schedule__wrap__padbox__box__contents */
+  display: flex;
+  align-items: flex-start; /* Mobile alignment */
+  text-align: left;
+  flex-grow: 1; /* Mobile flex-grow */
+}
+.schedule__item-image { /* Replaced .schedule__wrap__padbox__box__contents__image */
+  width: 40px; /* Mobile width */
+  height: 40px; /* Mobile height */
+  flex-shrink: 0; /* Prevent image shrinking */
+  margin-right: 10px; /* Mobile margin */
+  overflow: hidden; /* Ensure image stays within bounds */
+}
+  .schedule__item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers area */
+  }
+  /* Specific modifiers for long images */
+  .schedule__speaker-image--long2 {
+      object-fit: contain; /* Adjust fit for specific images */
+  }
+  .schedule__speaker-image--long3 {
+      object-fit: contain; /* Adjust fit for specific images */
+  }
+.schedule__item-title { /* Replaced .schedule__wrap__padbox__box__contents__title */
+  font-size: 1rem; /* Mobile font size */
+  font-weight: 500;
+  color: var(--color-text); /* Keep color */
+}
+
+/* Removed unused original styles: .schedule__wrap__padbox__box__desc, .schedule__wrap__padbox__box__speaker, .schedule__wrap__padbox__box__tag */
+
+.schedule__more-button-container { /* Replaced .schedule__continue */
+  margin-top: 20px; /* Mobile margin */
+  text-align: center;
+}
+.schedule__more-button { /* Replaced .schedule__continue__btn */
+  display: inline-block; /* Keep display */
+  padding: 8px 20px; /* Mobile padding */
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+  .schedule__more-button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
+
+/* Schedule Responsive */
+
+/* -- Component: FAQ -- */
+.faq {
+  text-align: center;
+  padding: 30px 0; /* Mobile padding */
+  position: relative; /* For decoration */
+}
+.faq__decoration { /* Style for polygon-small if needed */
+  /* Original polygon-small styles might be here or in layout/utilities */
+  /* Assuming it's handled elsewhere for now */
+}
+.faq__title { /* Inherits .title */
+  color: var(--color-primary);
+}
+.faq__subtitle { /* Inherits .subtitle */
+  /* No specific overrides needed */
+}
+.faq__list { /* Replaced .faq__list */
+  margin-top: 30px; /* Mobile margin */
+  text-align: left; /* Reset text align */
+}
+.faq__item { /* Replaced .faq__list__box */
+  margin-top: 20px;
+}
+  .faq__item:first-child {
+    margin-top: 0; /* Remove top margin for the first item */
+  }
+.faq__question { /* Replaced .faq__list__box__q */
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 12px 40px 12px 45px; /* Mobile padding */
+  border-radius: 5px;
+  font-size: 1rem; /* Mobile font size */
+  font-weight: 500;
+  cursor: pointer;
+  position: relative; /* For mark and arrow */
+  display: flex; /* Align mark and content */
+  align-items: center;
+}
+  .faq__question::after { /* Arrow indicator */
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--color-white);
+    border-bottom: 2px solid var(--color-white);
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+  .faq__question.is-open::after { /* Arrow state when open */
+    transform: translateY(-25%) rotate(-135deg); /* Adjust rotation and position */
+  }
+
+.faq__answer { /* Replaced .faq__list__box__a */
+  background-color: var(--color-light-gray);
+  padding: 15px 15px 15px 45px; /* Mobile padding */
+  border-radius: 0 0 5px 5px; /* Match question radius */
+  font-size: 0.9rem; /* Mobile font size */
+  display: none; /* Initially hidden */
+  position: relative; /* For mark */
+  margin-top: -5px; /* Overlap slightly with question */
+  z-index: -1; /* Ensure it's behind question initially */
+}
+  .faq__question.is-open + .faq__answer { /* Show answer when question is open */
+    display: block;
+  }
+
+.faq__mark {
+  position: absolute;
+  top: 50%;
+  left: 12px; /* Mobile position */
+  transform: translateY(-50%);
+  width: 20px; /* Mobile size */
+  height: 20px; /* Mobile size */
+  border-radius: 50%;
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9rem; /* Mobile font size */
+}
+.faq__mark--question { /* Replaced .faq__list__box__a__mark (color was from faq-style) */
+  background-color: var(--color-accent); /* Yellow for Q */
+  color: var(--color-dark-gray); /* Dark text on yellow */
+}
+.faq__answer .faq__mark--answer { /* Replaced .faq__list__box__q__mark (color was from faq-style) */
+  background-color: var(--color-primary); /* Blue for A */
+  /* Position adjusted by .faq__answer padding */
+}
+.faq__content { /* Replaced .faq__list__box__a__content and .faq__list__box__q__content */
+  /* Content takes remaining space, specific styling if needed */
+  line-height: 1.6;
+}
+.faq__link {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+  .faq__link:hover {
+    text-decoration: none;
+  }
+
+
+/* -- Component: Footer -- */
+.footer {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  padding: 20px 0; /* Mobile padding */
+  text-align: center;
+}
+.footer__exhibit {
+  margin-bottom: 20px; /* Add some space */
+}
+.footer__exhibit-link {
+  color: var(--color-white);
+  text-decoration: none;
+  border: 1px solid var(--color-white);
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+  .footer__exhibit-link:hover {
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
+  }
+.footer__info {
+  display: flex;
+  flex-direction: column; /* Mobile layout (stack vertically) */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Space from exhibit link */
+}
+.footer__info-label {
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+.footer__info-logo {
+  width: 120px; /* Adjust size */
+  height: auto;
+  margin: 10px 0; /* Mobile margin */
+  vertical-align: middle; /* Align logo nicely */
+}
+.footer__info-policy {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 10px; /* Mobile margin */
+}
+  .footer__info-policy:hover {
+    text-decoration: underline;
+  }
+
+
+/* -- Component: Floating Buttons -- */
+.floating-button {
+  position: fixed;
+  z-index: 10;
+}
+.floating-button--pc { /* Replaced .scrollPc */
+  bottom: 20px;
+  right: 20px;
+  display: block; /* Default display */
+}
+  @media (max-width: 768px) { /* Use var(--breakpoint-md) */
+    .floating-button--pc {
+      display: none; /* Hide on mobile */
+    }
+  }
+.floating-button--sp { /* Replaced .scrollSp */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: none; /* Default display */
+}
+  @media (max-width: 768px) { /* Use var(--breakpoint-md) */
+    .floating-button--sp {
+      display: block; /* Show on mobile */
+    }
+  }
+
+.floating-button__link { /* Common link styles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-line-green); /* Use variable */
+  color: var(--color-white);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+  .floating-button__link:hover {
+    opacity: 0.8;
+  }
+
+/* PC specific link styles */
+.floating-button--pc .floating-button__link {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  flex-direction: column; /* Stack icon */
+  font-size: 0.9rem; /* Text size if any text was added */
+  font-weight: 500;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); /* TODO: Consider variable */
+}
+.floating-button--pc .floating-button__icon { /* Replaced .scrollPc a img */
+  width: 30px; /* Adjust as needed */
+  height: auto;
+  /* margin-bottom: 5px; Removed as there's no text */
+}
+
+/* SP specific link styles */
+.floating-button--sp .floating-button__link { /* Replaced .scrollSp a */
+  width: 100%;
+  height: 60px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.floating-button--sp .floating-button__text { /* New element */
+  /* Styles for text if needed */
+}
+.floating-button--sp .floating-button__icon { /* Replaced .scrollSp a img */
+  width: 25px; /* Adjust as needed */
+  height: auto;
+  margin-left: 10px; /* Space between text and icon */
+}
+
+/* == FAQ Styles (from faq-style.css) == */
+/* FAQ Section Styles */
+.faq {
+  background-color: var(--color-white); /* Use variable */
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Polygon background elements */
+.faq::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 150px;
+  height: 150px;
+  background-image: url("../img/Polygon 5.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.faq::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background-image: url("../img/Polygon 6.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.faq .polygon-small {
+  position: absolute;
+  top: 30%;
+  left: 90.5%;
+  width: 67.49px;
+  height: 65.17px;
+  background-image: url("../img/Polygon 5.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* FAQ Title */
+.faq .title { /* Already styled in app.css section, potentially merge/refactor later */
+  font-family: var(--font-secondary); /* Use variable */
+  font-size: 60px;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-accent); /* Use variable */
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+/* FAQ Subtitle */
+.faq .subtitle { /* Already styled in app.css section, potentially merge/refactor later */
+  font-family: var(--font-primary); /* Use variable */
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-text); /* Use variable */
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* FAQ List */
+.faq__list { /* Already styled in app.css section, potentially merge/refactor later */
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* FAQ Contact Link */
+.faq__contact {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.faq__contact__link {
+  display: inline-block;
+  padding: 15px 20px;
+  background-color: var(--color-white); /* Use variable */
+  border: 1px solid #ddd; /* TODO: Consider variable */
+  border-radius: 5px;
+  color: var(--color-black); /* Use variable */
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.faq__contact__link:hover {
+  background-color: #f8f8f8; /* TODO: Consider variable */
+  border-color: #ccc; /* TODO: Consider variable */
+}
+
+.faq__list__box { /* Already styled in app.css section, potentially merge/refactor later */
+  margin-bottom: 30px;
+}
+
+/* Question */
+.faq__list__box__a { /* Already styled in app.css section, potentially merge/refactor later */
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.faq__list__box__a__mark {
+  background-color: var(--color-primary); /* Use variable */
+  border-radius: 50%;
+  color: var(--color-white); /* Use variable */
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-secondary); /* Use variable */
+  font-weight: 500;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq__list__box__a__content {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black); /* Use variable */
+  text-align: left;
+}
+
+/* Answer */
+.faq__list__box__q { /* Already styled in app.css section, potentially merge/refactor later */
+  display: flex;
+  align-items: center;
+}
+
+.faq__list__box__q__mark {
+  background-color: var(--color-accent); /* Use variable */
+  border-radius: 50%;
+  color: var(--color-white); /* Use variable */
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-secondary); /* Use variable */
+  font-weight: 500;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq__list__box__q__content {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black); /* Use variable */
+  text-align: left;
+}
+
+.faq__list__box__q__content a {
+  color: var(--color-black); /* Use variable */
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) { /* Use var(--breakpoint-lg) */
+  .faq {
+    padding: 60px 0;
+  }
+  
+  .faq::before {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .faq::after {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .faq .polygon-small {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) { /* Use var(--breakpoint-md) */
+  .faq {
+    padding: 50px 0;
+  }
+  
+  .faq .title {
+    font-size: 40px;
+  }
+  
+  .faq .subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .faq::before,
+  .faq::after {
+    display: none;
+  }
+  
+  .faq .polygon-small {
+    display: none;
+  }
+  
+  .faq__list__box__a__content,
+  .faq__list__box__q__content {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) { /* Use var(--breakpoint-sm) */
+  .faq {
+    padding: 40px 0;
+  }
+  
+  .faq .title {
+    font-size: 30px;
+  }
+  
+  .faq .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  .faq__list__box__a__mark,
+  .faq__list__box__q__mark {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .faq__list__box__a__content,
+  .faq__list__box__q__content {
+    font-size: 14px;
+  }
+}
+
+/* == Logo Sizes (from logo-sizes.css) == */
+/* 企業ロゴの固定サイズ設定 */
+
+/* オープランのロゴサイズ設定 */
+.logo-oplan {
+  width: 110.25px;
+  height: 30px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* PE-BANKのロゴサイズ設定 */
+.logo-pebank {
+  width: 223px;
+  height: 19px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* BOCjapanのロゴサイズ設定 */
+.logo-bocjapan {
+  width: 266.786px;
+  height: 30px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Crearaのロゴサイズ設定 */
+.logo-creava {
+  width: 124px;
+  height: 57px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Sucsakのロゴサイズ設定 */
+.logo-sucsak {
+  width: 95px;
+  height: 21px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* QUARTETのロゴサイズ設定 */
+.logo-quartet {
+  width: 103px;
+  height: 42px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* ロゴコンテナのレイアウト調整 */
+.pickup__item-image { /* Already styled in app.css section, potentially merge/refactor later */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 10px;
+}
+
+/* レスポンシブ対応を無効化し、固定サイズを維持 */
+@media (max-width: 768px) { /* Use var(--breakpoint-md) */
+  /* コンテナ調整 - すべての画面サイズで同じ設定を維持 */
+  .pickup__item-image {
+    height: auto;
+    padding: 10px;
+  }
+  
+  /* すべてのロゴで固定サイズを維持 */
+  .logo-oplan,
+  .logo-pebank,
+  .logo-bocjapan,
+  .logo-creava,
+  .logo-sucsak,
+  .logo-quartet {
+    /* 各ロゴの固定サイズはメインのセレクタで定義済み */
+    /* ここでは何も上書きしない */
+  }
+}
+
+/* == Media Queries == */
+/* Mobile-first approach: Styles outside this section are base (mobile) styles. */
+/* Use min-width with breakpoint variables (--breakpoint-sm, --breakpoint-md, --breakpoint-lg). */
+/* Container Widths */
+@media (min-width: var(--breakpoint-sm)) { /* 576px */
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: var(--breakpoint-md)) { /* 768px */
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: var(--breakpoint-lg)) { /* 992px */
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Note: Original had 1200px breakpoint, but variables only go up to lg (991px). */
+/* If a larger breakpoint is needed, a --breakpoint-xl variable should be added. */
+/* @media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+} */
+/* Typography Utilities */
+@media (min-width: var(--breakpoint-md)) { /* 768px */
+  .text-large {
+    font-size: 20px;
+  }
+  .text-medium {
+    font-size: 18px;
+  }
+  .text-regular {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: var(--breakpoint-lg)) { /* 991px */
+  .text-large {
+    font-size: 22px;
+  }
+  .text-medium {
+    font-size: 20px;
+  }
+  .text-regular {
+    font-size: 18px;
+  }
+}
+/* Generic Headings */
+@media (min-width: var(--breakpoint-md)) { /* 768px */
+  .title {
+    font-size: 60px; /* Original base size */
+  }
+  .subtitle {
+    padding: 0 50px; /* Original base padding */
+  }
+  .subtitle::before,
+  .subtitle::after {
+    width: 40px; /* Original base width */
+  }
+/* Layout Helpers */
+@media (min-width: var(--breakpoint-md)) { /* 768px */
+  .back2 {
+    background-image: url("../img/back2.svg"); /* Apply background on larger screens */
+  }
+  br.sp {
+    display: none; /* Hide on larger screens */
+  }
+}
+
+@media (min-width: var(--breakpoint-lg)) { /* 991px */
+  .layout--limited-width {
+    max-width: 960px;
+    padding: 0 10px; /* Revert to original base padding */
+  }
+  .limited-width-small {
+     max-width: 800px;
+     padding: 0 10px; /* Revert to original base padding */
+  }
+}
+
+
+}
+/* Responsive Display Utilities */
+/* .d-none-sm: Hide element on screens smaller than sm (576px) */
+/* Base style (mobile): Element is visible */
+@media (max-width: calc(var(--breakpoint-sm) - 1px)) { /* Up to 575px */
+  .d-none-sm {
+    display: none !important;
+  }
+}
+
+/* .d-none-md: Hide element on screens md (768px) and larger */
+/* Base style (mobile): Element is visible */
+@media (min-width: var(--breakpoint-md)) { /* 768px and up */
+  .d-none-md {
+    display: none !important;
+  }
+}
+/* Typography */
+/* Base styles (mobile) are already defined */
+/* .title-en: 60px base, 40px below md */
+/* .title-jp: 18px base, 16px below md */
+
+/* No min-width needed as base styles cover larger screens */
+/* Apply smaller sizes below md */
+@media (max-width: calc(var(--breakpoint-md) - 1px)) { /* Up to 767px */
+  .title-en {
+    font-size: 40px;
+  }
+  .title-jp {
+    font-size: 16px;
+  }
+}
+/* Component: Key Visual (KV) */
+@media (max-width: calc(var(--breakpoint-md) - 1px)) { /* Up to 767px */
+  .kv {
+    padding: 5px 10px 25px 10px;
+    background-image: url("../img/sp/background_sp.png");
+  }
+  .kv__logo img {
+    width: 100px;
+  }
+  .kv__subtitle {
+    margin-top: 20px;
+    font-size: 1.15rem;
+  }
+  .kv__title {
+    margin-top: 30px;
+  }
+  .kv__title img {
+    display: none; /* Hide desktop image */
+  }
+  .kv__title::before { /* Mobile logo */
+/* == Media Queries == */
+
+/* Component: Key Visual (KV) - Mobile First */
+@media (min-width: var(--breakpoint-md)) { /* 768px and up */
+  .kv {
+    padding: 10px 20px 40px 20px; /* Tablet padding */
+    background-image: url("../img/background.png"); /* Desktop background */
+  }
+  .kv__logo img {
+    width: 150px; /* Desktop logo size */
+  }
+   .kv__subtitle {
+    margin-top: 0; /* Reset mobile margin */
+    font-size: 28px; /* Desktop subtitle font size */
+  }
+  .kv__title {
+    margin-top: 40px; /* Desktop title margin */
+  }
+  .kv__title img {
+    display: block; /* Show desktop image */
+    width: 450px; /* Tablet title image size */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .kv__title::before,
+  .kv__title::after {
+    display: none; /* Hide mobile pseudo-elements */
+  }
+  .kv__date {
+    margin-top: 10px; /* Desktop margin */
+    font-size: 36px; /* Tablet date size */
+  }
+   .kv__date--small {
+     font-size: 33.36px; /* Desktop small date size */
+   }
+  .kv__location {
+    font-size: 24px; /* Tablet location size */
+  }
+}
+
+@media (min-width: var(--breakpoint-lg)) { /* 991px and up */
+  .kv {
+    padding: 20px 30px 60px 30px; /* Desktop padding */
+  }
+  .kv__title img {
+    width: 562px; /* Desktop title image size */
+    height: 342.337px;
+  }
+  .kv__date {
+    font-size: 45.874px; /* Desktop date size */
+  }
+/* Component: Buttons - Mobile First */
+@media (min-width: var(--breakpoint-md)) { /* 768px and up */
+  /* Show Apply buttons on desktop */
+  .kv__apply-button-container,
+  .contents__apply-button-container {
+    display: block; /* Show on desktop */
+  }
+
+  /* Restore desktop button styles */
+  .button--apply,
+  .button--exhibit {
+    width: 385px; /* Restore desktop width */
+    padding: 10px 30px; /* Restore desktop padding */
+  }
+  .button--apply .button__text,
+/* Component: Summary - Mobile First */
+@media (min-width: var(--breakpoint-md)) { /* 768px and up */
+  .summary {
+    padding: 40px 0; /* Restore desktop padding */
+  }
+  .summary .title {
+    margin-bottom: 0; /* Reset mobile margin */
+  }
+  .summary__detail__table td {
+    font-size: 1.1rem; /* Restore desktop font size */
+    padding: 30px; /* Restore desktop padding */
+    padding-right: 0;
+  }
+  .summary__detail__table__column {
+    width: 180px; /* Restore desktop width */
+    padding-right: 20px; /* Restore desktop padding */
+  }
+  .summary__detail__table__column .box {
+    font-size: 1rem; /* Restore desktop font size */
+  }
+  .summary__detail__table__access {
+    display: flex; /* Restore desktop display */
+  }
+  .summary__detail__table__access .station {
+    width: 50%; /* Restore desktop width */
+/* Component: Contents - Mobile First */
+@media (min-width: var(--breakpoint-md)) { /* 768px and up */
+  .contents {
+    padding: 50px 0; /* Restore desktop padding */
+  }
+  .contents .title {
+    margin-bottom: 0; /* Reset mobile margin */
+  }
+  .contents__wrap {
+    display: flex; /* Restore desktop display */
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .contents__wrap__box {
+    width: 44%; /* Restore desktop width */
+    margin-top: 30px; /* Restore desktop margin */
+  }
+  .contents__wrap__box__title {
+    font-size: 1.2rem; /* Restore desktop font size */
+  }
+  .contents__wrap__box__detail {
+    padding: 15px 30px; /* Restore desktop padding */
+  }
+  .contents__wrap__box__detail .ribbon {
+    width: 260px; /* Restore desktop width */
+  }
+  .contents__wrap__box__detail__appeal .number {
+    font-size: 2rem; /* Restore desktop font size */
+  }
+  /* No need to restore .contents__wrap__box__detail__text as it doesn't exist */
+}
+
+
+  }
+  .summary__detail__table__access .map {
+    width: 50%; /* Restore desktop width */
+    display: block; /* Show map on desktop */
+  }
+  .summary__detail .sp {
+    display: none; /* Hide SP map container on desktop */
+  }
+  .summary__detail__table__content .red {
+    font-size: 1rem; /* Restore desktop font size */
+  }
+  .summary__map iframe {
+    height: 400px; /* Restore desktop height */
+  }
+}
+
+
+/* Component: Overview - Mobile First */
+@media (min-width: var(--breakpoint-md)) { /* 768px and up */
+  .overview {
+    padding: 0px 0 40px 0; /* Restore desktop padding */
+    background-image: none; /* Remove mobile background */
+  }
+  .overview__description {
+    display: block; /* Show description on desktop */
+    font-size: 1.4rem; /* Restore desktop font size */
+  }
+  .overview__details {
+    font-size: 1.15rem; /* Restore desktop font size */
+  }
+  .overview__title {
+     margin-bottom: 0; /* Reset mobile margin */
+  }
+}
+
+
+  .button--exhibit .button__text {
+     font-size: 24px; /* Restore desktop font size */
+  }
+  .button__icon {
+    width: 40px; /* Restore desktop icon size */
+  }
+}
+
+
+  .kv__location {
+    font-size: 29.193px; /* Desktop location size */
+  }
+}
+
+
+    content: '';
+    display: block;
+    background-image: url("../img/sp/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+  .kv__title::after { /* Mobile subtitle image */
+    content: '';
+    display: block;
+    background-image: url("../img/sp/sub_title.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 25px;
+  }
+  .kv__location {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: calc(var(--breakpoint-xs) - 1px)) { /* Up to 389px */
+  .kv__date {
+    /* Base style is 45.874px, no specific smaller size defined in original CSS for this breakpoint */
+    /* Keep base style or adjust if needed based on visual comparison */
+  }
+  .kv__date--small {
+    font-size: 1.3rem; /* Apply smaller size */
+  }
+}
+
+/* Note: The min-width: 769px rule for .kv__title img was removed as it's covered by base styles */
