@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/******************
+* CSS Variables
+******************/
+:root {
+  /* Colors */
+  --color-primary: #00A8F0;
+  --color-secondary: #81D7FC;
+  --color-accent: #FDD35C;
+  --color-text: #444545;
+  --color-white: #FFF;
+  --color-black: #000;
+  --color-red: #E30000;
+  --color-dark-gray: #333333;
+  --color-light-gray: #F1F1F4;
+  --color-line-gray: #C4C4C4;
+  
+  /* Font families */
+  --font-primary: 'Noto Sans JP', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+  
+  /* Breakpoints */
+  --breakpoint-xs: 390px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 991px;
+}

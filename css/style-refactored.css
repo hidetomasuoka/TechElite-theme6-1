@@ -1,0 +1,1160 @@
+/* 
+ * TechElite Theme 6 - Refactored Styles
+ * Merged from app.css, faq-style.css, and logo-sizes.css
+ */
+
+/* ==================
+ * 1. IMPORTS & RESET
+ * ================== */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p, dl, dd, dt, ul {
+  margin-bottom: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #444545;
+  position: relative;
+}
+
+/* ==================
+ * 2. TYPOGRAPHY
+ * ================== */
+
+/* Title styles */
+.title {
+  font-style: italic;
+  font-size: 2.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.subtitle {
+  display: inline-block;
+  position: relative;
+  padding: 0 50px;
+  font-weight: 500;
+  margin-top: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 18px;
+  color: #444545;
+}
+
+.subtitle::before, 
+.subtitle::after {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+}
+
+.subtitle::before {
+  left: 0;
+}
+
+.subtitle::after {
+  right: 0;
+}
+
+/* Title variants */
+.title-en {
+  font-family: 'Roboto', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.title-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Text sizes */
+.text-large {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 22px;
+  line-height: 1.8;
+}
+
+.text-medium {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.text-regular {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Utility classes */
+.red {
+  color: #E30000;
+}
+
+/* ==================
+ * 3. LAYOUT UTILITIES
+ * ================== */
+.limited-width {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.limited-width-small {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Responsive breakpoints */
+br.sp {
+  display: none;
+}
+
+/* ==================
+ * 4. COMPONENTS
+ * ================== */
+
+/* --- 4.1 Buttons --- */
+.apply__title,
+.exhibit__title {
+  padding: 10px;
+  padding-right: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.apply a,
+.exhibit a {
+  width: 385px;
+  max-width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  border-radius: 9999px;
+  border: 2px solid #FFF;
+  padding: 0 30px;
+}
+
+.apply a:hover,
+.exhibit a:hover {
+  color: #FFF;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.apply a img,
+.exhibit a img {
+  width: 40px;
+}
+
+.apply a {
+  background-color: #06C755;
+}
+
+.exhibit a {
+  background-color: #FDD35C;
+}
+
+/* --- 4.2 Key Visual --- */
+.kv {
+  padding: 20px 30px 60px 30px;
+  color: #FFF;
+  background-image: url("../img/background.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.kv__logo img {
+  width: 150px;
+}
+
+.kv .limited-width {
+  text-align: center;
+}
+
+.kv__subtitle {
+  margin-top: 40px;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.kv__title {
+  margin-top: 40px;
+}
+
+.kv__date {
+  margin-top: 10px;
+  font-size: 2.9rem;
+  font-weight: 500;
+  font-style: italic;
+  text-shadow: 0 3px 6px #000c4d;
+}
+
+.kv__date small {
+  font-weight: 500;
+}
+
+.kv__location {
+  margin-top: 5px;
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-shadow: 0 3px 6px #000c4d;
+}
+
+.kv .apply,
+.kv .exhibit {
+  margin-top: 30px;
+}
+
+/* --- 4.3 Background Elements --- */
+.back2 {
+  background-image: url("../img/back2.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- 4.4 Overview Section --- */
+.overview {
+  text-align: center;
+  padding: 80px 0 40px 0;
+}
+
+.overview .title {
+  color: #81D7FC;
+}
+
+.overview__desc {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 30px;
+  line-height: 2.5rem;
+}
+
+.overview__detail {
+  margin-top: 30px;
+  text-align: left;
+  font-size: 1.15rem;
+  line-height: 2.4rem;
+}
+
+/* --- 4.5 Summary Section --- */
+.summary {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.summary .title {
+  color: #81D7FC;
+}
+
+.summary__detail {
+  margin-top: 40px;
+}
+
+.summary__detail__table {
+  width: 100%;
+  text-align: left;
+}
+
+.summary__detail__table td {
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 30px;
+  padding-right: 0;
+  border-bottom: 1px dashed #C4C4C4;
+}
+
+.summary__detail__table tr:last-child td {
+  border-bottom: none;
+}
+
+.summary__detail__table__column {
+  width: 180px;
+  padding-right: 20px;
+  vertical-align: top;
+}
+
+.summary__detail__table__column .box {
+  padding: 5px 10px;
+  border: 1px solid #FDD35C;
+  border-radius: 9999px;
+  display: block;
+  color: #FDD35C;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.summary__detail__table__access {
+  display: flex;
+}
+
+.summary__detail__table__access .station {
+  width: 50%;
+}
+
+.summary__detail__table__access .station ul {
+  font-size: 0.9rem;
+}
+
+.summary__detail__table__access .station ul li {
+  list-style-type: disc;
+  color: #FDD35C;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.summary__detail__table__access .station ul li .line {
+  color: #444545;
+  font-weight: 500;
+}
+
+.summary__detail__table__access .station ul .detail {
+  font-weight: 300;
+}
+
+.summary__detail__table__access .map {
+  width: 50%;
+}
+
+.summary__detail__table__access .map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.summary__detail .sp {
+  display: none;
+}
+
+/* --- 4.6 Contents Section --- */
+.contents {
+  text-align: center;
+  background-color: #FFF6DE;
+  padding: 50px 0;
+}
+
+.contents .title {
+  color: #FDD35C;
+}
+
+.contents__wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.contents__wrap__box {
+  width: 44%;
+  border: 3px solid #FDD35C;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.contents__wrap__box__title {
+  background-color: #FDD35C;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.contents__wrap__box__detail {
+  background-color: #FFF;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 15px 30px;
+}
+
+.contents__wrap__box__detail .ribbon {
+  width: 260px;
+}
+
+.contents__wrap__box__detail__appeal {
+  color: #FDD35C;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.contents__wrap__box__detail__appeal .number {
+  font-size: 2rem;
+  font-style: italic;
+  margin-right: 5px;
+  line-height: 1rem;
+}
+
+.contents__wrap__box__detail .scenery {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contents .apply {
+  margin-top: 40px;
+}
+
+/* --- 4.7 Pickup Section --- */
+.pickup {
+  padding: 50px 0;
+  text-align: center;
+  border-left: 50px solid #FDD35C;
+  border-right: 50px solid #FDD35C;
+}
+
+.pickup .title {
+  color: #FDD35C;
+}
+
+.pickup__list {
+  margin-top: 50px;
+}
+
+.pickup__list__box {
+  display: flex;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.pickup__list__box__image {
+  width: 320px;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 10px;
+}
+
+.pickup__list__box__image img {
+  max-width: 100%;
+  max-height: 30px;
+}
+
+.pickup__list__box__desc {
+  width: calc(100% - 320px);
+}
+
+.pickup__list__box__desc a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.pickup__list__box__desc a:hover {
+  color: #000;
+}
+
+.pickup__list__box__desc__inner {
+  display: flex;
+  align-items: baseline;
+}
+
+.pickup__list__box__desc__inner a {
+  text-decoration: none;
+}
+
+.pickup__list__box__desc__inner img.inner {
+  width: 100px;
+}
+
+.pickup__continue {
+  margin-top: 10px;
+  display: none;
+}
+
+.pickup__continue__btn {
+  border: 1px solid #000;
+  color: #000;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-style: italic;
+}
+
+.pickup__desc {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* --- 4.8 Exhibitor Section --- */
+.exhibitor {
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.exhibitor .title {
+  color: #81D7FC;
+}
+
+.exhibitor__list {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  line-height: 2;
+  text-align: left;
+}
+
+.exhibitor__continue {
+  margin-top: 10px;
+  display: none;
+}
+
+.exhibitor__continue__btn {
+  border: 1px solid #000;
+  color: #000;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-style: italic;
+}
+
+.exhibitor__desc {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* --- 4.9 Schedule Section --- */
+.schedule {
+  background-image: url("../img/timeschedule_background.png");
+  background-size: cover;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.schedule .title {
+  color: #00A8F0;
+}
+
+.schedule .subtitle {
+  color: #FFF;
+}
+
+.schedule .subtitle::before,
+.schedule .subtitle::after {
+  background-color: #FFF;
+}
+
+.schedule__wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-height: 450px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.schedule__wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.schedule__wrap.opened {
+  max-height: 3000px;
+  height: auto;
+}
+
+.schedule__wrap.opened::after {
+  display: none;
+}
+
+.schedule__wrap__padbox {
+  width: 33.333%;
+  margin-top: 30px;
+  padding: 0 8px;
+  height: auto;
+}
+
+.schedule__wrap__padbox__box {
+  background-color: rgba(241, 251, 255, 0.6);
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+}
+
+.schedule__wrap__padbox__box.mc {
+  height: 117px;
+}
+
+.schedule__wrap__padbox__box.mc .schedule__readbox__wrap__box__contents {
+  justify-content: center;
+}
+
+.schedule__wrap__padbox__box .time {
+  position: absolute;
+  left: -4px;
+  top: 10px;
+}
+
+.schedule__wrap__padbox__box .start {
+  position: absolute;
+  left: 5px;
+  top: 11px;
+  font-weight: 700;
+}
+
+.schedule__wrap__padbox__box__contents {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+}
+
+.schedule__wrap__padbox__box__contents__image {
+  height: 134px;
+}
+
+.schedule__wrap__padbox__box__contents__image img {
+  height: 134px;
+}
+
+.schedule__wrap__padbox__box__contents__image img.long2 {
+  height: auto;
+  max-height: 110px;
+  margin-top: 19px;
+  max-width: 100%;
+}
+
+.schedule__wrap__padbox__box__contents__image img.long3 {
+  height: auto;
+  max-height: 110px;
+  margin-top: 25px;
+  max-width: 100%;
+}
+
+.schedule__wrap__padbox__box__contents__image img.longmc {
+  height: auto;
+  max-height: 110px;
+  margin-top: 19px;
+  max-width: 100%;
+}
+
+.schedule__wrap__padbox__box__contents__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  text-align: left;
+}
+
+.schedule__wrap__padbox__box__contents__title.takahara {
+  font-size: 1.05rem;
+}
+
+.schedule__continue {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.schedule__continue__btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #0000;
+  color: #FFF;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border: 1px solid #FFF;
+  transition: all 0.3s ease;
+}
+
+.schedule__continue__btn:hover {
+  background-color: #0000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- 4.10 FAQ Section --- */
+.faq {
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 50px 0 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq::before {
+  content: "";
+  position: absolute;
+  top: 48%;
+  left: 0%;
+  width: 137px;
+  height: 133px;
+  background-image: url("../img/Polygon 5-1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.faq::after {
+  content: "";
+  position: absolute;
+  top: 0.5%;
+  right: 14.5%;
+  width: 205px;
+  height: 199px;
+  background-image: url("../img/Polygon 6.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.faq .polygon-small {
+  position: absolute;
+  top: 30%;
+  right: 9.5%;
+  width: 67px;
+  height: 65px;
+  background-image: url("../img/Polygon 5.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.faq .title {
+  color: #FDD35C;
+  position: relative;
+  z-index: 2;
+}
+
+.faq__list {
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+.faq__contact {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.faq__contact__link {
+  display: inline-block;
+  padding: 15px 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.faq__contact__link:hover {
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+
+.faq__list__box {
+  font-weight: 500;
+  padding: 15px 10px;
+  margin-bottom: 30px;
+}
+
+.faq__list__box__a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.faq__list__box__a__mark {
+  background-color: #00A8F0;
+  border-radius: 50%;
+  color: #FFF;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq__list__box__a__content {
+  width: calc(100% - 35px);
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+
+.faq__list__box__q {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.faq__list__box__q__mark {
+  background-color: #FDD35C;
+  border-radius: 50%;
+  color: #FFF;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq__list__box__q__content {
+  width: calc(100% - 35px);
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+
+.faq__list__box__q__content a {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* --- 4.11 Footer --- */
+.footer {
+  text-align: center;
+  background-color: #333333;
+  color: #FFF;
+  padding: 20px 0;
+  padding-bottom: 30px;
+}
+
+.footer__exhibit {
+  text-align: center;
+  padding-bottom: 40px;
+  border-bottom: 0.5px solid #FFF;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footer__exhibit a {
+  color: #FFF;
+  padding: 8px 35px;
+  border: 1px solid #FFF;
+  border-radius: 9999px;
+}
+
+.footer__exhibit a:hover {
+  color: #FFF;
+}
+
+.footer__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__wrap__company {
+  margin-right: 10px;
+}
+
+.footer__wrap__policy {
+  margin-left: 20px;
+  color: #FFF;
+}
+
+.footer__wrap__policy:hover {
+  color: #FFF;
+}
+
+.footer__wrap img {
+  width: 150px;
+}
+
+/* --- 4.12 Navigation --- */
+.scrollPc {
+  position: fixed;
+  bottom: 50%;
+  right: 0;
+  padding: 10px;
+  padding-right: 0;
+  text-align: center;
+  display: block;
+  background-image: url("../img/side_button.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
+  width: 70px;
+  height: 200px;
+}
+
+.scrollSp {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #F1F1F4;
+  display: none;
+}
+
+/* ==================
+ * 5. LOGO SPECIFIC STYLES
+ * ================== */
+
+/* オープランのロゴサイズ設定 */
+.logo-oplan {
+  width: 110.25px;
+  height: 30px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* PE-BANKのロゴサイズ設定 */
+.logo-pebank {
+  width: 223px;
+  height: 19px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* BOCjapanのロゴサイズ設定 */
+.logo-bocjapan {
+  width: 266.786px;
+  height: 30px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Crearaのロゴサイズ設定 */
+.logo-creava {
+  width: 124px;
+  height: 57px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Sucsakのロゴサイズ設定 */
+.logo-sucsak {
+  width: 95px;
+  height: 21px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* QUARTETのロゴサイズ設定 */
+.logo-quartet {
+  width: 103px;
+  height: 42px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* ==================
+ * 6. MEDIA QUERIES
+ * ================== */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 991px) {
+  /* Layout */
+  .limited-width,
+  .limited-width-small {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* Typography */
+  .text-large {
+    font-size: 20px;
+  }
+  
+  .text-medium {
+    font-size: 18px;
+  }
+  
+  .text-regular {
+    font-size: 16px;
+  }
+  
+  /* FAQ Section */
+  .faq {
+    padding: 60px 0;
+  }
+  
+  .faq::before {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .faq::after {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .faq .polygon-small {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* Summary */
+  .summary__detail__table__column {
+    width: 115px;
+    padding-right: 10px;
+  }
+  
+  /* Schedule */
+  .schedule__wrap__padbox__box__contents__title.takahara {
+    font-size: 1.2rem;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 768px) {
+  /* Typography */
+  .title {
+    font-size: 2rem;
+  }
+  
+  .title-en {
+    font-size: 40px;
+  }
+  
+  .title-jp {
+    font-size: 16px;
+  }
+  
+  .subtitle {
+    padding: 0 40px;
+  }
+  
+  .subtitle::before, 
+  .subtitle::after {
+    width: 30px;
+  }
+  
+  .text-large {
+    font-size: 18px;
+  }
+  
+  .text-medium {
+    font-size: 16px;
+  }
+  
+  .text-regular {
+    font-size: 14px;
+  }
+  
+  /* Responsive elements */
+  br.sp {
+    display: inherit;
+  }
+  
+  /* Key Visual */
+  .kv {
+    padding: 5px 10px 25px 10px;
+    background-image: url("../img/sp/background_sp.png");
+  }
+  
+  .kv__logo img {
+    width: 100px;
+  }
+  
+  .kv__subtitle {
+    margin-top: 20px;
+    font-size: 1.15rem;
+  }
+  
+  .kv__title {
+    margin-top: 30px;
+  }
+  
+  .kv__title img {
+    display: none;
+  }
+  
+  .kv__title:before {
+    content: '';
+    display: block;
+    background-image: url("../img/sp/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+  
+  .kv__title:after {
+    content: '';
+    display: block;
+    background-image: url("../img/sp/sub_title.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 25px;
+  }
+  
+  .kv__location {
+    font-size: 1.3rem;
+  }
+  
+  /* Background */
+  .back2 {
+    background-image: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  /* Overview */
+  .overview {
+    padding: 60px 0 30px 0;
+    background-image: url("../img/sp/back2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
