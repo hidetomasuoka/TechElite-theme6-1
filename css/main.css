@@ -1,0 +1,1114 @@
+/*
+ * フリーランスサミット - メインスタイルシート
+ * 統合版：app.css, faq-style.css, logo-sizes.css, reset.css, style-refactored.css, style.css
+ */
+
+/* ===========================================
+ * 1. リセット/ベース
+ * =========================================== */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* ブラウザのデフォルトスタイルをリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML5の要素をブロックとして表示 */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* フォントのベースとなる設定 */
+body {
+  line-height: 1.5;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #444545;
+  position: relative;
+}
+
+/* リスト項目のマーカーを非表示 */
+ol, ul {
+  list-style: none;
+}
+
+/* テーブルの境界線を結合してスペースを削除 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 画像の最大幅を親要素に制限 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* リンクスタイルの基本設定 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3, p, dl, dd, dt, ul {
+  margin-bottom: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* ===========================================
+ * 2. 変数
+ * =========================================== */
+:root {
+  /* Colors */
+  --color-primary: #00A8F0;
+  --color-secondary: #81D7FC;
+  --color-accent: #FDD35C;
+  --color-text: #444545;
+  --color-white: #FFF;
+  --color-black: #000;
+  --color-red: #E30000;
+  --color-dark-gray: #333333;
+  --color-light-gray: #F1F1F4;
+  --color-line-gray: #C4C4C4;
+  --color-green: #06C755;
+  
+  /* Font families */
+  --font-primary: 'Noto Sans JP', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+  
+  /* Breakpoints */
+  --breakpoint-xs: 390px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 991px;
+  
+  /* Spacing */
+  --space-section: 80px;
+  --space-title: 60px;
+  --space-content: 40px;
+}
+
+/* ===========================================
+ * 3. タイポグラフィ
+ * =========================================== */
+/* タイトルスタイル */
+.title {
+  font-family: var(--font-secondary);
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.title-en {
+  font-family: var(--font-secondary);
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.title-jp {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.subtitle {
+  display: inline-block;
+  position: relative;
+  padding: 0 50px;
+  font-weight: 500;
+  margin-top: 10px;
+  font-family: var(--font-primary);
+}
+
+.subtitle::before, 
+.subtitle::after {
+  background-color: var(--color-black);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+}
+
+.subtitle::before {
+  left: 0;
+}
+
+.subtitle::after {
+  right: 0;
+}
+
+/* 本文テキストサイズ */
+.text-large {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  line-height: 1.8;
+}
+
+.text-medium {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.text-regular {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* テキスト色 */
+.red {
+  color: var(--color-red);
+}
+
+/* ===========================================
+ * 4. レイアウト
+ * =========================================== */
+/* コンテナスタイル */
+.limited-width {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.limited-width-small {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* レスポンシブ表示制御 */
+br.sp {
+  display: none;
+}
+
+/* 背景スタイル */
+.back2 {
+  background-image: url("../img/back2.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* コンテナ */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ===========================================
+ * 5. コンポーネント
+ * =========================================== */
+/* --- 5.1 共通コンポーネント --- */
+/* ボタンスタイル */
+.apply__title,
+.exhibit__title {
+  padding: 10px;
+  padding-right: 0;
+  font-weight: 500;
+}
+
+.apply__title {
+  font-size: 24px;
+}
+
+.exhibit__title {
+  font-size: 60px;
+}
+
+.apply a,
+.exhibit a {
+  width: 385px;
+  max-width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  border-radius: 9999px;
+  border: 2px solid var(--color-white);
+  padding: 0 30px;
+  text-decoration: none;
+}
+
+.apply a:hover,
+.exhibit a:hover {
+  color: var(--color-white);
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.apply a img,
+.exhibit a img {
+  width: 40px;
+}
+
+.apply a {
+  background-color: var(--color-green);
+}
+
+.exhibit a {
+  background-color: var(--color-accent);
+}
+
+/* --- 5.2 キービジュアル --- */
+.kv {
+  background-image: url("../img/background.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.kv__logo {
+  margin-bottom: 20px;
+}
+
+.kv__title {
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.kv__subtitle {
+  color: var(--color-white);
+  margin-bottom: 30px;
+}
+
+.kv__date {
+  color: var(--color-white);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.kv__location {
+  color: var(--color-white);
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* --- 5.3 イベント概要 --- */
+.overview {
+  background-color: var(--color-white);
+  padding: var(--space-section) 0;
+  text-align: center;
+}
+
+.overview .title {
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.overview__content {
+  margin-top: var(--space-title);
+  text-align: left;
+}
+
+/* --- 5.4 イベント詳細 --- */
+.summary {
+  background-color: var(--color-light-gray);
+  padding: var(--space-section) 0;
+  text-align: center;
+}
+
+.summary .title {
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.summary__detail {
+  margin-top: var(--space-title);
+  text-align: left;
+}
+
+.summary__detail__table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.summary__detail__table__column {
+  width: 150px;
+  padding-right: 20px;
+  font-weight: 700;
+  vertical-align: top;
+}
+
+/* --- 5.5 コンテンツセクション --- */
+.contents {
+  background-color: var(--color-white);
+  padding: var(--space-section) 0;
+  text-align: center;
+}
+
+.contents .title {
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.contents__list {
+  margin-top: var(--space-title);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contents__list__box {
+  width: 30%;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.contents__list__box__title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* --- 5.6 ピックアップセクション --- */
+.pickup {
+  background-color: var(--color-light-gray);
+  padding: var(--space-section) 0;
+  text-align: center;
+}
+
+.pickup .title {
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.pickup__list {
+  margin-top: var(--space-title);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pickup__list__box {
+  width: 30%;
+  margin-bottom: 30px;
+  background-color: var(--color-white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pickup__list__box__title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pickup__list__box__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 10px;
+}
+
+.pickup__desc {
+  margin-top: 20px;
+  text-align: right;
+  font-style: italic;
+}
+
+/* 企業ロゴの固定サイズ設定 */
+.logo-oplan {
+  width: 110.25px;
+  height: 30px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.logo-pebank {
+  width: 223px;
+  height: 19px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.logo-bocjapan {
+  width: 266.786px;
+  height: 30px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.logo-creava {
+  width: 124px;
+  height: 57px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.logo-sucsak {
+  width: 95px;
+  height: 21px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.logo-quartet {
+  width: 103px;
+  height: 42px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* --- 5.7 出展者セクション --- */
+.exhibitor {
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: var(--space-section) 0;
+}
+
+.exhibitor .title {
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+}
+
+.exhibitor__list {
+  margin-top: var(--space-title);
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  line-height: 2;
+  text-align: left;
+}
+
+.exhibitor__continue {
+  margin-top: 10px;
+  display: none;
+}
+
+.exhibitor__continue__btn {
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+  cursor: pointer;
+  padding: 5px 10px;
+  font-style: italic;
+}
+
+.exhibitor__desc {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* --- 5.8 スケジュールセクション --- */
+.schedule {
+  background-image: url("../img/timeschedule_background.png");
+  background-size: cover;
+  text-align: center;
+  padding: var(--space-section) 0;
+}
+
+.schedule .title {
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.schedule .subtitle {
+  color: var(--color-white);
+}
+
+.schedule .subtitle::before,
+.schedule .subtitle::after {
+  background-color: var(--color-white);
+}
+
+.schedule__wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-height: 450px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.schedule__wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.schedule__wrap.opened {
+  max-height: 3000px;
+  height: auto;
+}
+
+.schedule__wrap.opened::after {
+  display: none;
+}
+
+.schedule__wrap__padbox {
+  width: 33.333%;
+  margin-top: 30px;
+  padding: 0 8px;
+}
+
+.schedule__wrap__padbox__box {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.schedule__wrap__padbox__box__time {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 10px;
+  font-weight: 700;
+}
+
+.schedule__wrap__padbox__box__contents {
+  padding: 15px;
+  text-align: left;
+}
+
+.schedule__wrap__padbox__box__contents__title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.schedule__wrap__padbox__box__contents__speaker {
+  font-size: 14px;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.schedule__wrap__padbox__box__contents__desc {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.schedule__continue {
+  margin-top: 20px;
+}
+
+.schedule__continue__btn {
+  background-color: var(--color-white);
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+/* --- 5.9 FAQセクション --- */
+.faq {
+  background-color: var(--color-white);
+  padding: var(--space-section) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Polygon background elements */
+.faq::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 150px;
+  height: 150px;
+  background-image: url("../img/Polygon 5.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.faq::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background-image: url("../img/Polygon 6.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.faq .polygon-small {
+  position: absolute;
+  top: 30%;
+  left: 90.5%;
+  width: 67.49px;
+  height: 65.17px;
+  background-image: url("../img/Polygon 5.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.faq .title {
+  color: var(--color-accent);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.faq .subtitle {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
+}
+
+.faq__list {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq__contact {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.faq__contact__link {
+  display: inline-block;
+  padding: 15px 20px;
+  background-color: var(--color-white);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.faq__contact__link:hover {
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+
+.faq__list__box {
+  margin-bottom: 30px;
+}
+
+.faq__list__box__a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.faq__list__box__a__mark {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq__list__box__a__content {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black);
+  text-align: left;
+}
+
+.faq__list__box__q {
+  display: flex;
+  align-items: center;
+}
+
+.faq__list__box__q__mark {
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq__list__box__q__content {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black);
+  text-align: left;
+}
+
+.faq__list__box__q__content a {
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+/* --- 5.10 フッター --- */
+.footer {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__wrap__logo {
+  margin-bottom: 20px;
+}
+
+.footer__wrap__company {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.footer__wrap__copyright {
+  font-size: 12px;
+}
+
+/* --- 5.11 ナビゲーション --- */
+.scrollPc {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+  display: block;
+}
+
+.scrollSp {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  background-color: var(--color-white);
+  padding: 10px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================================
+ * 6. ユーティリティクラス
+ * =========================================== */
+
+/* ===========================================
+ * 7. メディアクエリ
+ * =========================================== */
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: var(--breakpoint-lg)) {
+  /* レイアウト */
+  .limited-width,
+  .limited-width-small {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* タイポグラフィ */
+  .text-large {
+    font-size: 20px;
+  }
+  
+  .text-medium {
+    font-size: 18px;
+  }
+  
+  .text-regular {
+    font-size: 16px;
+  }
+  
+  /* FAQセクション */
+  .faq {
+    padding: 60px 0;
+  }
+  
+  .faq::before {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .faq::after {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .faq .polygon-small {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* イベント詳細 */
+  .summary__detail__table__column {
+    width: 115px;
+    padding-right: 10px;
+  }
+  
+  /* スケジュール */
+  .schedule__wrap__padbox__box__contents__title.takahara {
+    font-size: 1.2rem;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: var(--breakpoint-md)) {
+  /* タイポグラフィ */
+  .title {
+    font-size: 2rem;
+  }
+  
+  .title-en {
+    font-size: 40px;
+  }
+  
+  .title-jp {
+    font-size: 16px;
+  }
+  
+  .subtitle {
+    padding: 0 40px;
+  }
+  
+  .subtitle::before, 
+  .subtitle::after {
+    width: 30px;
+  }
+  
+  .text-large {
+    font-size: 18px;
+  }
+  
+  .text-medium {
+    font-size: 16px;
+  }
+  
+  .text-regular {
+    font-size: 14px;
+  }
+  
+  /* レスポンシブ表示制御 */
+  br.sp {
+    display: inherit;
+  }
+  
+  /* キービジュアル */
+  .kv {
+    padding: 5px 10px 25px 10px;
+    background-image: url("../img/sp/background_sp.png");
+  }
+  
+  .kv__logo img {
+    width: 100px;
+  }
+  
+  .kv__subtitle {
+    margin-top: 20px;
+    font-size: 1.15rem;
+  }
+  
+  .kv__title {
+    margin-top: 30px;
+  }
+  
+  .kv__title img {
+    display: none;
+  }
+  
+  .kv__title:before {
+    content: '';
+    display: block;
+    background-image: url("../img/sp/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+  
+  .kv__title:after {
+    content: '';
+    display: block;
+    background-image: url("../img/sp/sub_title.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 25px;
+  }
+  
+  .kv__location {
+    font-size: 1.3rem;
+  }
+  
+  /* 背景スタイル */
+  .back2 {
+    background-image: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  /* イベント概要 */
+  .overview {
+    padding: 60px 0 30px 0;
+    background-image: url("../img/sp/back2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  /* ボタン */
+  .apply {
+    display: none;
+  }
+  
+  .exhibit a {
+    padding: 0 20px;
+  }
+  
+  /* ナビゲーション */
+  .scrollPc {
+    display: none;
+  }
+  
+  .scrollSp {
+    display: block;
+  }
+  
+  /* FAQセクション */
+  .faq {
+    padding: 50px 0;
+  }
+  
+  .faq .title {
+    font-size: 40px;
+  }
+  
+  .faq .subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .faq::before,
+  .faq::after {
+    display: none;
+  }
+  
+  .faq .polygon-small {
+    display: none;
+  }
+  
+  .faq__list__box__a__content,
+  .faq__list__box__q__content {
+    font-size: 16px;
+  }
+  
+  /* コンテンツセクション */
+  .contents__list__box {
+    width: 100%;
+  }
+  
+  /* ピックアップセクション */
+  .pickup__list__box {
+    width: 100%;
+  }
+  
+  /* スケジュールセクション */
+  .schedule__wrap__padbox {
+    width: 100%;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: var(--breakpoint-sm)) {
+  /* FAQセクション */
+  .faq {
+    padding: 40px 0;
+  }
+  
+  .faq .title {
+    font-size: 30px;
+  }
+  
+  .faq .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .faq__list__box__a__mark,
+  .faq__list__box__q__mark {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .faq__list__box__a__content,
+  .faq__list__box__q__content {
+    font-size: 14px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: var(--breakpoint-xs)) {
+  /* タイポグラフィ */
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .title-en {
+    font-size: 32px;
+  }
+  
+  .title-jp {
+    font-size: 14px;
+  }
+  
+  .subtitle {
+    padding: 0 30px;
+    font-size: 14px;
+  }
+  
+  .subtitle::before, 
+  .subtitle::after {
+    width: 20px;
+  }
+}
