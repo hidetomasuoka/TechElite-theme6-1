@@ -832,6 +832,126 @@ br.sp {
 /* ===========================================
  * 6. ユーティリティクラス
  * =========================================== */
+/* 表示・非表示制御 */
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+/* レスポンシブ表示制御 */
+.d-none-sm {
+  display: none !important;
+}
+@media (min-width: 576px) {
+  .d-none-sm {
+    display: block !important;
+  }
+}
+
+.d-none-md {
+  display: none !important;
+}
+@media (min-width: 768px) {
+  .d-none-md {
+    display: block !important;
+  }
+}
+
+/* テキスト配置 */
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+/* マージン */
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+/* アコーディオン機能用クラス */
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.hidden.show {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  height: 254px;
+  border-radius: 5px;
+  background: rgba(241, 251, 255, 0.6);
+}
+
+.time_schedule_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 22px;
+}
+
+.accordion_button {
+  display: none;
+  border: 1px solid var(--color-white);
+  width: 123px;
+  height: 33px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;    
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.accordion-open {
+  margin-bottom: 30px;
+}
 
 /* ===========================================
  * 7. メディアクエリ
