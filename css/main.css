@@ -11,7 +11,6 @@
  * 4. レイアウト - グリッドやコンテナなどのレイアウトスタイル
  * 5. コンポーネント - ボタン、カード、セクションなど
  * 6. ユーティリティクラス - 再利用可能な小さなユーティリティ
- * 7. メディアクエリ - レスポンシブデザイン用のスタイル
  */
 
 /* ========================================================================
@@ -193,6 +192,80 @@ li {
   color: var(--color-red);
 }
 
+/* レスポンシブ対応 - タイポグラフィ */
+@media (max-width: var(--breakpoint-lg)) {
+  .text-large {
+    font-size: 20px;
+  }
+  
+  .text-medium {
+    font-size: 18px;
+  }
+  
+  .text-regular {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .title-en {
+    font-size: 40px;
+  }
+  
+  .title-jp {
+    font-size: 16px;
+  }
+  
+  .subtitle {
+    padding: 0 40px;
+  }
+  
+  .subtitle::before, 
+  .subtitle::after {
+    width: 30px;
+  }
+  
+  .text-large {
+    font-size: 18px;
+  }
+  
+  .text-medium {
+    font-size: 16px;
+  }
+  
+  .text-regular {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: var(--breakpoint-xs)) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .title-en {
+    font-size: 32px;
+  }
+  
+  .title-jp {
+    font-size: 14px;
+  }
+  
+  .subtitle {
+    padding: 0 30px;
+    font-size: 14px;
+  }
+  
+  .subtitle::before, 
+  .subtitle::after {
+    width: 20px;
+  }
+}
+
 /* ========================================================================
  * 4. レイアウト
  * ========================================================================
@@ -231,6 +304,27 @@ br.sp {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+/* レスポンシブ対応 - レイアウト */
+@media (max-width: var(--breakpoint-lg)) {
+  .limited-width,
+  .limited-width-small {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  br.sp {
+    display: inherit;
+  }
+  
+  .back2 {
+    background-image: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 /* ========================================================================
@@ -293,6 +387,26 @@ br.sp {
   background-color: var(--color-accent);
 }
 
+/* レスポンシブ対応 - ボタン */
+@media (max-width: var(--breakpoint-md)) {
+  .apply {
+    display: none;
+  }
+  
+  .exhibit a {
+    padding: 0 20px;
+  }
+  
+  /* ナビゲーション */
+  .scrollPc {
+    display: none;
+  }
+  
+  .scrollSp {
+    display: block;
+  }
+}
+
 /* --- 5.2 キービジュアル -------------------------------------------
  * サイトのメインビジュアルセクション。背景画像、ロゴ、タイトル、日付、
  * 場所情報などが含まれています。
@@ -337,6 +451,58 @@ br.sp {
   margin-bottom: 30px;
 }
 
+/* レスポンシブ対応 - キービジュアル */
+@media (max-width: var(--breakpoint-md)) {
+  .kv {
+    padding: 5px 10px 25px 10px;
+    background-image: url("../img/sp/background_sp.png");
+  }
+  
+  .kv__logo img {
+    width: 100px;
+  }
+  
+  .kv__subtitle {
+    margin-top: 20px;
+    font-size: 1.15rem;
+  }
+  
+  .kv__title {
+    margin-top: 30px;
+  }
+  
+  .kv__title img {
+    display: none;
+  }
+  
+  .kv__title:before {
+    content: '';
+    display: block;
+    background-image: url("../img/sp/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+  
+  .kv__title:after {
+    content: '';
+    display: block;
+    background-image: url("../img/sp/sub_title.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 25px;
+  }
+  
+  .kv__location {
+    font-size: 1.3rem;
+  }
+}
+
 /* --- 5.3 イベント概要 -------------------------------------------
  * イベントの概要を表示するセクション。タイトルと説明文を含む
  * シンプルなレイアウトで構成されています。
@@ -355,6 +521,16 @@ br.sp {
 .overview__content {
   margin-top: var(--space-title);
   text-align: left;
+}
+
+/* レスポンシブ対応 - イベント概要 */
+@media (max-width: var(--breakpoint-md)) {
+  .overview {
+    padding: 60px 0 30px 0;
+    background-image: url("../img/sp/back2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 /* --- 5.4 イベント詳細 -------------------------------------------
@@ -389,6 +565,14 @@ br.sp {
   vertical-align: top;
 }
 
+/* レスポンシブ対応 - イベント詳細 */
+@media (max-width: var(--breakpoint-lg)) {
+  .summary__detail__table__column {
+    width: 115px;
+    padding-right: 10px;
+  }
+}
+
 /* --- 5.5 コンテンツセクション -------------------------------------------
  * イベントのコンテンツ情報を表示するセクション。複数のコンテンツボックスを
  * フレックスレイアウトで表示します。
@@ -420,6 +604,13 @@ br.sp {
 .contents__list__box__title {
   font-weight: 700;
   margin-bottom: 10px;
+}
+
+/* レスポンシブ対応 - コンテンツセクション */
+@media (max-width: var(--breakpoint-md)) {
+  .contents__list__box {
+    width: 100%;
+  }
 }
 
 /* --- 5.6 ピックアップセクション -------------------------------------------
@@ -470,6 +661,13 @@ br.sp {
   margin-top: 20px;
   text-align: right;
   font-style: italic;
+}
+
+/* レスポンシブ対応 - ピックアップセクション */
+@media (max-width: var(--breakpoint-md)) {
+  .pickup__list__box {
+    width: 100%;
+  }
 }
 
 /* 企業ロゴの固定サイズ設定 */
@@ -557,6 +755,13 @@ br.sp {
 .exhibitor__desc {
   margin-top: 20px;
   text-align: right;
+}
+
+/* レスポンシブ対応 - 出展者セクション */
+@media (max-width: var(--breakpoint-md)) {
+  .exhibitor__list {
+    flex-direction: column;
+  }
 }
 
 /* --- 5.8 スケジュールセクション -------------------------------------------
@@ -671,6 +876,19 @@ br.sp {
   font-weight: 700;
 }
 
+/* レスポンシブ対応 - スケジュールセクション */
+@media (max-width: var(--breakpoint-lg)) {
+  .schedule__wrap__padbox__box__contents__title.takahara {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  .schedule__wrap__padbox {
+    width: 100%;
+  }
+}
+
 /* --- 5.9 FAQセクション -------------------------------------------
  * よくある質問と回答を表示するセクション。Q&A形式のレイアウトで
  * 質問と回答を表示します。背景に装飾的な多角形要素があります。
@@ -750,6 +968,85 @@ br.sp {
   max-width: 800px;
   margin: 30px auto 0;
   text-align: center;
+}
+
+/* レスポンシブ対応 - FAQセクション */
+@media (max-width: var(--breakpoint-lg)) {
+  .faq {
+    padding: 60px 0;
+  }
+  
+  .faq::before {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .faq::after {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .faq .polygon-small {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  .faq {
+    padding: 50px 0;
+  }
+  
+  .faq .title {
+    font-size: 40px;
+  }
+  
+  .faq .subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .faq::before,
+  .faq::after {
+    display: none;
+  }
+  
+  .faq .polygon-small {
+    display: none;
+  }
+  
+  .faq__list__box {
+    width: 100%;
+  }
+  
+  .faq__list__box__q {
+    padding: 15px;
+  }
+  
+  .faq__list__box__a {
+    padding: 15px;
+  }
+  
+  .faq__list__box__a__content,
+  .faq__list__box__q__content {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: var(--breakpoint-xs)) {
+  .faq__list__box__q__mark,
+  .faq__list__box__a__mark {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+  }
+  
+  .faq__list__box__q__text,
+  .faq__list__box__a__text {
+    width: calc(100% - 35px);
+    padding-left: 10px;
+  }
 }
 
 .faq__contact__link {
@@ -1015,285 +1312,8 @@ br.sp {
   margin-bottom: 30px;
 }
 
-/* ========================================================================
- * 7. メディアクエリ
- * ========================================================================
- * レスポンシブデザイン用のスタイル。異なる画面サイズに対応するための
- * メディアクエリが含まれています。ブレークポイント変数を使用して一貫性を保っています。
+/* 注意: レスポンシブスタイルは各セクションに直接含まれています。
+ * 各コンポーネントセクションの下部に「レスポンシブ対応 - コンポーネント名」として
+ * メディアクエリが配置されています。
  */
-/* --- 大型デバイス (デスクトップ, 1200px未満) --- */
-@media (max-width: var(--breakpoint-lg)) {
-  /* レイアウト */
-  .limited-width,
-  .limited-width-small {
-    width: 100%;
-    padding: 0 15px;
-  }
-  
-  /* タイポグラフィ */
-  .text-large {
-    font-size: 20px;
-  }
-  
-  .text-medium {
-    font-size: 18px;
-  }
-  
-  .text-regular {
-    font-size: 16px;
-  }
-  
-  /* FAQセクション */
-  .faq {
-    padding: 60px 0;
-  }
-  
-  .faq::before {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .faq::after {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .faq .polygon-small {
-    width: 80px;
-    height: 80px;
-  }
-  
-  /* イベント詳細 */
-  .summary__detail__table__column {
-    width: 115px;
-    padding-right: 10px;
-  }
-  
-  /* スケジュール */
-  .schedule__wrap__padbox__box__contents__title.takahara {
-    font-size: 1.2rem;
-  }
-}
 
-/* --- 中型デバイス (タブレット, 992px未満) --- */
-@media (max-width: var(--breakpoint-md)) {
-  /* タイポグラフィ */
-  .title {
-    font-size: 2rem;
-  }
-  
-  .title-en {
-    font-size: 40px;
-  }
-  
-  .title-jp {
-    font-size: 16px;
-  }
-  
-  .subtitle {
-    padding: 0 40px;
-  }
-  
-  .subtitle::before, 
-  .subtitle::after {
-    width: 30px;
-  }
-  
-  .text-large {
-    font-size: 18px;
-  }
-  
-  .text-medium {
-    font-size: 16px;
-  }
-  
-  .text-regular {
-    font-size: 14px;
-  }
-  
-  /* レスポンシブ表示制御 */
-  br.sp {
-    display: inherit;
-  }
-  
-  /* キービジュアル */
-  .kv {
-    padding: 5px 10px 25px 10px;
-    background-image: url("../img/sp/background_sp.png");
-  }
-  
-  .kv__logo img {
-    width: 100px;
-  }
-  
-  .kv__subtitle {
-    margin-top: 20px;
-    font-size: 1.15rem;
-  }
-  
-  .kv__title {
-    margin-top: 30px;
-  }
-  
-  .kv__title img {
-    display: none;
-  }
-  
-  .kv__title:before {
-    content: '';
-    display: block;
-    background-image: url("../img/sp/logo.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 100%;
-    height: 120px;
-    margin-bottom: 15px;
-  }
-  
-  .kv__title:after {
-    content: '';
-    display: block;
-    background-image: url("../img/sp/sub_title.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 100%;
-    height: 25px;
-  }
-  
-  .kv__location {
-    font-size: 1.3rem;
-  }
-  
-  /* 背景スタイル */
-  .back2 {
-    background-image: none;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  /* イベント概要 */
-  .overview {
-    padding: 60px 0 30px 0;
-    background-image: url("../img/sp/back2.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  /* ボタン */
-  .apply {
-    display: none;
-  }
-  
-  .exhibit a {
-    padding: 0 20px;
-  }
-  
-  /* ナビゲーション */
-  .scrollPc {
-    display: none;
-  }
-  
-  .scrollSp {
-    display: block;
-  }
-  
-  /* FAQセクション */
-  .faq {
-    padding: 50px 0;
-  }
-  
-  .faq .title {
-    font-size: 40px;
-  }
-  
-  .faq .subtitle {
-    font-size: 16px;
-    margin-bottom: 30px;
-  }
-  
-  .faq::before,
-  .faq::after {
-    display: none;
-  }
-  
-  .faq .polygon-small {
-    display: none;
-  }
-  
-  .faq__list__box__a__content,
-  .faq__list__box__q__content {
-    font-size: 16px;
-  }
-  
-  /* コンテンツセクション */
-  .contents__list__box {
-    width: 100%;
-  }
-  
-  /* ピックアップセクション */
-  .pickup__list__box {
-    width: 100%;
-  }
-  
-  /* スケジュールセクション */
-  .schedule__wrap__padbox {
-    width: 100%;
-  }
-}
-
-/* --- 小型デバイス (横向きスマートフォン, 768px未満) --- */
-@media (max-width: var(--breakpoint-sm)) {
-  /* FAQセクション */
-  .faq {
-    padding: 40px 0;
-  }
-  
-  .faq .title {
-    font-size: 30px;
-  }
-  
-  .faq .subtitle {
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-  
-  .faq__list__box__a__mark,
-  .faq__list__box__q__mark {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-  }
-  
-  .faq__list__box__a__content,
-  .faq__list__box__q__content {
-    font-size: 14px;
-  }
-}
-
-/* --- 超小型デバイス (縦向きスマートフォン, 576px未満) --- */
-@media (max-width: var(--breakpoint-xs)) {
-  /* タイポグラフィ */
-  .title {
-    font-size: 1.8rem;
-  }
-  
-  .title-en {
-    font-size: 32px;
-  }
-  
-  .title-jp {
-    font-size: 14px;
-  }
-  
-  .subtitle {
-    padding: 0 30px;
-    font-size: 14px;
-  }
-  
-  .subtitle::before, 
-  .subtitle::after {
-    width: 20px;
-  }
-}
