@@ -54,6 +54,21 @@
   .schedule__wrap__padbox__box__contents__title.takahara {
     font-size: 1.2rem;
   }
+  
+  /* faq-style.cssから追加 */
+  .faq .title {
+    font-size: 50px;
+  }
+  
+  .faq .subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .faq__list__box__a__content,
+  .faq__list__box__q__content {
+    font-size: 18px;
+  }
 }
 
 /******************
@@ -1179,6 +1194,49 @@
     width: 50px;
     height: 150px;
   }
+  
+  /* faq-style.cssから追加 */
+  .faq::before,
+  .faq::after {
+    display: none;
+  }
+  
+  .faq .polygon-small {
+    display: none;
+  }
+  
+  /* logo-sizes.cssから追加 */
+  .pickup__list__box__image {
+    height: auto;
+    padding: 10px;
+  }
+  
+  /* faq-style.cssから追加 */
+  .faq .title {
+    font-size: 30px;
+  }
+  
+  .faq .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .faq__list__box__a__content,
+  .faq__list__box__q__content {
+    font-size: 14px;
+  }
+  
+  /* reset.cssから追加 */
+  .d-none-sm {
+    display: none !important;
+  }
+}
+
+/* reset.cssから追加 - 新しいメディアクエリ */
+@media (min-width: 576px) {
+  .d-none-md {
+    display: none !important;
+  }
 }
 
 /******************
@@ -1190,5 +1248,10 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 0.95rem;
+  }
+  
+  /* app.cssから追加 */
+  .kv__date .kv__date__small {
+    font-size: 1.3rem;
   }
 }
