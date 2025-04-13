@@ -35,7 +35,7 @@
   --border-radius-pill: 9999px;
   
   /* Container widths */
-  --container-width-regular: 960px;
+  --container-width-regular: 1010px;
   --container-width-small: 800px;
   
   /* Breakpoints */
@@ -780,6 +780,7 @@ br.sp {
   left: 5px;
   top: 11px;
   font-weight: 700;
+  font-size: 16px;
 }
 
 .schedule__wrap__padbox__box__contents {
@@ -823,6 +824,7 @@ br.sp {
   align-items: center;
   height: 80px;
   text-align: left;
+  padding: 0 0px;
 }
 
 .schedule__wrap__padbox__box__contents__title.takahara {

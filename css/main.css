@@ -1150,7 +1150,7 @@ br.sp {
   .limited-width,
   .limited-width-small {
     width: 100%;
-    padding: 0 50px;
+    padding: 0 30px;
   }
   
   /* Schedule */
