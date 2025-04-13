@@ -109,7 +109,9 @@ h2.title.pickup__title {
 h2.title.exhibitor__title {
   color: var(--color-secondary);
   letter-spacing: 1.5px;
-  padding: 30px 0 0 0;  
+  padding: 20px 0 0 0;
+  position: relative;
+  right: -10px;
 }
 
 h2.title.schedule__title {
@@ -897,6 +899,16 @@ br.sp {
   font-size: 20px;
 }
 
+.exhibitor__list__left {
+  position: relative;
+  right: 40px; /* 右に40px移動 */
+}
+
+.exhibitor__list__right {
+  position: relative;
+  right: 5px; /* 右に40px移動 */
+}
+
 .exhibitor__list.opened {
   max-height: none;
   height: auto;
@@ -916,9 +928,11 @@ br.sp {
 }
 
 .exhibitor__desc {
-  margin-top: 20px;
+  margin-top: 30px;  /* 下に10px移動（20px→30px） */
+  margin-left: -10px;  /* 左に10px移動 */
   font-size: 20px;
   text-align: right;
+  position: relative;
 }
 
 /* Schedule Section */
