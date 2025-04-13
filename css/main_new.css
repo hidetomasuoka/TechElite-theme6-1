@@ -181,9 +181,9 @@ br.sp {
   display: inline-block;
   height: 1px;
   position: flexbox;
-  top: 50%;
-  width: 40px;
+  width: 30px;
   box-sizing: border-box;
+  margin-bottom: 8px;
 }
 
 .subtitle::before {
@@ -363,19 +363,26 @@ br.sp {
   font-weight: 500;
   margin-top: 56px;
   line-height: 45px;
+  margin-bottom: 40px;
 }
 
 .overview__detail {
-  margin-top: 40px;
+  color: #444545;
+  font-family: "Noto Sans JP";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 45px; /* 250% */
+  width: 960px;
+  height: 139px;
   text-align: left;
-  font-size:  18px;
-  line-height: 45px;
+  margin-left: 17px;
 }
 
 /* Summary Section */
 .summary {
   text-align: center;
-  padding: 90px 0;
+  padding: 85px 0 80px 0;
 }
 
 .summary .title {
@@ -383,7 +390,7 @@ br.sp {
 }
 
 .summary__detail {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .summary__detail__table {
@@ -392,10 +399,9 @@ br.sp {
 }
 
 .summary__detail__table td {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 22px;
-  padding: 30px;
-  padding-right: 0;
+  padding: 30px 10px 30px 15px;
   border-bottom: 1px dashed var(--color-line-gray);
 }
 
@@ -421,7 +427,81 @@ br.sp {
   height: 55px;
 }
 
-.summary__detail__table__column .boxno {
+.summary__detail__table__column__date,
+.summary__detail__table__column__venue,
+.summary__detail__table__column__contents,
+.summary__detail__table__column__target,
+.summary__detail__table__column__access {
+  width: 180px;
+  padding-right: 20px;
+  vertical-align: top;
+  position: relative;
+}
+
+.summary__detail__table__column__date {
+  margin-top: 10px;
+}
+
+.summary__detail__table__column__venue,
+.summary__detail__table__column__access {
+  margin-top: 0;
+}
+
+.summary__detail__table__column__contents {
+  margin-top: 10px;
+}
+
+.summary__detail__table__column__target,
+.summary__detail__table__column__targets {
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.summary__detail__table__column__date .box {
+  padding: 10px 5px;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--border-radius-pill);
+  display: block;
+  color: var(--color-accent);
+  text-align: center;
+  font-size: 22px;
+  width: 170px;
+  height: 55px;
+  position: relative;
+  top: -10px;
+  border-bottom-width: 5px;
+}
+
+.summary__detail__table__column__venue .box,
+.summary__detail__table__column__contents .box,
+.summary__detail__table__column__target .box,
+.summary__detail__table__column__access .box {
+  padding: 10px 5px;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--border-radius-pill);
+  display: block;
+  color: var(--color-accent);
+  text-align: center;
+  font-size: 22px;
+  width: 170px;
+  height: 55px;
+}
+
+/* Common classes for boxes */
+.box {
+  padding: 10px 5px;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--border-radius-pill);
+  display: block;
+  color: var(--color-accent);
+  text-align: center;
+  font-size: 22px;
+  width: 170px;
+  height: 55px;
+}
+
+.boxno {
   padding: 5px 10px;
   border: 0.35px solid var(--color-accent);
   border-radius: var(--border-radius-pill);
@@ -479,6 +559,7 @@ br.sp {
   text-align: center;
   background-color: #FFF6DE;
   padding: 50px 0;
+  height: 814px;
 }
 
 .contents .title {
@@ -487,8 +568,18 @@ br.sp {
 
 .contents__wrap {
   display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contents__wrap__inner {
+  display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 55px;
+  margin-top: 7px;
 }
 
 .contents__wrap__box {
@@ -496,13 +587,15 @@ br.sp {
   border: 3px solid var(--color-accent);
   border-radius: var(--border-radius-medium);
   margin-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .contents__wrap__box__title {
   background-color: var(--color-accent);
   color: var(--color-white);
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 24px;
   text-align: center;
   padding: 5px;
 }
@@ -520,19 +613,23 @@ br.sp {
 
 .contents__wrap__box__detail__appeal {
   color: var(--color-accent);
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .contents__wrap__box__detail__appeal .number {
-  font-size: 2rem;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 48px;
   font-style: italic;
-  margin-right: 5px;
-  line-height: 1rem;
+  font-weight: 600;
+  line-height: 100%; /* 48px */
 }
 
 .contents__wrap__box__detail .scenery {
-  width: 100%;
+  width: 340px;
+  height: 180px;
+  flex-shrink: 0;
   margin-top: 10px;
 }
 
@@ -823,9 +920,27 @@ br.sp {
   display: flex;
   align-items: center;
   height: 80px;
+  width: 266px;
   text-align: left;
   padding: 0 0px;
+  line-height: 125%; /* 25px */
+  letter-spacing: 1.6px;
 }
+
+.schedule__wrap__padbox__box__contents__title__seisei {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: 272px;
+  text-align: left;
+  padding: 0 0px;
+  line-height: 125%; /* 25px */
+  letter-spacing: 1.6px;
+}
+
 
 .schedule__wrap__padbox__box__contents__title.takahara {
   font-size: 1.05rem;
@@ -1141,3 +1256,45 @@ br.sp {
 }
 
 /* CSSファイルが分割されています - メディアクエリはresponsive.cssに移動されました */
+
+/* テーブルの値セルのスタイル */
+.summary__detail__table__value__date,
+.summary__detail__table__value__venue,
+.summary__detail__table__value__contents,
+.summary__detail__table__value__target {
+  font-size: 22px;
+  line-height: 1.5;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+
+/* 日付のセルのスタイル */
+.summary__detail__table__value__date {
+  font-weight: 700;
+  position: relative;
+  left: -10px;
+  top: 0px;
+}
+
+/* 会場のセルのスタイル */
+.summary__detail__table__value__venue {
+  font-weight: 700;
+  position: relative;
+  left: -10px;
+}
+
+/* イベント内容のセルのスタイル */
+.summary__detail__table__value__contents {
+  font-weight: 700;
+  line-height: 1.8;
+  position: relative;
+  left: -8px;
+  top: 0px;
+}
+/* 対象者のセルのスタイル */
+.summary__detail__table__value__target,
+.summary__detail__table__value__targets {
+  font-weight: 700;
+  position: relative;
+  top: 10px;
+}

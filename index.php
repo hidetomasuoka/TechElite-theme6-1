@@ -51,25 +51,25 @@
                         <table class="summary__detail__table">
                             <tbody>
                                 <tr>
-                                    <td class="summary__detail__table__column"><span class="box">開催日程</span></td>
-                                    <td>2023年3月4日（土）<br class="sp">開場10:00 閉場18:00（受付開始9:30-）</td>
+                                    <td class="summary__detail__table__column__date"><span class="box">開催日程</span></td>
+                                    <td class="summary__detail__table__value__date">2023年3月4日（土）<br class="sp">開場10:00 閉場18:00（受付開始9:30-）</td>
                                 </tr>
                                 <tr>
-                                    <td class="summary__detail__table__column"><span class="box">会場</span></td>
-                                    <td>東京国際フォーラム ホールE2</td>
+                                    <td class="summary__detail__table__column__venue"><span class="box">会場</span></td>
+                                    <td class="summary__detail__table__value__venue">東京国際フォーラム ホールE2</td>
                                 </tr>
                                 <tr>
-                                    <td class="summary__detail__table__column"><span class="box">イベント内容</span></td>
-                                    <td>
+                                    <td class="summary__detail__table__column__contents"><span class="box">イベント内容</span></td>
+                                    <td class="summary__detail__table__value__contents">
                                         企業ブース出展：60ブース<br>ビジネス系セミナー：12枠
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="summary__detail__table__column"><span class="box">対象者</span></td>
-                                    <td>経営者 / フリーランス / <br class="sp">独立志望の会社員</td>
+                                    <td class="summary__detail__table__column__target"><span class="box">対象者</span></td>
+                                    <td class="summary__detail__table__value__target">経営者 / フリーランス / <br class="sp">独立志望の会社員</td>
                                 </tr>
                                 <tr>
-                                    <td class="summary__detail__table__column">
+                                    <td class="summary__detail__table__column__access">
                                         <div>
                                             <span class="box">アクセス</span>
                                         </div>
@@ -118,34 +118,36 @@
                     イベント内容
                 </div>
                 <div class="contents__wrap">
-                    <div class="contents__wrap__box">
-                        <div class="contents__wrap__box__title">
-                            フリーランスに特化した企業エリア
+                    <div class="contents__wrap__inner">
+                        <div class="contents__wrap__box">
+                            <div class="contents__wrap__box__title">
+                                フリーランスに特化した企業エリア
+                            </div>
+                            <div class="contents__wrap__box__detail">
+                                <div class="contents__wrap__box__detail__top">
+                                    出会いたい企業にきっと出会える
+                                </div>
+                                <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
+                                <div class="contents__wrap__box__detail__appeal">
+                                    <span class="number">60</span>ブースの企業エリア
+                                </div>
+                                <img src="./img/contents1.png" alt="サミットの様子1" class="scenery">
+                            </div>
                         </div>
-                        <div class="contents__wrap__box__detail">
-                            <div class="contents__wrap__box__detail__top">
-                                出会いたい企業にきっと出会える
+                        <div class="contents__wrap__box">
+                            <div class="contents__wrap__box__title">
+                                各業界の著名人が登壇
                             </div>
-                            <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
-                            <div class="contents__wrap__box__detail__appeal">
-                                <span class="number">60</span>ブースの企業エリア
+                            <div class="contents__wrap__box__detail">
+                                <div class="contents__wrap__box__detail__top">
+                                    ここでしか聞けない話が聞ける
+                                </div>
+                                <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
+                                <div class="contents__wrap__box__detail__appeal">
+                                    豪華セミナーを開催
+                                </div>
+                                <img src="./img/contents2.png" alt="サミットの様子2" class="scenery">
                             </div>
-                            <img src="./img/contents1.png" alt="サミットの様子1" class="scenery">
-                        </div>
-                    </div>
-                    <div class="contents__wrap__box">
-                        <div class="contents__wrap__box__title">
-                            各業界の著名人が登壇
-                        </div>
-                        <div class="contents__wrap__box__detail">
-                            <div class="contents__wrap__box__detail__top">
-                                ここでしか聞けない話が聞ける
-                            </div>
-                            <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
-                            <div class="contents__wrap__box__detail__appeal">
-                                豪華セミナーを開催
-                            </div>
-                            <img src="./img/contents2.png" alt="サミットの様子2" class="scenery">
                         </div>
                     </div>
                 </div>
@@ -169,7 +171,7 @@
                             <a href="https://oplan.co.jp/" target="_blank" rel="noopener noreferrer"><img src="../img/oplan.png" alt="オープラン株式会社" class="logo-oplan"></a>
                         </div>
                         <div class="pickup__list__box__desc">
-                            フリーランスの方も高単価案件希望なら【オープラン】！1000件以上の高単価案件参画実績！単価も公開し、営業も親身に相談できる会社です。新規自社サービス【CAREEBLE】も展開中！
+                        オープラン株式会社は「ITサービス」を軸に「人」と「グローバル」に向き合い日本を代表する企業になるべく2015年に産声をあげたベンチャー企業です。
                         </div>
                     </div>
 
@@ -388,7 +390,7 @@
                                 <div class="schedule__wrap__padbox__box__contents__image">
                                     <img src="../img/seisei.png" alt="" class="long2">
                                 </div>
-                                <div class="schedule__wrap__padbox__box__contents__title">
+                                <div class="schedule__wrap__padbox__box__contents__title__seisei">
                                     エンジニアとして独立し、年収3000万円を超える方法
                                 </div>
                             </div>
