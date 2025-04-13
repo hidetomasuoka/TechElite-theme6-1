@@ -568,15 +568,15 @@
   }
   
   .kv__date {
-    font-size: 1.7rem;
+    font-size: 24.953px;
   }
   
   .kv__date .kv__date__small {
-    font-size: 1.3rem;
+    font-size:18.148px;
   }
   
-  .kv__time {
-    font-size: 1.3rem;
+  .kv__date .kv__time {
+    font-size: 23.592px;
   }
   
   .kv__location {
@@ -661,9 +661,12 @@
   }
   
   .subtitle {
-    padding: 0 30px;
-    font-size: 0.9rem;
-    margin-top: 3px;
+    color: #444545;
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 14px */
   }
   
   .subtitle::before, 
@@ -710,11 +713,13 @@
   }
   
   .overview__detail {
-    font-size: 0.95rem;
+    font-size: 16px;
     width: 100%;
-    height: auto;
-    line-height: 1.6;
-    margin-left: 0;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 37px; /* 231.25% */
+    width: 295px;
+    height: 312px;
   }
   
   .overview__title {
@@ -879,8 +884,8 @@
   }
   
   .pickup__list__box__desc {
-    font-size: 0.85rem;
-    line-height: 1.4;
+    font-size: 14px;
+    width: 338px;
     width: 100%;
   }
   

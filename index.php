@@ -11,8 +11,7 @@
                     <img src="../img/kv.svg" alt="フリーランスサミット">
                 </h1>
                 <div class="kv__date">
-                    3/4 <small class="kv__date__small">Sat</small> 
-                    <div class="kv__time">10:00-18:00</div>
+                    3/4 <small class="kv__date__small">Sat</small> <span class="kv__time">10:00-18:00</span>
                 </div>
                 <div class="kv__location">
                     東京国際フォーラム  ホールE2
