@@ -17,7 +17,7 @@
             </div>
             <div class="footer__wrap">
                 <span class="footer__wrap__company">運営会社</span>
-                <img src="../img/stocksun_logo.png" alt="">
+                <img src="../img/fv_logo.png" alt="">
                 <a href="#" target="_blank" class="footer__wrap__policy">個人情報保護方針</a>
             </div>
         </div>

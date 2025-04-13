@@ -74,7 +74,7 @@ h2.title {
   font-size: 60px;
   font-weight: 700;
   text-align: center;
-  margin-top: 30px;
+  padding: 30px 0 0 0 ;
   margin-bottom: 8px;
 }
 
@@ -104,7 +104,7 @@ img {
 .limited-width {
   max-width: var(--container-width-regular);
   margin: 0 auto;
-  padding: 0 var(--spacing-sm);
+  padding: 0 10px;
 }
 
 .limited-width-small {
@@ -183,6 +183,7 @@ br.sp {
   position: flexbox;
   top: 50%;
   width: 40px;
+  box-sizing: border-box;
 }
 
 .subtitle::before {
@@ -302,11 +303,11 @@ br.sp {
 .kv__subtitle {
   font-size: 28px;
   font-weight: 500;
-  padding: 30px 0 10px 0;
+  padding: 30px 0 12px 0;
 }
 
 .kv__title {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .kv__title img {
@@ -320,6 +321,7 @@ br.sp {
   font-weight: 500;
   font-style: italic;
   text-shadow: 0 3px 6px #000c4d;
+  font-family: var(--font-secondary);
 }
 
 .kv__date .kv__date__small {
@@ -357,23 +359,23 @@ br.sp {
 }
 
 .overview__desc {
-  font-size: 1.4rem;
+  font-size: 22px;
   font-weight: 500;
   margin-top: 56px;
-  line-height: 2.5rem;
+  line-height: 45px;
 }
 
 .overview__detail {
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: left;
-  font-size: 1.15rem;
-  line-height: 2.4rem;
+  font-size:  18px;
+  line-height: 45px;
 }
 
 /* Summary Section */
 .summary {
   text-align: center;
-  padding: 40px 0;
+  padding: 90px 0;
 }
 
 .summary .title {
@@ -408,8 +410,8 @@ br.sp {
 }
 
 .summary__detail__table__column .box {
-  padding: 5px 10px;
-  border: 0.35px solid var(--color-accent);
+  padding: 10px 5px;
+  border: 2px solid var(--color-accent);
   border-radius: var(--border-radius-pill);
   display: block;
   color: var(--color-accent);
@@ -529,7 +531,6 @@ br.sp {
 
 /* Pickup Section */
 .pickup {
-  padding: 50px 0;
   text-align: center;
   border-left: 50px solid var(--color-accent);
   border-right: 50px solid var(--color-accent);
@@ -645,14 +646,16 @@ br.sp {
 }
 
 .exhibitor__list {
-  margin-top: 50px;
+  margin-top: 85px;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   line-height: 2;
   text-align: left;
-  font-size: 22px;
+  font-size: 20px;
 }
+
+
 
 .exhibitor__continue {
   margin-top: 10px;
@@ -669,6 +672,7 @@ br.sp {
 
 .exhibitor__desc {
   margin-top: 20px;
+  font-size: 20px;
   text-align: right;
 }
 
@@ -678,6 +682,8 @@ br.sp {
   background-size: cover;
   text-align: center;
   padding: 60px 0;
+  max-width: 1440px;
+  height: 1520px;
 }
 
 .schedule .title {
@@ -728,11 +734,13 @@ br.sp {
 .schedule__wrap__padbox {
   width: 33.333%;
   margin-top: 30px;
-  padding: 0 8px;
+  padding: 0 10px;
   height: auto;
 }
 
 .schedule__wrap__padbox__box {
+  width: 300px;
+  height: 254px;
   background-color: rgba(241, 251, 255, 0.6);
   border-radius: var(--border-radius-small);
   padding: 20px;
@@ -844,7 +852,7 @@ br.sp {
   background-size: cover;
   background-position: center;
   text-align: center;
-  padding: 50px 0 100px 0;
+  padding: 60px 0 100px 0;
   position: relative;
   overflow: hidden;
 }
@@ -957,7 +965,16 @@ br.sp {
   padding: 8px 35px;
   border: 1px solid var(--color-white);
   border-radius: var(--border-radius-pill);
-  width: 301px;height: 50px;
+  margin-top: 10px;
+  width: 301px;
+  height: 50px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .footer__exhibit a:hover {
@@ -972,10 +989,12 @@ br.sp {
 
 .footer__wrap__company {
   margin-right: 10px;
+  font-size: 14px;
 }
 
 .footer__wrap__policy {
   margin-left: 20px;
+  font-size: 14px;
   color: var(--color-white);
 }
 
@@ -1131,7 +1150,7 @@ br.sp {
   .limited-width,
   .limited-width-small {
     width: 100%;
-    padding: 0 15px;
+    padding: 0 50px;
   }
   
   /* Schedule */
@@ -1428,12 +1447,12 @@ br.sp {
   }
   
   .summary__detail__table__column {
-    width: 115px;
+    width: 105px;
     padding-right: 10px;
   }
   
   .summary__detail__table__column .box {
-    font-size: 0.75rem;
+    font-size: 22px;
   }
   
   .summary__detail__table__access {
