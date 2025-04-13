@@ -123,6 +123,58 @@
   .schedule__wrap__padbox__box {
     width: 354px;
     height: 103px;
+    padding: 12px 8px;
+  }
+  
+  .schedule__wrap__padbox__box .time {
+    width: 20px;
+    top: 12px;
+    left: 8px;
+  }
+  
+  .schedule__wrap__padbox__box .start {
+    font-size: 0.8rem;
+    margin-left: 25px;
+    margin-bottom: 5px;
+  }
+  
+  .schedule__wrap__padbox__box.mc {
+    height: 110px;
+  }
+  
+  .schedule__wrap__padbox__box__contents {
+    min-height: auto;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image {
+    height: 80px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img {
+    height: 80px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img.long2 {
+    max-width: 140px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img.long3 {
+    max-width: 170px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img.longmc {
+    max-width: 140px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    font-size: 0.85rem;
+    margin-top: 15px;
+    height: auto;
+    width: 100%;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title.takahara {
+    font-size: 0.85rem;
   }
 }
 
@@ -1046,6 +1098,7 @@
     padding: 0 5px;
   }
   
+  /* 390pxブレークポイントから移動 */
   .schedule__wrap__padbox__box {
     padding: 12px 8px;
     width: 100%;
