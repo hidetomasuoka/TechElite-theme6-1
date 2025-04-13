@@ -116,6 +116,17 @@
 }
 
 /******************
+* Breakpoint: max-width: 675px (custom)
+******************/
+@media (max-width: 675px) {
+  /* app.cssから追加 - Schedule section */
+  .schedule__wrap__padbox__box {
+    width: 354px;
+    height: 103px;
+  }
+}
+
+/******************
 * Breakpoint: max-width: 768px
 ******************/
 @media (max-width: 768px) {
