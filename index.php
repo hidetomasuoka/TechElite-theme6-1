@@ -171,7 +171,7 @@
                             <a href="https://oplan.co.jp/" target="_blank" rel="noopener noreferrer"><img src="../img/oplan.png" alt="オープラン株式会社" class="logo-oplan"></a>
                         </div>
                         <div class="pickup__list__box__desc">
-                        オープラン株式会社は「ITサービス」を軸に「人」と「グローバル」に向き合い日本を代表する企業になるべく2015年に産声をあげたベンチャー企業です。
+                        オープラン株式会社は「ITサービス」を軸に「人」と「グローバル」に向き合い日本を代表する企業になるべく2015年に産声をあげたベンチャー企業です。 <br> <a href="https://oplan.co.jp/" class="op_url">https://oplan.co.jp/</a>
                         </div>
                     </div>
 

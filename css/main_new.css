@@ -747,12 +747,37 @@ br.sp {
   max-height: 30px;
 }
 
-.pickup__image img.pe {
-  max-height: 20px;
+.pickup__image img.logo-pebank,
+.pickup__list__box__image img.logo-pebank {
+  width: 223px;
+  height: 19px;
 }
 
-.pickup__image img.creava {
-  max-height: 40px;
+.pickup__image img.logo-sucsak,
+.pickup__list__box__image img.logo-sucsak,
+.sucsak_container img.logo-sucsak {
+  width: 95px;
+  height: 21px;
+}
+
+/* creava.pngのサイズ設定 */
+.pickup__list__box__image img.logo-creava {
+  width: 124px;
+  height: 57px;
+  max-height: 57px;
+  flex-shrink: 0;
+}
+
+/* quartet.pngのサイズ設定 */
+.pickup__list__box__image img.logo-quartet {
+  width: 103px;
+  height: 42px;
+  max-height: 42px;
+  flex-shrink: 0;
+}
+
+.pickup__image img.pe {
+  max-height: 20px;
 }
 
 .pickup__image img.quartet {
@@ -1413,4 +1438,15 @@ br.sp {
   top: 0;
   padding-top: 10px;
   vertical-align: top;
+}
+
+.pickup__list__box__image a[href="https://sucsak.com/"] {
+  display: inline-block;
+  width: 124px;
+  height: 57px;
+  flex-shrink: 0;
+}
+
+.pickup__image img.pe {
+  max-height: 20px;
 }
