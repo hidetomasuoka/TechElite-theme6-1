@@ -14,7 +14,7 @@
                     3/4 <small class="kv__date__small">Sat</small> 10:00-18:00
                 </div>
                 <div class="kv__location">
-                    東京国際フォーラム ホールE2
+                    東京国際フォーラム  ホールE2
                 </div>
                 <div class="apply">
                     <a href="#" target="_blank"><span class="apply__title">事前申し込みはこちら（無料）</span><img src="../img/LINE_Brand_icon.png" alt=""></a>
@@ -28,10 +28,11 @@
                         Freelance Summit
                     </h2>
                     <div class="subtitle">
-                        フリーランスサミットとは？
+                        　フリーランスサミットとは？　
                     </div>
                     <div class="overview__desc">
-                        「FREELANCE SUMMIT」は、StockSun株式会社が主催する<br>日本最大規模のフリーランスイベントです。
+                    「FREELANCE SUMMIT」は、StockSun株式会社が主催する<br>
+                    日本最大規模のフリーランスイベントです。
                     </div>
                     <div class="overview__detail">
                         各業界でTOPクラスのフリーランスが集結するイベント。有名企業が集結する60ブースもの出展エリアに加え、各領域で圧倒的に結果を出し続ける精鋭フリーランス達が、自身のノウハウを語ります。他のイベントでは味わえない、新たな体験と出会える充実したコンテンツを用意しています。
@@ -228,7 +229,7 @@
                         株式会社グラントホープ<br>
                         Modis株式会社<br>
                         INTLOOP株式会社<br>
-                    L    angdemy株式会社<br>
+                        angdemy株式会社<br>
                         BOCジャパン合同会社<br>
                     </div>
                     <div class="exhibitor__list__right">
@@ -267,7 +268,7 @@
                                     <img src="../img/dj.png" alt="">
                                 </div>
                                 <div class="schedule__wrap__padbox__box__contents__title">
-                                    ビジネスを学ぶ前に
+                                    今、SNSを始めるなら
                                 </div>
                             </div>
                         </div>
