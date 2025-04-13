@@ -69,6 +69,39 @@
   .faq__list__box__q__content {
     font-size: 18px;
   }
+  
+  /* app.cssから追加 - Typography */
+  .text-large {
+    font-size: 20px;
+  }
+  
+  .text-medium {
+    font-size: 18px;
+  }
+  
+  .text-regular {
+    font-size: 16px;
+  }
+  
+  /* app.cssから追加 - Layout */
+  .limited-width {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .limited-width-small {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* app.cssから追加 - Schedule */
+  .schedule__wrap__padbox__box__contents__title.takahara {
+    font-size: 1.2rem;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    font-size: 1.2rem;
+  }
 }
 
 /******************
@@ -1211,6 +1244,204 @@
     padding: 10px;
   }
   
+  /* app.cssから追加 - Typography */
+  .title-en {
+    font-size: 40px;
+  }
+  
+  .title-jp {
+    font-size: 16px;
+  }
+  
+  .text-large {
+    font-size: 18px;
+  }
+  
+  .text-medium {
+    font-size: 16px;
+  }
+  
+  .text-regular {
+    font-size: 14px;
+  }
+  
+  /* app.cssから追加 - Layout & Common */
+  br.sp {
+    display: inherit;
+  }
+  
+  /* app.cssから追加 - Buttons & Links */
+  .apply {
+    display: none;
+  }
+  
+  .exhibit a {
+    padding: 0 20px;
+  }
+  
+  /* app.cssから追加 - Headings */
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    padding: 0 40px;
+  }
+  
+  .subtitle::before, 
+  .subtitle::after {
+    width: 30px;
+  }
+  
+  /* app.cssから追加 - KV section */
+  .kv {
+    padding: 5px 10px 25px 10px;
+    background-image: url("../img/sp/background_sp.png");
+  }
+  
+  .kv__logo img {
+    width: 100px;
+  }
+  
+  .kv__subtitle {
+    margin-top: 20px;
+    font-size: 1.15rem;
+  }
+  
+  .kv__title {
+    margin-top: 30px;
+  }
+  
+  .kv__location {
+    font-size: 1.3rem;
+  }
+  
+  /* app.cssから追加 - Overview section */
+  .overview {
+    padding: 60px 0 30px 0;
+    background-image: url("../img/sp/back2.svg");
+  }
+  
+  .overview__desc {
+    display: none;
+  }
+  
+  .overview__detail {
+    font-size: 1.05rem;
+  }
+  
+  /* app.cssから追加 - Summary section */
+  .summary {
+    padding: 30px 0;
+  }
+  
+  .summary__detail__table td {
+    font-size: 0.95rem;
+    padding: 15px 10px;
+  }
+  
+  .summary__detail__table__column {
+    width: 115px;
+    padding-right: 10px;
+  }
+  
+  .summary__detail__table__column .box {
+    font-size: 0.75rem;
+  }
+  
+  .summary__detail__table__access {
+    display: block;
+  }
+  
+  .summary__detail__table__access .station {
+    width: 100%;
+  }
+  
+  .summary__detail__table__access .map {
+    width: 100%;
+    display: none;
+  }
+  
+  .summary__detail .sp {
+    display: block;
+  }
+  
+  /* app.cssから追加 - Contents section */
+  .contents {
+    padding: 30px 0;
+  }
+  
+  .contents__wrap {
+    display: block;
+  }
+  
+  .contents__wrap__box {
+    width: 100%;
+  }
+  
+  /* app.cssから追加 - Schedule section */
+  .schedule__wrap.opened {
+    height: auto;
+  }
+  
+  .schedule__wrap__padbox {
+    width: 48%;
+    margin-top: 15px;
+  }
+  
+  .schedule__wrap__padbox__box {
+    padding: 15px 10px;
+  }
+  
+  .schedule__wrap__padbox__box.mc {
+    height: 117px;
+  }
+  
+  .schedule__wrap__padbox__box__contents {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image {
+    height: 87px;
+    margin-left: 7px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img {
+    height: 87px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title.takahara {
+    font-size: 0.9rem;
+  }
+  
+  /* app.cssから追加 - Scroll elements */
+  .scrollPc {
+    display: none;
+  }
+  
+  .scrollSp {
+    display: block;
+  }
+  
+  .scrollSp .apply {
+    display: block;
+  }
+  
+  .scrollSp .apply .apply__title {
+    font-size: 1rem;
+  }
+  
+  /* app.cssから追加 - Logo sizes */
+  .pickup__list__box__image {
+    height: auto;
+  }
+  
   /* faq-style.cssから追加 */
   .faq .title {
     font-size: 30px;
@@ -1226,6 +1457,87 @@
     font-size: 14px;
   }
   
+  /* app.cssから追加 - Pickup section */
+  .pickup {
+    padding: 30px 0;
+    border-left: 10px solid #FDD35C;
+    border-right: 10px solid #FDD35C;
+  }
+  
+  .pickup__list {
+    margin-top: 30px;
+  }
+  
+  .pickup__list__box {
+    display: block;
+  }
+  
+  .pickup__list__box__image {
+    width: 100%;
+  }
+  
+  .pickup__list__box__desc {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .pickup__continue {
+    display: block;
+  }
+  
+  /* app.cssから追加 - Exhibitor section */
+  .exhibitor {
+    background-image: url("../img/bg.png");
+    background-size: contain;
+  }
+  
+  .exhibitor__list {
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+  }
+  
+  .exhibitor__continue {
+    display: block;
+  }
+  
+  /* app.cssから追加 - Schedule section */
+  .schedule {
+    padding: 30px 0;
+  }
+  
+  .schedule__wrap {
+    margin-top: 30px;
+    display: block;
+  }
+  
+  .schedule__wrap__padbox {
+    width: 100%;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    height: auto;
+    margin-top: 30px;
+    font-size: 1.05rem;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title.takahara {
+    font-size: 1.05rem;
+  }
+  
+  .schedule__continue {
+    margin-top: 10px;
+  }
+  
+  /* app.cssから追加 - Footer */
+  .footer {
+    padding-bottom: 75px;
+  }
+  
+  .footer__wrap {
+    font-size: 0.8rem;
+  }
+  
   /* reset.cssから追加 */
   .d-none-sm {
     display: none !important;
@@ -1236,6 +1548,13 @@
 @media (min-width: 576px) {
   .d-none-md {
     display: none !important;
+  }
+}
+
+/* app.cssから追加 - KV section */
+@media (min-width: 769px) {
+  .kv__title img {
+    width: 100%;
   }
 }
 
@@ -1250,7 +1569,11 @@
     font-size: 0.95rem;
   }
   
-  /* app.cssから追加 */
+  /* app.cssから追加 - KV section */
+  .kv__date {
+    font-size: 1.7rem;
+  }
+  
   .kv__date .kv__date__small {
     font-size: 1.3rem;
   }
