@@ -24,7 +24,7 @@
     <div class="back2">
             <section class="overview">
                 <div class="limited-width">
-                    <h2 class="title">
+                    <h2 class="title overview__title">
                         Freelance Summit
                     </h2>
                     <div class="subtitle">
@@ -41,7 +41,7 @@
             </section>
             <section class="summary">
                 <div class="limited-width">
-                    <h2 class="title">
+                    <h2 class="title summary__title">
                         Event Summary
                     </h2>
                     <div class="subtitle">
@@ -111,7 +111,7 @@
         </div>
         <section class="contents">
             <div class="limited-width">
-                <h2 class="title">
+                <h2 class="title contents__title">
                     Contents
                 </h2>
                 <div class="subtitle">
@@ -160,7 +160,7 @@
 
         <section class="pickup">
             <div class="limited-width">
-                <h2 class="title">
+                <h2 class="title pickup__title">
                     Pick Up
                 </h2>
                 <div class="subtitle">
@@ -216,7 +216,7 @@
     </section>   
     <section class="exhibitor">
             <div class="limited-width">
-                <h2 class="title">
+                <h2 class="title exhibitor__title">
                     About Exhibitors
                 </h2>
                 <div class="subtitle">
@@ -452,7 +452,7 @@
         <section class="faq">
             <div class="polygon-small"></div>
             <div class="limited-width-small">
-                <h2 class="title">
+                <h2 class="title faq__title">
                     FAQ
                 </h2>
                 <div class="subtitle">

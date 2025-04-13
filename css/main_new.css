@@ -69,13 +69,72 @@ p, dl, dd, dt, ul {
 }
 
 h2.title {
-  /* 既存のスタイルを維持 */
+  /* 基本スタイル */
   font-style: italic;
   font-size: 60px;
   font-weight: 700;
   text-align: center;
-  padding: 30px 0 0 0 ;
   margin-bottom: 8px;
+}
+
+/* 各セクション用のタイトルスタイル */
+h2.title.freelance__title {
+  color: var(--color-secondary);
+  letter-spacing: 1px;
+  padding: 30px 0 0 0;
+}
+
+h2.title.event__title {
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+  padding: 30px 0 0 0;
+}
+
+h2.title.content__title,
+h2.title.contents__title {
+  color: var(--color-accent);
+  font-weight: 800;
+  padding: 30px 0 0 0;
+  letter-spacing: 2px;
+}
+
+h2.title.pickup__title {
+  color: var(--color-accent);
+  padding-top: 20px;
+  padding: 50px 0 0 0;
+  position: relative;
+  right: -10px;
+}
+
+h2.title.exhibitor__title {
+  color: var(--color-secondary);
+  letter-spacing: 1.5px;
+  padding: 30px 0 0 0;  
+}
+
+h2.title.schedule__title {
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  padding: 30px 0 0 0;  
+}
+
+h2.title.faq__title {
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  padding: 30px 0 0 0;  
+}
+
+h2.title.overview__title {
+  color: var(--color-secondary);
+  letter-spacing: 1.2px;
+  padding: 30px 0 0 0;
+}
+
+h2.title.summary__title {
+  color: var(--color-secondary);
+  letter-spacing: 1.5px;
+  padding: 30px 0 0 0;
+  font-weight: 700;
 }
 
 ul, li {
@@ -453,9 +512,10 @@ br.sp {
 
 .summary__detail__table__column__target,
 .summary__detail__table__column__targets {
-  margin-top: 10px;
-  padding-top: 5px;
+  margin-top: 0;
+  padding-top: 10px;
   padding-bottom: 5px;
+  vertical-align: top;
 }
 
 .summary__detail__table__column__date .box {
@@ -646,12 +706,85 @@ br.sp {
 
 .pickup .title {
   color: var(--color-accent);
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.pickup__title {
+  color: var(--color-accent);
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-right: 10px;
+  padding-top: 20px;
+  position: relative;
+  right: -10px;
 }
 
 .pickup__list {
   margin-top: 50px;
 }
 
+/* 新しいクラス構造のスタイル */
+.pickup__box {
+  display: flex;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.pickup__image {
+  width: 320px;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pickup__image img {
+  max-width: 100%;
+  max-height: 30px;
+}
+
+.pickup__image img.pe {
+  max-height: 20px;
+}
+
+.pickup__image img.creava {
+  max-height: 40px;
+}
+
+.pickup__image img.quartet {
+  max-height: 50px;
+}
+
+.pickup__image img.granthope {
+  max-height: 75px;
+}
+
+.pickup__image img.woogway {
+  max-height: 60px;
+}
+
+.pickup__image img.astar {
+  max-height: 80px;
+}
+
+.pickup__desc {
+  width: calc(100% - 320px);
+}
+
+.pickup__desc a {
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+.pickup__desc a:hover {
+  color: var(--color-black);
+}
+
+/* 古いクラス名との互換性のため一時的に残しておく（移行期間中） */
 .pickup__list__box {
   display: flex;
   text-align: left;
@@ -670,30 +803,6 @@ br.sp {
 .pickup__list__box__image img {
   max-width: 100%;
   max-height: 30px;
-}
-
-.pickup__list__box__image img.pe {
-  max-height: 20px;
-}
-
-.pickup__list__box__image img.creava {
-  max-height: 40px;
-}
-
-.pickup__list__box__image img.quartet {
-  max-height: 50px;
-}
-
-.pickup__list__box__image img.granthope {
-  max-height: 75px;
-}
-
-.pickup__list__box__image img.woogway {
-  max-height: 60px;
-}
-
-.pickup__list__box__image img.astar {
-  max-height: 80px;
 }
 
 .pickup__list__box__desc {
@@ -1023,8 +1132,13 @@ br.sp {
   background-image: url("../img/Polygon 5.svg");
 }
 
-.faq .title {
+.faq .title,
+.faq__title {
   color: var(--color-accent);
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
 }
 
 .faq__list {
@@ -1296,5 +1410,7 @@ br.sp {
 .summary__detail__table__value__targets {
   font-weight: 700;
   position: relative;
-  top: 10px;
+  top: 0;
+  padding-top: 10px;
+  vertical-align: top;
 }
