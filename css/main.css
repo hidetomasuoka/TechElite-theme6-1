@@ -341,28 +341,31 @@ br.sp {
  *******************/
 /* Key Visual (KV) */
 .kv {
-  padding: 13px 40px 60px 40px;
+  padding: 13px 20px 40px;
   color: var(--color-white);
   background-image: url("../img/background.png");
-  background-size: 100% 100%; /* Both width and height at 100% */
-  background-position: center center;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   text-align: center;
-  max-width: 1440px; /* Restrict container width */
-  margin: 0 auto; /* Center the container */
-  height: 841.108px;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  aspect-ratio: 16/9;
 }
-/* Add this CSS to your main.css file */
+
 .kv__logo {
   text-align: left;
 }
 
 .kv__logo img {
-  width: 183px;
+  max-width: 183px;
+  width: 100%;
+  height: auto;
 }
 
 .kv__subtitle {
-  font-size: 28px;
+  font-size: clamp(16px, 2.5vw, 28px);
   font-weight: 500;
   padding: 30px 0 12px 0;
 }
@@ -372,13 +375,14 @@ br.sp {
 }
 
 .kv__title img {
-  width: 562px;
-  height: 342.337px;
+  max-width: 562px;
+  width: 100%;
+  height: auto;
 }
 
 .kv__date {
   margin-top: 10px;
-  font-size: 45.874px;
+  font-size: clamp(24px, 4vw, 45.874px);
   font-weight: 500;
   font-style: italic;
   text-shadow: 0 3px 6px #000c4d;
@@ -387,11 +391,11 @@ br.sp {
 
 .kv__date .kv__date__small {
   font-weight: 500;
-  font-size: 33.36px;
+  font-size: clamp(18px, 3vw, 33.36px);
 }
 
 .kv__time {
-  font-size: 43.372px;
+  font-size: clamp(20px, 3.5vw, 43.372px);
   font-weight: 700;
   font-style: italic;
   text-shadow: 0 3px 6px #000c4d;
@@ -400,7 +404,7 @@ br.sp {
 
 .kv__location {
   margin-top: 5px;
-  font-size: 29.193px;
+  font-size: clamp(16px, 2.5vw, 29.193px);
   font-weight: 500;
   text-shadow: 0 3px 6px #000c4d;
 }
@@ -408,6 +412,32 @@ br.sp {
 .kv .apply,
 .kv .exhibit {
   margin-top: 30px;
+}
+
+/* モバイル対応の追加スタイル */
+@media screen and (max-width: 768px) {
+  .kv {
+    padding: 10px 15px 30px;
+  }
+  
+  .kv__logo {
+    text-align: center;
+  }
+  
+  .kv__title {
+    margin-top: 20px;
+  }
+  
+  .kv__date,
+  .kv__time,
+  .kv__location {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .kv .apply,
+  .kv .exhibit {
+    margin-top: 20px;
+  }
 }
 
 /* Background styles */
