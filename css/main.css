@@ -407,9 +407,8 @@ br.sp {
   text-shadow: 0 3px 6px #000c4d;
 }
 
-.kv .apply,
-.kv .exhibit {
-  margin-top: 30px;
+.kv .apply {
+  margin-top: 40px;
 }
 
 /* モバイル対応の追加スタイル */
