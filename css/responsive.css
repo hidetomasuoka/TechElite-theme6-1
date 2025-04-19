@@ -225,6 +225,20 @@
     font-size: 2rem;
   }
   
+  h2.title,
+  h2.title.freelance__title,
+  h2.title.event__title,
+  h2.title.content__title,
+  h2.title.contents__title,
+  h2.title.pickup__title,
+  h2.title.exhibitor__title,
+  h2.title.schedule__title,
+  h2.title.faq__title,
+  h2.title.overview__title,
+  h2.title.summary__title {
+    font-size: 26px;
+  }
+  
   .subtitle {
     padding: 0 40px;
   }
