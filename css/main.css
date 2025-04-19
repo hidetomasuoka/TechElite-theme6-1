@@ -1529,8 +1529,14 @@ media (max-width: 768px) {
   background-size: contain;
   background-position: right center;
   width: 65px;
-  height: 303px;
-}
+  height: 303px;}
+ 
+  @media (max-width: 768px) {
+  .scrollPc {
+    display: none;
+  }
+
+
 
 
 .scrollSp {
