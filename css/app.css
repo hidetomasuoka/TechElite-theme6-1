@@ -1,4 +1,142 @@
 /* reset.css - Bootstrapの代わりに使用する基本スタイルリセット */
+/*******************
+ * Reset & Base Styles
+ *******************/
+ *,
+ *:before,
+ *:after {
+   box-sizing: border-box;
+ }
+ 
+ body {
+   font-family: var(--font-primary);
+   color: var(--color-text);
+   position: relative;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ h1, h2, h3, h4, h5, h6,
+ p, dl, dd, dt, ul {
+   margin: 0;
+   padding: 0;
+ }
+ 
+ h2.title {
+   /* 基本スタイル */
+   font-style: italic;
+   font-size: 60px;
+   font-weight: 700;
+   text-align: center;
+   font-family: Roboto;
+ }
+ 
+
+ /* 各セクション用のタイトルスタイル */
+ h2.title.overview__title {
+  color: var(--color-secondary);
+  letter-spacing: 1.2px;
+  padding: 30px 0 0 0;
+}
+
+h2.title.summary__title {
+  color: var(--color-secondary);
+  letter-spacing: 1.5px;
+  padding: 30px 0 0 0;
+  font-weight: 700;
+}
+ 
+ h2.title.freelance__title {
+   color: var(--color-secondary);
+   letter-spacing: 1px;
+   padding: 30px 0 0 0;
+ }
+ 
+ h2.title.event__title {
+   color: var(--color-secondary);
+   margin-bottom: 10px;
+   padding: 30px 0 0 0;
+ }
+ 
+ h2.title.content__title,
+ h2.title.contents__title {
+   color: var(--color-accent);
+   font-weight: 800;
+   padding: 30px 0 0 0;
+   letter-spacing: 2px;
+ }
+ 
+ h2.title.pickup__title {
+   color: var(--color-accent);
+   padding-top: 20px;
+   padding: 50px 0 0 0;
+   position: relative;
+   right: -10px;
+ }
+ 
+ h2.title.exhibitor__title {
+   color: var(--color-secondary);
+   letter-spacing: 1.5px;
+   padding: 20px 0 0 0;
+   position: relative;
+   right: -10px;
+ }
+ 
+ h2.title.schedule__title {
+   color: var(--color-primary);
+   letter-spacing: 1px;
+   padding: 30px 0 0 0;  
+ }
+ 
+ h2.title.faq__title {
+   color: var(--color-accent);
+   letter-spacing: 2px;
+   padding: 30px 0 0 0;  
+ }
+ 
+
+ 
+ ul, li {
+   list-style: none;
+ }
+ 
+ a {
+   text-decoration: none;
+   color: inherit;
+ }
+ 
+ a:hover {
+   opacity: 0.9;
+ }
+ 
+ img {
+   max-width: 100%;
+   height: auto;
+ }
+ 
+ /* Utility classes */
+ .red {
+   color: var(--color-red);
+ }
+ 
+ .limited-width {
+   max-width: var(--container-width-regular);
+   margin: 0 auto;
+   padding: 0 10px;
+ }
+ 
+ .limited-width-small {
+   max-width: var(--container-width-small);
+   margin: 0 auto;
+   padding: 0 var(--spacing-sm);
+ }
+ 
+ /* Responsive line breaks */
+ br.sp {
+   display: none;
+ }
+ 
+
 
 /* ブラウザのデフォルトスタイルをリセット */
 * {
@@ -713,8 +851,8 @@ br.sp {
 }
 
 .overview {
-    text-align: center;
-    padding: 80px 0 40px 0;
+  text-align: center;
+  padding: 0px 0 40px 0;
 }
 
 @media (max-width: 768px) {
@@ -724,12 +862,6 @@ br.sp {
         background-size: contain;
         background-repeat: no-repeat;
     }
-}
-
-.overview__title {
-    color: var(--color-secondary);
-    letter-spacing: 1.2px;
-    padding: 30px 0 0 0;
 }
 
 .overview__desc {

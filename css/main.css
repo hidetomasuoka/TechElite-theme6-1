@@ -1456,7 +1456,6 @@ br.sp {
   display: block;
 }
 
-/* CSSファイルが分割されています - メディアクエリはresponsive.cssに移動されました */
 
 /* テーブルの値セルのスタイル */
 .summary__detail__table__value__date,
