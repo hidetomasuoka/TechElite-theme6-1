@@ -524,6 +524,53 @@
 * Breakpoint: max-width: 575px
 ******************/
 @media (max-width: 575px) {
+  .schedule {
+    padding: 30px 0;
+  }
+  
+  .schedule__wrap {
+    margin-top: 30px;
+    display: block;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+  
+  .schedule__wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    height: 40px;
+    background: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #000 100%);
+  }
+  
+  .schedule__wrap.opened {
+    max-height: none;
+    height: auto;
+  }
+  
+  .schedule__wrap.opened::after {
+    display: none;
+  }
+  
+  .schedule__wrap__padbox {
+    width: 100%;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    height: auto;
+    margin-top: 30px;
+    font-size: 1.05rem;
+  }
+  
+  .schedule__continue {
+    margin-top: 10px;
+  }
+  
   /* Pickup section */
   .pickup {
     padding: 30px 0;
@@ -590,86 +637,6 @@
   
   .exhibitor__continue {
     display: block;
-  }
-  
-  /* Schedule section */
-  .schedule {
-    padding: 30px 0;
-  }
-  
-  .schedule__wrap {
-    display: block;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .schedule__wrap::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
-    pointer-events: none;
-  }
-  
-  .schedule__wrap.opened {
-    max-height: none;
-    height: auto;
-  }
-  
-  .schedule__wrap.opened::after {
-    display: none;
-  }
-  
-  .schedule__wrap__padbox {
-    width: 100%;
-    margin-top: 10px;
-    padding: 0;
-  }
-  
-  .schedule__wrap__padbox__box {
-    padding: 12px 8px;
-    width: 100%;
-    height: auto;
-  }
-  
-  .schedule__wrap__padbox__box.mc {
-    height: 110px;
-  }
-  
-  .schedule__wrap__padbox__box__contents {
-    display: block;
-    min-height: auto;
-  }
-  
-  .schedule__wrap__padbox__box__contents__image {
-    height: 80px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .schedule__wrap__padbox__box__contents__image img {
-    height: 80px;
-    max-width: 100%;
-  }
-  
-  .schedule__wrap__padbox__box__contents__title {
-    font-size: 0.85rem;
-    margin-top: 15px;
-    height: auto;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .schedule__wrap__padbox__box__contents__title.takahara {
-    font-size: 0.85rem;
-  }
-  
-  .schedule__continue {
-    margin-top: 10px;
   }
   
   /* Footer section */
