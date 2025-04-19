@@ -399,13 +399,13 @@
   }
   
   /* Schedule section */
-  .schedule__wrap.opened {
-    height: auto;
+  .schedule {
+    padding: 30px 0;
   }
   
-  .schedule__wrap.opened::after {
-    content: '';
-    display: none;
+  .schedule__wrap {
+    display: block;
+    height: auto;
   }
   
   .schedule__wrap__padbox {
