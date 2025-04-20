@@ -171,7 +171,7 @@ h2.title.pickup__title{
 }
 
 h2.title.exhibitor__title{
-  padding: 40px 0 10px 0;
+  padding: 30px 0 0px 0;
 }
 
 
@@ -1009,6 +1009,36 @@ h2.title.exhibitor__title{
   flex-shrink: 0;
 }
 
+.pickup__list__box__image--oplan {
+  position: relative;
+  left: -10px;
+  top: 5px;
+}
+
+.pickup__list__box__desc--oplan {
+  position: relative;
+  left: -10px;
+  top: 5px;
+}
+
+.pickup__list__box__image--pebank {
+  position: relative;
+  left: -15px;
+  top: 10px;
+}
+
+.pickup__list__box__image--creava {
+  position: relative;
+  left: -5px;
+  top: -15px;
+}
+
+.pickup__list__box__desc--quartet {
+  position: relative;
+  left: -10px;
+  top: -15px;
+}
+
 /* 6.6 Exhibitor
  * =================================================================== */
 .exhibitor {
@@ -1016,7 +1046,7 @@ h2.title.exhibitor__title{
   background-size: cover;
   background-position: center;
   text-align: center;
-  padding: 50px 0;
+  padding: 50px 0 65px 0;
 }
 
 .exhibitor .title {
@@ -1941,4 +1971,10 @@ h2.title.exhibitor__title{
   max-height: 100%;
   object-fit: contain;
   display: block;
+}
+
+.pickup__list__box__desc--creava {
+  position: relative;
+  left: -5px;
+  top: -15px;
 }
