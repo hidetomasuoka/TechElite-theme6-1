@@ -719,8 +719,29 @@ h2.title.exhibitor__title{
   height: 100%;
 }
 
+/* PC表示では非表示 */
 .summary__detail .sp {
   display: none;
+}
+
+/* モバイル表示では表示する */
+@media (max-width: 768px) {
+  .summary__detail .sp {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  /* モバイル表示ではテーブル内の地図を非表示 */
+  .summary__detail__table__access .map {
+    display: none;
+  }
+  
+  .summary__detail .sp iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+  }
 }
 
 /* 6.4 Contents
