@@ -661,90 +661,172 @@ h2.title.exhibitor__title {
 
 /* 6.4 Contents
  * =================================================================== */
+
+/* 共通のスタイル */
 .contents {
   text-align: center;
   background-color: #FFF6DE;
-  padding: 50px 0;
-  height: 814px;
 }
 
-.contents .title {
-  color: var(--color-accent);
-}
-
-.contents__wrap {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.contents__wrap__inner {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 55px;
-  margin-top: 7px;
-}
-
-.contents__wrap__box {
-  width: 44%;
-  border: 3px solid var(--color-accent);
-  border-radius: var(--border-radius-medium);
-  margin-top: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 50px;
-}
-
-.contents__wrap__box__title {
-  background-color: var(--color-accent);
-  color: var(--color-white);
+.subtitle {
+  display: inline-block;
+  position: relative;
   font-weight: 500;
-  font-size: 24px;
-  text-align: center; /* Keep for fallback or remove if only flex is needed */
-  height: 57px;
-  display: flex; /* 追加 */
-  align-items: center; /* 追加 */
-  justify-content: center; /* 追加 */
-}
-
-.contents__wrap__box__detail {
-  background-color: var(--color-white);
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  padding: 15px 30px;
-}
-
-.contents__wrap__box__detail .ribbon {
-  width: 260px;
-}
-
-.contents__wrap__box__detail__appeal {
-  color: var(--color-accent);
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.contents__wrap__box__detail__appeal .number {
+  margin-top: 5px;
+  font-size: 18px;
   text-align: center;
-  font-family: Roboto;
-  font-size: 48px;
-  font-style: italic;
-  font-weight: 600;
-  line-height: 100%;
 }
 
-.contents__wrap__box__detail .scenery {
-  width: 340px;
-  height: 180px;
-  flex-shrink: 0;
-  margin-top: 10px;
+/* PCビュー用のスタイル */
+@media (min-width: 769px) {
+  .contents {
+    padding: 50px 0;
+    height: 814px;
+  }
+
+  .contents__wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contents__wrap__inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 55px;
+    margin-top: 7px;
+  }
+
+  .contents__wrap__box {
+    width: 44%;
+    border: 3px solid var(--color-accent);
+    border-radius: var(--border-radius-medium);
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+
+  .contents__wrap__box__title {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+  }
+
+  .contents__wrap__box__detail {
+    background-color: var(--color-white);
+    border-bottom-right-radius: var(--border-radius-medium);
+    border-bottom-left-radius: var(--border-radius-medium);
+    padding: 15px 30px;
+  }
+
+  .contents__wrap__box__detail__appeal {
+    color: var(--color-accent);
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .contents__wrap__box__detail__appeal .number {
+    font-family: var(--font-secondary);
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .contents__wrap__box__detail .scenery {
+    width: 340px;
+    height: 180px;
+    flex-shrink: 0;
+    margin-top: 10px;
+  }
 }
 
-.contents .apply {
-  margin-top: 40px;
+/* モバイルビュー用のスタイル */
+@media (max-width: 768px) {
+  .contents {
+    height: auto;
+    padding: 30px 0;
+  }
+  
+  .contents__wrap {
+    display: block;
+    width: 336px;
+    max-width: 90%;
+    margin: 0 auto;
+    border: none;
+    background: transparent;
+  }
+  
+  .contents__wrap__box {
+    width: 100%;
+    margin: 0 0 20px;
+    border: 2.317px solid var(--color-accent);
+    border-radius: 7.724px;
+    background: var(--color-white);
+  }
+  
+  .contents__wrap__box:last-child {
+    margin-bottom: 0;
+  }
+
+  .contents__wrap__box__title {
+    font-size: 18.538px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-radius: 7.724px 7.724px 0 0;
+  }
+
+  .contents__wrap__box__detail {
+    height: auto;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .contents__wrap__box__detail .scenery {
+    width: 100%;
+    max-width: 262.621px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .contents__wrap__box__detail__appeal {
+    font-size: 21.628px;
+    text-align: center;
+    margin: 10px 0;
+    color: var(--color-accent);
+  }
+
+  .contents__wrap__box__detail__top {
+    font-size: 10.84px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .contents__wrap__box__detail__appeal .number {
+    font-size: 37.076px;
+    line-height: 1.2;
+    display: block;
+    text-align: center;
+    font-family: var(--font-secondary);
+    font-style: italic;
+    font-weight: 600;
+  }
 }
 
 /* 6.5 Pickup
@@ -1546,44 +1628,75 @@ h2.title.exhibitor__title {
   
   /* Content */
   .contents {
-    height: 778px; /* 追加 */
+    height: auto;
+    padding: 30px 0;
   }
   .contents__wrap {
-    display: block; /* block から flex に変更 */
+    display: flex;
+    flex-direction: column;
     width: 336px;
-    height: 291.2px;
-    border-radius: 7.724px;
-    border: 2.317px solid var(--color-accent); /* Use variable for color */
-    background: var(--color-white); /* Use variable for color */
+    height: auto;
+    margin: 0 auto;
+    max-width: 90%;
+    border: none;
+    background: transparent;
   }
   
   .contents__wrap__box {
     width: 100%;
+    margin-bottom: 20px;
+    border: 2.317px solid var(--color-accent);
+    border-radius: 7.724px;
+    background: var(--color-white);
+  }
+  
+  .contents__wrap__box:last-child {
+    margin-bottom: 0;
   }
   
   .contents__wrap__box__title {
     font-size: 18.538px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-radius: 7.724px 7.724px 0 0;
   }
 
-  .contents__wrap__box__detail { /* 追加 */
-    height: 258px; /* 追加 */
-  } /* 追加 */
+  .contents__wrap__box__detail {
+    height: auto;
+    padding: 15px;
+    text-align: center;
+  }
 
   .contents__wrap__box__detail .scenery {
-    width: 262.621px;
-    height: 139.034px;
+    width: 100%;
+    height: auto;
+    max-width: 262.621px;
+    margin: 0 auto;
+    display: block;
   }
 
   .contents__wrap__box__detail__appeal {
     font-size: 21.628px;
+    text-align: center;
+    margin: 10px 0;
+    color: var(--color-accent);
   }
   
   .contents__wrap__box__detail__top {
     font-size: 10.84px;
+    text-align: center;
+    margin-bottom: 10px;
   }
   .contents__wrap__box__detail__appeal .number {
     font-size: 37.076px;
-    line-height: 1rem;
+    line-height: 1.2;
+    display: block;
+    text-align: center;
+    font-family: var(--font-secondary);
+    font-style: italic;
+    font-weight: 600;
   }
   
   /* Apply */
