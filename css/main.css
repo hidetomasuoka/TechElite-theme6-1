@@ -2020,6 +2020,36 @@ h2.title.exhibitor__title{
     height: 36.364px;
     font-size: 16px;
   }
+
+  .footer__wrap__company {
+    width: 39.724px;
+    height: 14.978px;
+    flex-shrink: 0;
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    font-size: 9.117px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 13.024px;
+  }
+
+  .footer__wrap img {
+    width: 121.636px;
+    height: 31.65px;
+    flex-shrink: 0;
+  }
+
+  .footer__wrap__policy {
+    width: 79px;
+    height: 15px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: "Noto Sans JP";
+    font-size: 9.117px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 13.024px;
+  }
 }
 
 @media (max-width: 390px) {

@@ -17,7 +17,19 @@
             <div class="footer__wrap">
                 <span class="footer__wrap__company">運営会社</span>
                 <img src="../img/fv_logo.png" alt="">
-                <a href="#" target="_blank" class="footer__wrap__policy">個人情報保護方針</a>
+                <a href="#" target="_blank" class="footer__wrap__policy" style="
+                    @media (max-width: 768px) {
+                        width: 79px;
+                        height: 15px;
+                        flex-shrink: 0;
+                        color: #FFF;
+                        font-family: 'Noto Sans JP';
+                        font-size: 9.117px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 13.024px;
+                    }
+                ">個人情報保護方針</a>
             </div>
         </div>
     </footer>
