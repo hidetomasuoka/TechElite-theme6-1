@@ -1,9 +1,34 @@
+/* ===================================================================
+ * Table of Contents
+ * 
+ * 1. Import & Variables
+ * 2. Base Styles & Reset
+ * 3. Typography
+ * 4. Common Components
+ * 5. Buttons & Links
+ * 6. Layout Components
+ *    6.1 Key Visual (KV)
+ *    6.2 Overview
+ *    6.3 Summary
+ *    6.4 Contents
+ *    6.5 Pickup
+ *    6.6 Exhibitor
+ *    6.7 Schedule
+ *    6.8 FAQ
+ * 7. Footer
+ * 8. Navigation
+ * 9. Media Queries
+ * 10. Utilities
+ * =================================================================== */
+
+/* ===================================================================
+ * 1. Import & Variables
+ * =================================================================== */
+
 /* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-/*******************
- * CSS Variables
- *******************/
+/* CSS Variables */
 :root {
   /* Colors */
   --color-primary: #00A8F0;
@@ -45,9 +70,9 @@
   --breakpoint-lg: 991px;
 }
 
-/*******************
- * Reset & Base Styles
- *******************/
+/* ===================================================================
+ * 2. Base Styles & Reset
+ * =================================================================== */
 *,
 *:before,
 *:after {
@@ -68,77 +93,6 @@ p, dl, dd, dt, ul {
   padding: 0;
 }
 
-h2.title {
-  /* 基本スタイル */
-  font-style: italic;
-  font-size: 60px;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-/* 各セクション用のタイトルスタイル */
-h2.title.freelance__title {
-  color: var(--color-secondary);
-  letter-spacing: 1px;
-  padding: 30px 0 0 0;
-}
-
-h2.title.event__title {
-  color: var(--color-secondary);
-  margin-bottom: 10px;
-  padding: 30px 0 0 0;
-}
-
-h2.title.content__title,
-h2.title.contents__title {
-  color: var(--color-accent);
-  font-weight: 800;
-  padding: 30px 0 0 0;
-  letter-spacing: 2px;
-}
-
-h2.title.pickup__title {
-  color: var(--color-accent);
-  padding-top: 20px;
-  padding: 50px 0 0 0;
-  position: relative;
-  right: -10px;
-}
-
-h2.title.exhibitor__title {
-  color: var(--color-secondary);
-  letter-spacing: 1.5px;
-  padding: 20px 0 0 0;
-  position: relative;
-  right: -10px;
-}
-
-h2.title.schedule__title {
-  color: var(--color-primary);
-  letter-spacing: 1px;
-  padding: 30px 0 0 0;  
-}
-
-h2.title.faq__title {
-  color: var(--color-accent);
-  letter-spacing: 2px;
-  padding: 30px 0 0 0;  
-}
-
-h2.title.overview__title {
-  color: var(--color-secondary);
-  letter-spacing: 1.2px;
-  padding: 30px 0 0 0;
-}
-
-h2.title.summary__title {
-  color: var(--color-secondary);
-  letter-spacing: 1.5px;
-  padding: 30px 0 0 0;
-  font-weight: 700;
-}
-
 ul, li {
   list-style: none;
 }
@@ -157,31 +111,61 @@ img {
   height: auto;
 }
 
-/* Utility classes */
-.red {
-  color: var(--color-red);
-}
-
-.limited-width {
-  max-width: var(--container-width-regular);
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.limited-width-small {
-  max-width: var(--container-width-small);
-  margin: 0 auto;
-  padding: 0 var(--spacing-sm);
-}
-
 /* Responsive line breaks */
 br.sp {
   display: none;
 }
 
-/*******************
- * Typography
- *******************/
+@media (max-width: 768px) {
+  br.sp {
+    display: inline;
+  }
+}
+
+/* ===================================================================
+ * 3. Typography
+ * =================================================================== */
+h2.title {
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+/* Section-specific title styles */
+h2.title.overview__title,
+h2.title.summary__title,
+h2.title.freelance__title,
+h2.title.event__title,
+h2.title.exhibitor__title {
+  color: var(--color-secondary);
+  letter-spacing: 1.2px;
+  padding: 30px 0 0 0;
+}
+
+h2.title.schedule__title {
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  padding: 30px 0 0 0;  
+}
+
+h2.title.content__title,
+h2.title.contents__title,
+h2.title.pickup__title,
+h2.title.faq__title {
+  color: var(--color-accent);
+  font-weight: 800;
+  padding: 30px 0 0 0;
+  letter-spacing: 2px;
+}
+
+h2.title.pickup__title,
+h2.title.exhibitor__title {
+  position: relative;
+  right: -10px;
+}
+
 /* Title fonts */
 .title-en {
   font-family: var(--font-secondary);
@@ -241,7 +225,7 @@ br.sp {
   content: "";
   display: inline-block;
   height: 1px;
-  position: flexbox;
+  position: relative;
   width: 30px;
   box-sizing: border-box;
   margin-bottom: 8px;
@@ -255,9 +239,36 @@ br.sp {
   right: 0;
 }
 
-/*******************
- * Buttons & Links
- *******************/
+/* ===================================================================
+ * 4. Common Components
+ * =================================================================== */
+/* Utility classes */
+.red {
+  color: var(--color-red);
+}
+
+.limited-width {
+  max-width: var(--container-width-regular);
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.limited-width-small {
+  max-width: var(--container-width-small);
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+/* Background styles */
+.back2 {
+  background-image: url("../img/back2.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ===================================================================
+ * 5. Buttons & Links
+ * =================================================================== */
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -301,7 +312,7 @@ br.sp {
 
 .apply__title,
 .exhibit__title {
-  padding: 10px;
+  padding: 10px 0px 10px 6px;
   padding-right: 0;
   font-weight: 500;
 }
@@ -316,53 +327,87 @@ br.sp {
 
 .apply a,
 .exhibit a {
-  width: 385px;
-  max-width: 100%;
-  width: 385px;
+  width: 420px;
+  height: 60px;
   max-width: 100%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  color: #FFF;
+  color: var(--color-white);
   background-color: #06C755;
-  border-radius: 9999px;
-  border: 2px solid #FFF;
+  border-radius: var(--border-radius-pill);
+  border: 2px solid var(--color-white);
   font-size: 24px;
-
 }
+
 
 .apply a img,
 .exhibit a img {
-  width: 40px;
+  width: 57px;
+  height: 57px;
 }
 
-/*******************
- * Layout Components
- *******************/
-/* Key Visual (KV) */
+.sp__apply a {
+  width: 385px;
+  height: 49px;
+  max-width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  background-color: #06C755;
+  border-radius: var(--border-radius-pill);
+  border: 2px solid var(--color-white);
+  font-size: 24px;
+}
+
+.sp__apply a img{
+  width: 46.5px;
+  height: 46,5px;
+}
+.sp__apply__title {
+  font-size: 19.6px;
+}
+
+
+.sp__apply__title {
+  padding: 10px 0px 10px 6px;
+  padding-right: 0;
+  font-weight: 500;
+}
+/* ===================================================================
+ * 6. Layout Components
+ * =================================================================== */
+
+/* 6.1 Key Visual (KV)
+ * =================================================================== */
 .kv {
-  padding: 13px 40px 60px 40px;
+  padding: 13px 20px 40px;
   color: var(--color-white);
   background-image: url("../img/background.png");
-  background-size: 100% 100%; /* Both width and height at 100% */
-  background-position: center center;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   text-align: center;
-  max-width: 1440px; /* Restrict container width */
-  margin: 0 auto; /* Center the container */
-  height: 841.108px;
+  margin: 0 auto;
+  position: relative;
+  aspect-ratio: 1440/841.108;
 }
-/* Add this CSS to your main.css file */
+
 .kv__logo {
   text-align: left;
+  position: relative;
+  left: 15px;
 }
 
 .kv__logo img {
-  width: 183px;
+  max-width: 183px;
+  width: 100%;
+  height: auto;
 }
 
 .kv__subtitle {
-  font-size: 28px;
+  font-size: clamp(16px, 2.5vw, 28px);
   font-weight: 500;
   padding: 30px 0 12px 0;
 }
@@ -372,13 +417,14 @@ br.sp {
 }
 
 .kv__title img {
-  width: 562px;
-  height: 342.337px;
+  max-width: 562px;
+  width: 100%;
+  height: auto;
 }
 
 .kv__date {
   margin-top: 10px;
-  font-size: 45.874px;
+  font-size: clamp(24px, 4vw, 45.874px);
   font-weight: 500;
   font-style: italic;
   text-shadow: 0 3px 6px #000c4d;
@@ -387,11 +433,11 @@ br.sp {
 
 .kv__date .kv__date__small {
   font-weight: 500;
-  font-size: 33.36px;
+  font-size: clamp(18px, 3vw, 33.36px);
 }
 
 .kv__time {
-  font-size: 43.372px;
+  font-size: clamp(20px, 3.5vw, 43.372px);
   font-weight: 700;
   font-style: italic;
   text-shadow: 0 3px 6px #000c4d;
@@ -400,24 +446,17 @@ br.sp {
 
 .kv__location {
   margin-top: 5px;
-  font-size: 29.193px;
+  font-size: clamp(16px, 2.5vw, 29.193px);
   font-weight: 500;
   text-shadow: 0 3px 6px #000c4d;
 }
 
-.kv .apply,
-.kv .exhibit {
-  margin-top: 30px;
+.kv .apply {
+  margin-top: 40px;
 }
 
-/* Background styles */
-.back2 {
-  background-image: url("../img/back2.svg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* Overview Section */
+/* 6.2 Overview
+ * =================================================================== */
 .overview {
   text-align: center;
   padding: 0px 0 40px 0;
@@ -441,14 +480,15 @@ br.sp {
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 45px; /* 250% */
-  width: 960px;
+  line-height: 45px;
+  max-width: 960px;
   height: 139px;
   text-align: left;
   margin-left: 17px;
 }
 
-/* Summary Section */
+/* 6.3 Summary
+ * =================================================================== */
 .summary {
   text-align: center;
   padding: 85px 0 80px 0;
@@ -470,7 +510,6 @@ br.sp {
 .summary__detail__table td {
   font-weight: 700;
   font-size: 22px;
-  padding: 30px 10px 30px 15px;
   border-bottom: 1px dashed var(--color-line-gray);
 }
 
@@ -500,35 +539,18 @@ br.sp {
 .summary__detail__table__column__venue,
 .summary__detail__table__column__contents,
 .summary__detail__table__column__target,
+.summary__detail__table__column__targets,
 .summary__detail__table__column__access {
   width: 180px;
-  padding-right: 20px;
   vertical-align: top;
   position: relative;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
-.summary__detail__table__column__date {
-  margin-top: 10px;
-}
-
-.summary__detail__table__column__venue,
-.summary__detail__table__column__access {
-  margin-top: 0;
-}
-
-.summary__detail__table__column__contents {
-  margin-top: 10px;
-}
-
-.summary__detail__table__column__target,
-.summary__detail__table__column__targets {
-  margin-top: 0;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  vertical-align: top;
-}
-
-.summary__detail__table__column__date .box {
+.box {
   padding: 10px 5px;
   border: 2px solid var(--color-accent);
   border-radius: var(--border-radius-pill);
@@ -540,54 +562,67 @@ br.sp {
   height: 55px;
   position: relative;
   top: -10px;
-  border-bottom-width: 5px;
 }
 
-.summary__detail__table__column__venue .box,
-.summary__detail__table__column__contents .box,
-.summary__detail__table__column__target .box,
-.summary__detail__table__column__access .box {
-  padding: 10px 5px;
-  border: 2px solid var(--color-accent);
-  border-radius: var(--border-radius-pill);
-  display: block;
-  color: var(--color-accent);
-  text-align: center;
+/* テーブルの値セルのスタイル */
+.summary__detail__table__value__date,
+.summary__detail__table__value__venue,
+.summary__detail__table__value__contents{
   font-size: 22px;
-  width: 170px;
-  height: 55px;
+  line-height: 1.5;
+  vertical-align: middle;
+  padding-top: 25px; /* 追加 */
+  padding-bottom: 30px; /* 追加 */
 }
 
-/* Common classes for boxes */
-.box {
-  padding: 10px 5px;
-  border: 2px solid var(--color-accent);
-  border-radius: var(--border-radius-pill);
-  display: block;
-  color: var(--color-accent);
-  text-align: center;
+.summary__detail__table__value__target {
   font-size: 22px;
-  width: 170px;
-  height: 55px;
+  line-height: 1.5;
+  vertical-align: middle;
+  padding-top: 50px; /* 追加 */
+  padding-bottom: 30px; /* 追加 */
+  padding-right: 30px; /* 追加 */
 }
 
-.boxno {
-  padding: 5px 10px;
-  border: 0.35px solid var(--color-accent);
-  border-radius: var(--border-radius-pill);
-  display: block;
-  color: var(--color-accent);
-  text-align: center;
-  font-size: 22px;
-  width: 170px;
-  height: 55px;
+/* 日付のセルのスタイル */
+.summary__detail__table__value__date {
+  font-weight: 700;
+  position: relative;
+  left: -10px;
+  /* top: 0px; */ /* 削除 */
 }
+
+/* 会場のセルのスタイル */
+.summary__detail__table__value__venue {
+  font-weight: 700;
+  position: relative;
+  left: -10px;
+}
+
+/* イベント内容のセルのスタイル */
+.summary__detail__table__value__contents {
+  font-weight: 700;
+  line-height: 1.8;
+  position: relative;
+  left: -8px;
+}
+
+/* 対象者のセルのスタイル */
+.summary__detail__table__value__target,
+.summary__detail__table__value__targets {
+  font-weight: 700;
+  position: relative;
+  vertical-align: top;
+}
+
 
 .summary__detail__table__access {
   display: flex;
 }
 
 .summary__detail__table__access .station {
+  padding-top: 40px;
+  padding-left: 20px;
   width: 50%;
 }
 
@@ -624,7 +659,8 @@ br.sp {
   display: none;
 }
 
-/* Contents Section */
+/* 6.4 Contents
+ * =================================================================== */
 .contents {
   text-align: center;
   background-color: #FFF6DE;
@@ -656,9 +692,10 @@ br.sp {
   width: 44%;
   border: 3px solid var(--color-accent);
   border-radius: var(--border-radius-medium);
-  margin-top: 30px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
 
 .contents__wrap__box__title {
@@ -666,14 +703,17 @@ br.sp {
   color: var(--color-white);
   font-weight: 500;
   font-size: 24px;
-  text-align: center;
-  padding: 5px;
+  text-align: center; /* Keep for fallback or remove if only flex is needed */
+  height: 57px;
+  display: flex; /* 追加 */
+  align-items: center; /* 追加 */
+  justify-content: center; /* 追加 */
 }
 
 .contents__wrap__box__detail {
   background-color: var(--color-white);
-  border-bottom-right-radius: var(--border-radius-medium);
-  border-bottom-left-radius: var(--border-radius-medium);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   padding: 15px 30px;
 }
 
@@ -693,7 +733,7 @@ br.sp {
   font-size: 48px;
   font-style: italic;
   font-weight: 600;
-  line-height: 100%; /* 48px */
+  line-height: 100%;
 }
 
 .contents__wrap__box__detail .scenery {
@@ -707,7 +747,8 @@ br.sp {
   margin-top: 40px;
 }
 
-/* Pickup Section */
+/* 6.5 Pickup
+ * =================================================================== */
 .pickup {
   text-align: center;
   border-left: 50px solid var(--color-accent);
@@ -736,14 +777,16 @@ br.sp {
   margin-top: 50px;
 }
 
-/* 新しいクラス構造のスタイル */
-.pickup__box {
+/* 統一されたボックススタイル */
+.pickup__box,
+.pickup__list__box {
   display: flex;
   text-align: left;
   margin-top: 30px;
 }
 
-.pickup__image {
+.pickup__image,
+.pickup__list__box__image {
   width: 320px;
   padding: 0 20px;
   text-align: center;
@@ -752,9 +795,17 @@ br.sp {
   align-items: center;
 }
 
-.pickup__image img {
+.pickup__image img,
+.pickup__list__box__image img {
   max-width: 100%;
   max-height: 30px;
+}
+
+/* 特定の画像スタイル */
+.pickup__image img.pe,
+.pickup__list__box__image img.pe,
+.pickup__image img.pe {
+  max-height: 20px;
 }
 
 .pickup__image img.logo-pebank,
@@ -770,7 +821,6 @@ br.sp {
   height: 21px;
 }
 
-/* creava.pngのサイズ設定 */
 .pickup__list__box__image img.logo-creava {
   width: 124px;
   height: 57px;
@@ -778,16 +828,11 @@ br.sp {
   flex-shrink: 0;
 }
 
-/* quartet.pngのサイズ設定 */
 .pickup__list__box__image img.logo-quartet {
   width: 103px;
   height: 42px;
   max-height: 42px;
   flex-shrink: 0;
-}
-
-.pickup__image img.pe {
-  max-height: 20px;
 }
 
 .pickup__image img.quartet {
@@ -806,49 +851,18 @@ br.sp {
   max-height: 80px;
 }
 
-.pickup__desc {
-  width: calc(100% - 320px);
-}
-
-.pickup__desc a {
-  color: var(--color-black);
-  text-decoration: underline;
-}
-
-.pickup__desc a:hover {
-  color: var(--color-black);
-}
-
-/* 古いクラス名との互換性のため一時的に残しておく（移行期間中） */
-.pickup__list__box {
-  display: flex;
-  text-align: left;
-  margin-top: 30px;
-}
-
-.pickup__list__box__image {
-  width: 320px;
-  padding: 0 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pickup__list__box__image img {
-  max-width: 100%;
-  max-height: 30px;
-}
-
+.pickup__desc,
 .pickup__list__box__desc {
   width: calc(100% - 320px);
 }
 
+.pickup__desc a,
 .pickup__list__box__desc a {
   color: var(--color-black);
   text-decoration: underline;
 }
 
+.pickup__desc a:hover,
 .pickup__list__box__desc a:hover {
   color: var(--color-black);
 }
@@ -884,7 +898,15 @@ br.sp {
   text-align: right;
 }
 
-/* Exhibitor Section */
+.pickup__list__box__image a[href="https://sucsak.com/"] {
+  display: inline-block;
+  width: 124px;
+  height: 57px;
+  flex-shrink: 0;
+}
+
+/* 6.6 Exhibitor
+ * =================================================================== */
 .exhibitor {
   background-image: url("../img/bg.png");
   background-size: cover;
@@ -909,12 +931,12 @@ br.sp {
 
 .exhibitor__list__left {
   position: relative;
-  right: 40px; /* 右に40px移動 */
+  right: 40px;
 }
 
 .exhibitor__list__right {
   position: relative;
-  right: 5px; /* 右に40px移動 */
+  right: 5px;
 }
 
 .exhibitor__list.opened {
@@ -936,21 +958,20 @@ br.sp {
 }
 
 .exhibitor__desc {
-  margin-top: 30px;  /* 下に10px移動（20px→30px） */
-  margin-left: -10px;  /* 左に10px移動 */
+  margin-top: 30px;
+  margin-left: -10px;
   font-size: 20px;
   text-align: right;
   position: relative;
 }
 
-/* Schedule Section */
+/* 6.7 Schedule
+ * =================================================================== */
 .schedule {
   background-image: url("../img/timeschedule_background.png");
   background-size: cover;
   text-align: center;
   padding: 60px 0;
-  max-width: 1440px;
-  height: 1520px;
 }
 
 .schedule .title {
@@ -961,8 +982,7 @@ br.sp {
   color: var(--color-white);
 }
 
-.schedule .subtitle::before, 
-.schedule .subtitle::after {
+.schedule .subtitle::before, .schedule .subtitle::after {
   background-color: var(--color-white);
 }
 
@@ -1001,15 +1021,13 @@ br.sp {
 .schedule__wrap__padbox {
   width: 33.333%;
   margin-top: 30px;
-  padding: 0 10px;
+  padding: 0 8px;
   height: auto;
 }
 
 .schedule__wrap__padbox__box {
-  width: 300px;
-  height: 254px;
   background-color: rgba(241, 251, 255, 0.6);
-  border-radius: var(--border-radius-small);
+  border-radius: 5px;
   padding: 20px;
   position: relative;
 }
@@ -1018,6 +1036,7 @@ br.sp {
   height: 168px;
 }
 
+.schedule__wrap__padbox__box__mc .schedule__readbox__wrap__box__contents,
 .schedule__wrap__padbox__box.mc .schedule__readbox__wrap__box__contents {
   justify-content: center;
 }
@@ -1033,7 +1052,6 @@ br.sp {
   left: 5px;
   top: 11px;
   font-weight: 700;
-  font-size: 16px;
 }
 
 .schedule__wrap__padbox__box__contents {
@@ -1050,8 +1068,7 @@ br.sp {
   height: 134px;
 }
 
-.schedule__wrap__padbox__box__contents__image img.long2,
-.schedule__wrap__padbox__box__contents__image img.long3 {
+.schedule__wrap__padbox__box__contents__image img.long2 {
   height: auto;
   max-height: 110px;
   margin-top: 19px;
@@ -1059,7 +1076,10 @@ br.sp {
 }
 
 .schedule__wrap__padbox__box__contents__image img.long3 {
+  height: auto;
+  max-height: 110px;
   margin-top: 25px;
+  max-width: 100%;
 }
 
 .schedule__wrap__padbox__box__contents__image img.longmc {
@@ -1070,36 +1090,13 @@ br.sp {
 }
 
 .schedule__wrap__padbox__box__contents__title {
-  font-size: 20px;
+  font-size: 1.3rem;
   font-weight: 700;
   margin-top: 10px;
   display: flex;
   align-items: center;
   height: 80px;
-  width: 266px;
   text-align: left;
-  padding: 0 0px;
-  line-height: 125%; /* 25px */
-  letter-spacing: 1.6px;
-}
-
-.schedule__wrap__padbox__box__contents__title__seisei {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  height: 80px;
-  width: 272px;
-  text-align: left;
-  padding: 0 0px;
-  line-height: 125%; /* 25px */
-  letter-spacing: 1.6px;
-}
-
-
-.schedule__wrap__padbox__box__contents__title.takahara {
-  font-size: 1.05rem;
 }
 
 .schedule__continue {
@@ -1133,7 +1130,22 @@ br.sp {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* FAQ Section */
+.schedule__wrap__padbox__box__contents__title__seisei {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: 272px;
+  text-align: left;
+  padding: 0 0px;
+  line-height: 125%;
+  letter-spacing: 1.6px;
+}
+
+/* 6.8 FAQ
+ * =================================================================== */
 .faq {
   background-image: url("../img/bg.png");
   background-size: cover;
@@ -1235,7 +1247,35 @@ br.sp {
   text-align: left;
 }
 
-/* Footer */
+.faq__contact {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.faq__contact__link {
+  display: inline-block;
+  padding: 15px 20px;
+  background-color: var(--color-white);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.faq__contact__link:hover {
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+
+/* ===================================================================
+ * 7. Footer
+ * =================================================================== */
 .footer {
   text-align: center;
   background-color: var(--color-dark-gray);
@@ -1298,6 +1338,9 @@ br.sp {
   width: 150px;
 }
 
+/* ===================================================================
+ * 8. Navigation
+ * =================================================================== */
 /* Fixed navigation */
 .scrollPc {
   position: fixed;
@@ -1311,8 +1354,8 @@ br.sp {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right center;
-  width: 70px;
-  height: 200px;
+  width: 65px;
+  height: 303px;
 }
 
 .scrollSp {
@@ -1323,36 +1366,6 @@ br.sp {
   text-align: center;
   background-color: var(--color-light-gray);
   display: none;
-}
-
-/*******************
- * Additional Styles
- *******************/
-/* FAQ Additional Styles */
-.faq__contact {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 30px auto 0;
-  text-align: center;
-}
-
-.faq__contact__link {
-  display: inline-block;
-  padding: 15px 20px;
-  background-color: var(--color-white);
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  color: var(--color-black);
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 1.5;
-  transition: all 0.3s ease;
-}
-
-.faq__contact__link:hover {
-  background-color: #f8f8f8;
-  border-color: #ccc;
 }
 
 /* Mobile Navigation */
@@ -1403,6 +1416,384 @@ br.sp {
   margin-left: 8px;
 }
 
+/* ===================================================================
+ * 9. Media Queries
+ * =================================================================== */
+@media (max-width: 991px) {
+  .schedule__wrap__padbox__box__contents__title {
+    font-size: 1.2rem;
+  }
+  
+  h2.title {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Typography */
+  h2.title {
+    font-size: 26px;
+  }
+  
+  h2.title.pickup__title {
+    font-size: 26px;
+  }
+
+  .kv__title img {
+    width: 100%;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+  }
+  
+  .logo-oplan {
+    width: 73.5px;
+    height: 20px;
+  }
+  
+  .logo-pebank {
+    width: 154px;
+    height: 12.682px;
+  }
+  
+  .logo-creava {
+    width: 77px;
+    height: 17px;
+  }
+  
+  /* KV section */
+  .kv {
+    padding: 5px 10px 25px 10px;
+    background-image: url("../img/sp/background_sp.png");
+    height: 466px;
+  }
+  
+  .kv__logo img {
+    width: 100px;
+  }
+  
+  .kv__subtitle {
+    margin-top: 20px;
+    font-size: 1.15rem;
+  }
+  
+  .kv__title {
+    margin-top: 30px;
+  }
+  
+  .kv__title img {
+    display: none;
+  }
+  
+  .kv__title:before {
+    content: '';
+    display: block;
+    background-image: url("../img/sp/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+  
+  .kv__title:after {
+    content: '';
+    display: block;
+    background-image: url("../img/sp/sub_title.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 25px;
+  }
+  .summary__detail__table__column__date,
+  .summary__detail__table__column__venue,
+  .summary__detail__table__column__contents,
+  .summary__detail__table__column__target,
+  .summary__detail__table__column__targets,
+  .summary__detail__table__column__access {
+  width: 108px;
+  vertical-align: top;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 30px; 
+  padding-left: 0px;
+  padding-right: 0px; 
+
+}
+
+  /* Overview */
+  .overview__desc {
+    display: none;
+  }
+  
+  .overview__detail {
+    font-size: 16px;
+  }
+  
+  /* Summary */
+  .summary__detail__table td {
+    font-size: 14px;
+  }
+  
+  .summary__detail__table__column .box,
+  .summary__detail__table__column__date .box {
+    font-size: 15px;
+  }
+    
+  
+  /* Content */
+  .contents {
+    height: 778px; /* 追加 */
+  }
+  .contents__wrap {
+    display: block; /* block から flex に変更 */
+    width: 336px;
+    height: 291.2px;
+    border-radius: 7.724px;
+    border: 2.317px solid var(--color-accent); /* Use variable for color */
+    background: var(--color-white); /* Use variable for color */
+  }
+  
+  .contents__wrap__box {
+    width: 100%;
+  }
+  
+  .contents__wrap__box__title {
+    font-size: 18.538px;
+  }
+
+  .contents__wrap__box__detail { /* 追加 */
+    height: 258px; /* 追加 */
+  } /* 追加 */
+
+  .contents__wrap__box__detail .scenery {
+    width: 262.621px;
+    height: 139.034px;
+  }
+
+  .contents__wrap__box__detail__appeal {
+    font-size: 21.628px;
+  }
+  
+  .contents__wrap__box__detail__top {
+    font-size: 10.84px;
+  }
+  .contents__wrap__box__detail__appeal .number {
+    font-size: 37.076px;
+    line-height: 1rem;
+  }
+  
+  /* Apply */
+  .apply {
+    display: none;
+  }
+  
+  /* Exhibitor */
+  .exhibitor__list {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 14px;
+  }
+  
+  .exhibitor__list__left {
+    position: static;
+    right: auto;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .exhibitor__list__right {
+    position: static;
+    right: auto;
+  }
+  
+  .exhibitor__desc {
+    font-size: 14px;
+  }
+  
+  /* Schedule */
+  .schedule__wrap.opened {
+    height: auto;
+  }
+  
+  .schedule__wrap__padbox {
+    width: 48%;
+    margin-top: 15px;
+  }
+  
+  .schedule__wrap__padbox__box {
+    padding: 15px 10px;
+  }
+  
+  .schedule__wrap__padbox__box.mc {
+    height: 117px;
+  }
+  
+  .schedule__wrap__padbox__box__contents {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: auto;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image {
+    height: 87px;
+    margin-left: 7px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img {
+    height: 87px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img.long2 {
+    max-width: 156px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img.long3 {
+    max-width: 186px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__image img.longmc {
+    max-width: 156px;
+    margin-top: 0;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+  
+  /* Navigation */
+  .scrollPc {
+    display: none;
+  }
+  
+  .scrollSp {
+    display: block;
+  }
+  
+  .scrollSp .apply {
+    display: block;
+  }
+  
+  .scrollSp .apply .apply__title {
+    font-size: 19.6px;
+  }
+  
+  /* Box styles */
+  .box,
+  .boxno {
+    font-size: 15px;
+    width: 105.739px;;
+    height: 30px;;
+    padding: 0 0 0 0 ;
+    border-radius: 17.105px;
+
+  }
+
+  /* Pickup */
+  .pickup {
+    padding: 30px 0;
+    border-left: 10px solid var(--color-accent);
+    border-right: 10px solid var(--color-accent);
+  }
+  
+  .pickup__list {
+    margin-top: 30px;
+  }
+  
+  .pickup__list__box {
+    display: block;
+  }
+  
+  .pickup__list__box__image {
+    width: 100%;
+  }
+  
+  .pickup__list__box__desc {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .pickup__continue {
+    display: block;
+  }
+  
+  /* Schedule */
+  .schedule {
+    padding: 30px 0;
+  }
+  
+  .schedule__wrap {
+    margin-top: 30px;
+    display: block;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+  
+  .schedule__wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    height: 40px;
+    width: 100%;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
+    background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
+  }
+  
+  .schedule__wrap.opened {
+    max-height: none;
+    height: auto;
+  }
+  
+  .schedule__wrap.opened::after {
+    display: none;
+  }
+  
+  .schedule__wrap__padbox {
+    width: 100%;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    height: auto;
+    margin-top: 30px;
+    font-size: 1.05rem;
+  }
+  
+  .schedule__continue {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .kv__date {
+    font-size: 23.592px;
+  }
+  
+  .overview__detail {
+    max-width: 295px;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    max-width: 248px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* ===================================================================
+ * 10. Utilities
+ * =================================================================== */
 /* Polygon Decorations */
 .hexagon {
   position: absolute;
@@ -1414,61 +1805,4 @@ br.sp {
   max-height: 100%;
   object-fit: contain;
   display: block;
-}
-
-/* CSSファイルが分割されています - メディアクエリはresponsive.cssに移動されました */
-
-/* テーブルの値セルのスタイル */
-.summary__detail__table__value__date,
-.summary__detail__table__value__venue,
-.summary__detail__table__value__contents,
-.summary__detail__table__value__target {
-  font-size: 22px;
-  line-height: 1.5;
-  padding-left: 20px;
-  vertical-align: middle;
-}
-
-/* 日付のセルのスタイル */
-.summary__detail__table__value__date {
-  font-weight: 700;
-  position: relative;
-  left: -10px;
-  top: 0px;
-}
-
-/* 会場のセルのスタイル */
-.summary__detail__table__value__venue {
-  font-weight: 700;
-  position: relative;
-  left: -10px;
-}
-
-/* イベント内容のセルのスタイル */
-.summary__detail__table__value__contents {
-  font-weight: 700;
-  line-height: 1.8;
-  position: relative;
-  left: -8px;
-  top: 0px;
-}
-/* 対象者のセルのスタイル */
-.summary__detail__table__value__target,
-.summary__detail__table__value__targets {
-  font-weight: 700;
-  position: relative;
-  top: 0;
-  padding-top: 10px;
-  vertical-align: top;
-}
-
-.pickup__list__box__image a[href="https://sucsak.com/"] {
-  display: inline-block;
-  width: 124px;
-  height: 57px;
-  flex-shrink: 0;
-}
-
-.pickup__image img.pe {
-  max-height: 20px;
 }

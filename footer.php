@@ -1,12 +1,11 @@
-</main>
 
     <div class="scrollPc">
         <a href="#" target="_blank"><img src="../img/parts/side_line.svg" alt=""></a>
     </div>
 
     <div class="scrollSp">
-        <div class="apply">
-            <a href="#" target="_blank"><span class="apply__title">事前申し込みはこちら（無料）</span><img src="../img/line.png" alt=""></a>
+        <div class="sp__apply ">
+            <a href="#" target="_blank"><span class="sp__apply__title">事前申し込みはこちら（無料）</span><img src="./img/LINE_Brand_icon.png" alt=""></a>
         </div>
     </div>
 
