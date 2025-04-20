@@ -218,7 +218,7 @@
                 <h2 class="title exhibitor__title">
                     About Exhibitors
                 </h2>
-                <div class="subtitle">
+                <div class="subtitle exhibitor__subtitle">
                     出展企業一覧
                 </div>
                 <div class="exhibitor__list">
@@ -252,10 +252,10 @@
         </section>
         <section class="schedule">
             <div class="limited-width">
-                <h2 class="title">
+                <h2 class="title schedule__title">
                     Time Schedule
                 </h2>
-                <div class="subtitle">
+                <div class="subtitle schedule__subtitle">
                     タイムスケジュール
                 </div>
                 <div class="schedule__wrap">
