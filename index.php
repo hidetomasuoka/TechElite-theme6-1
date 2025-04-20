@@ -129,7 +129,7 @@
                             </div>
                             <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
                             <div class="contents__wrap__box__detail__appeal">
-                                <span class="number">60</span>ブースの企業エリア
+                                <span class="number">60</span><span class="text">ブースの企業エリア</span>
                             </div>
                             <img src="./img/contents1.png" alt="サミットの様子1" class="scenery">
                         </div>
@@ -166,35 +166,35 @@
                     注目の企業
                 </div>
                 <div class="pickup__list__box">
-                        <div class="pickup__list__box__image">
+                        <div class="pickup__list__box__image pickup__list__box__image--oplan">
                             <a href="https://oplan.co.jp/" target="_blank" rel="noopener noreferrer"><img src="../img/oplan.png" alt="オープラン株式会社" class="logo-oplan"></a>
                         </div>
-                        <div class="pickup__list__box__desc">
+                        <div class="pickup__list__box__desc pickup__list__box__desc--oplan">
                         オープラン株式会社は「ITサービス」を軸に「人」と「グローバル」に向き合い日本を代表する企業になるべく2015年に産声をあげたベンチャー企業です。 <br> <a href="https://oplan.co.jp/" class="op_url">https://oplan.co.jp/</a>
                         </div>
                     </div>
 
                  <div class="pickup__list__box">
-                    <div class="pickup__list__box__image">
+                    <div class="pickup__list__box__image pickup__list__box__image--pebank">
                         <a href="https://pe-bank.co.jp/" target="_blank" rel="noopener noreferrer"><img src="./img/PE-BANK.png" alt="pe-bank" class="logo-pebank"></a>
                     </div>
-                    <div class="pickup__list__box__desc">
+                    <div class="pickup__list__box__desc pickup__list__box__desc--pebank">
                         ITフリーランスの仕事探しなら【PE-BANK】へ。Web・SE系を中心に毎月1,000件以上のご紹介。
                     </div>
                 </div>
                  <div class="pickup__list__box">
-                    <div class="pickup__list__box__image">
+                    <div class="pickup__list__box__image pickup__list__box__image--bocjapan">
                         <a href="https://boc-japan.com/" target="_blank" rel="noopener noreferrer"><img src="./img/BOCjapan.png" alt="boc-japan" class="logo-bocjapan"></a>
                     </div>
-                    <div class="pickup__list__box__desc">
+                    <div class="pickup__list__box__desc pickup__list__box__desc--bocjapan">
                         <div class="picup_text">台湾の「食文化」の導入により、日本の飲食業をクリエイティブに。</div>
                     </div>
                 </div>
                 <div class="pickup__list__box">
-                    <div class="pickup__list__box__image">
+                    <div class="pickup__list__box__image pickup__list__box__image--creava">
                         <a href="https://sucsak.com/"><img src="./img/creava.png" alt="creava" class="logo-creava"></a>
                     </div>
-                    <div class="pickup__list__box__desc">
+                    <div class="pickup__list__box__desc pickup__list__box__desc--creava">
                         月額制システム開発チームレンタルSucSak(サクサク)を運営している東京新宿のシステム開発会社です。
                         <div class="sucsak_container">
                             <img src="./img/sucsak.png" alt="sucsak" class="logo-sucsak">
@@ -203,10 +203,10 @@
                     </div>
                 </div>
                 <div class="pickup__list__box">
-                    <div class="pickup__list__box__image">
+                    <div class="pickup__list__box__image pickup__list__box__image--quartet">
                         <div class="quartet"><a href="https://quartetcom.co.jp/"><img src="./img/QUARTET.png" alt="quartet" class="logo-quartet"></a></div>
                     </div>
-                    <div class="pickup__list__box__desc">
+                    <div class="pickup__list__box__desc pickup__list__box__desc--quartet">
                         1000業種以上の圧倒的運用実績！リスティング、Facebook・TwitterなどのSNS広告もおまかせ。
                     </div>
                 </div>   

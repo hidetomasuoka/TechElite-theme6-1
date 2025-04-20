@@ -166,6 +166,16 @@ h2.title.exhibitor__title {
   right: -10px;
 }
 
+h2.title.pickup__title{
+  padding: 40px 0 10px 0;
+}
+
+h2.title.exhibitor__title{
+  padding: 40px 0 10px 0;
+}
+
+
+
 /* Title fonts */
 .title-en {
   font-family: var(--font-secondary);
@@ -701,13 +711,16 @@ h2.title.exhibitor__title {
   }
 
   .contents__wrap__box {
-    width: 44%;
+    width: 435px;
+    height: 397px;
+    flex-shrink: 0;
     border: 3px solid var(--color-accent);
     border-radius: var(--border-radius-medium);
     margin-top: 50px;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 50px;
+    border-radius: 10px
   }
 
   .contents__wrap__box__title {
@@ -720,7 +733,7 @@ h2.title.exhibitor__title {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+
   }
 
   .contents__wrap__box__detail {
@@ -743,6 +756,14 @@ h2.title.exhibitor__title {
     font-style: italic;
     font-weight: 600;
     line-height: 1;
+    text-align: center;
+    margin-right: 5px;
+  }
+
+  .contents__wrap__box__detail__appeal .text {
+    font-family: var(--font-primary);
+    font-size: 28px;
+    line-height: 1.2;
     text-align: center;
   }
 
@@ -792,9 +813,10 @@ h2.title.exhibitor__title {
   }
 
   .contents__wrap__box__detail {
-    height: auto;
-    padding: 15px;
-    text-align: center;
+    background-color: var(--color-white);
+    border-bottom-right-radius: var(--border-radius-medium);
+    border-bottom-left-radius: var(--border-radius-medium);
+    padding: 15px 30px;
   }
   
   .contents__wrap__box__detail .scenery {
@@ -1664,9 +1686,10 @@ h2.title.exhibitor__title {
   }
 
   .contents__wrap__box__detail {
-    height: auto;
-    padding: 15px;
-    text-align: center;
+    background-color: var(--color-white);
+    border-bottom-right-radius: var(--border-radius-medium);
+    border-bottom-left-radius: var(--border-radius-medium);
+    padding: 15px 30px;
   }
 
   .contents__wrap__box__detail .scenery {
