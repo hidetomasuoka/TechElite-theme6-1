@@ -10,7 +10,7 @@
     </div>
 
     <footer class="footer">
-        <div class="limited-width">
+        <div class="limited-width-footer">
             <div class="footer__exhibit">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdphU7Vu9xdSpRV0xaVSt9C6MpHUYG3OsTh7Vuqj8sGyInYqA/viewform" target="_blank">出展希望企業はこちら</a>
             </div>
