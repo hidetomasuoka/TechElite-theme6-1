@@ -1602,6 +1602,9 @@ h2.title.exhibitor__title{
     padding: 5px 10px 25px 10px;
     background-image: url("../img/sp/background_sp.png");
     height: 466px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
   
   .kv__logo img {
