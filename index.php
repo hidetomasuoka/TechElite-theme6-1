@@ -144,7 +144,7 @@
                             </div>
                             <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
                             <div class="contents__wrap__box__detail__appeal">
-                                豪華セミナーを開催
+                            <span class="text">豪華セミナーを開催</span>
                             </div>
                             <img src="./img/contents2.png" alt="サミットの様子2" class="scenery">
                         </div>
