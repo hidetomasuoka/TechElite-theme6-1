@@ -1459,12 +1459,18 @@ h2.title.exhibitor__title{
 .footer__wrap__company {
   margin-right: 10px;
   font-size: 14px;
+  position: relative;
+  left: -25px;
+  top: 5px;
 }
 
 .footer__wrap__policy {
   margin-left: 20px;
   font-size: 14px;
   color: var(--color-white);
+  position: relative;
+  left: 10px;
+  top: 5px;
 }
 
 .footer__wrap__policy:hover {
@@ -1472,7 +1478,10 @@ h2.title.exhibitor__title{
 }
 
 .footer__wrap img {
-  width: 150px;
+  width: 205px;
+  height: 60px;
+  position: relative;
+  left: -20px;
 }
 
 /* ===================================================================
