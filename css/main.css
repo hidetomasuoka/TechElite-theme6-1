@@ -2015,6 +2015,12 @@ h2.title.exhibitor__title{
   }
 
   /* Footer */
+  .footer {
+    height: 158px;
+    flex-shrink: 0;
+    padding: 0;
+  }
+
   .footer__exhibit a {
     width: 250px;
     height: 36.364px;
