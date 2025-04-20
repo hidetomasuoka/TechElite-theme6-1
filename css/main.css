@@ -1646,21 +1646,105 @@ h2.title.exhibitor__title{
     width: 100%;
     height: 25px;
   }
-  .summary__detail__table__column__date,
-  .summary__detail__table__column__venue,
-  .summary__detail__table__column__contents,
-  .summary__detail__table__column__target,
-  .summary__detail__table__column__targets,
-  .summary__detail__table__column__access {
-  width: 108px;
-  vertical-align: top;
-  position: relative;
-  padding-top: 40px;
-  padding-bottom: 30px; 
-  padding-left: 0px;
-  padding-right: 0px; 
 
-}
+  /* Schedule section */
+  .schedule {
+    padding: 30px 0;
+  }
+
+  .schedule__wrap {
+    margin-top: 30px;
+    display: block;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+
+  .schedule__wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    height: 40px;
+    width: 100%;
+    background: -webkit-linear-gradient(
+      top,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgba(255, 255, 255, 0.9) 50%,
+      #000 100%
+    );
+    background: linear-gradient(
+      top,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgba(255, 255, 255, 0.9) 50%,
+      #000 100%
+    );
+  }
+
+  .schedule__wrap.opened {
+    max-height: none;
+    height: auto;
+  }
+
+  .schedule__wrap.opened::after {
+    display: none;
+  }
+
+  .schedule__wrap__padbox {
+    width: 48%;
+    margin-top: 15px;
+  }
+
+  .schedule__wrap__padbox__box {
+    padding: 15px 10px;
+  }
+
+  .schedule__wrap__padbox__box.mc {
+    height: 117px;
+  }
+
+  .schedule__wrap__padbox__box__contents {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .schedule__wrap__padbox__box__contents__image {
+    height: 87px;
+    margin-left: 7px;
+  }
+
+  .schedule__wrap__padbox__box__contents__image img {
+    height: 87px;
+  }
+
+  .schedule__wrap__padbox__box__contents__image img.long2 {
+    max-width: 156px;
+  }
+
+  .schedule__wrap__padbox__box__contents__image img.long3 {
+    max-width: 186px;
+  }
+
+  .schedule__wrap__padbox__box__contents__image img.longmc {
+    max-width: 156px;
+    margin-top: 0;
+  }
+
+  .schedule__wrap__padbox__box__contents__title {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+
+  .schedule__continue {
+    margin-top: 10px;
+  }
 
   /* Overview */
   .overview__desc {
@@ -1785,53 +1869,6 @@ h2.title.exhibitor__title{
     font-size: 14px;
   }
   
-  /* Schedule */
-  .schedule__wrap {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-  }
-  
-  .schedule__wrap__padbox {
-    width: 100%;
-    margin-top: 15px;
-    padding: 0 10px;
-  }
-  
-  .schedule__wrap__padbox__box {
-    padding: 15px;
-    background-color: rgba(241, 251, 255, 0.8);
-  }
-  
-  .schedule__wrap__padbox__box__contents {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .schedule__wrap__padbox__box__contents__image {
-    height: auto;
-    max-width: 200px;
-    margin: 0 auto;
-  }
-  
-  .schedule__wrap__padbox__box__contents__image img {
-    height: auto;
-    max-width: 100%;
-  }
-  
-  .schedule__wrap__padbox__box__contents__title {
-    font-size: 1rem;
-    margin-top: 10px;
-    text-align: center;
-    max-width: 100%;
-  }
-  
   /* Navigation */
   .scrollPc {
     display: none;
@@ -1857,7 +1894,6 @@ h2.title.exhibitor__title{
     height: 30px;;
     padding: 0 0 0 0 ;
     border-radius: 17.105px;
-
   }
 
   /* Pickup */
@@ -1887,55 +1923,6 @@ h2.title.exhibitor__title{
   .pickup__continue {
     display: block;
   }
-  
-  /* Schedule */
-  .schedule {
-    padding: 30px 0;
-  }
-  
-  .schedule__wrap {
-    margin-top: 30px;
-    display: block;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-  }
-  
-  .schedule__wrap::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
-    height: 40px;
-    width: 100%;
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
-    background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
-  }
-  
-  .schedule__wrap.opened {
-    max-height: none;
-    height: auto;
-  }
-  
-  .schedule__wrap.opened::after {
-    display: none;
-  }
-  
-  .schedule__wrap__padbox {
-    width: 100%;
-  }
-  
-  .schedule__wrap__padbox__box__contents__title {
-    height: auto;
-    margin-top: 30px;
-    font-size: 1.05rem;
-  }
-  
-  .schedule__continue {
-    margin-top: 10px;
-  }
 }
 
 @media (max-width: 390px) {
@@ -1954,6 +1941,35 @@ h2.title.exhibitor__title{
   }
 }
 
+@media (max-width: 575px) {
+  .schedule__continue {
+      margin-top: 10px;
+  }
+}
+
+.schedule__continue__btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #0000;
+  color: #FFF;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 100%; /* 18px */
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border: 1px solid #FFF;
+  transition: all 0.3s ease;
+}
+
+.schedule__continue__btn:hover {
+  background-color: #0000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
 /* ===================================================================
  * 10. Utilities
