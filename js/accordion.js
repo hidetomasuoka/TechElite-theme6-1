@@ -1,12 +1,12 @@
 $(document).ready(function() {
-    // 画面幅が550px未満の場合のみアコーディオン機能を有効にする関数
+    // 画面幅が768px未満の場合のみアコーディオン機能を有効にする関数
     function isMobileView() {
-        return $(window).width() < 550;
+        return $(window).width() < 768;
     }
     
     // 既存のアコーディオン機能
     $('.accordion_button').on('click', function() {
-        if (!isMobileView()) return; // 550px以上の場合は処理を中止
+        if (!isMobileView()) return; // 768px以上の場合は処理を中止
         
         console.log("Accordion button clicked");
         // Only toggle the hidden elements within the time_schedule_container
@@ -17,7 +17,7 @@ $(document).ready(function() {
     
     // スケジュールセクションのアコーディオン機能
     $('.schedule__continue__btn').on('click', function() {
-        if (!isMobileView()) return; // 550px以上の場合は処理を中止
+        if (!isMobileView()) return; // 768px以上の場合は処理を中止
         
         console.log("Schedule continue button clicked");
         // Toggle the opened class on the schedule__wrap element
@@ -33,7 +33,7 @@ $(document).ready(function() {
     
     // 出展企業一覧のアコーディオン機能
     $('.exhibitor__continue__btn').on('click', function() {
-        if (!isMobileView()) return; // 550px以上の場合は処理を中止
+        if (!isMobileView()) return; // 768px以上の場合は処理を中止
         
         console.log("Exhibitor continue button clicked");
         // Toggle the opened class on the exhibitor__list element
@@ -47,10 +47,10 @@ $(document).ready(function() {
         }
     });
     
-    // ウィンドウサイズが変更された時に550px以上になった場合、アコーディオンの状態をリセット
+    // ウィンドウサイズが変更された時に768px以上になった場合、アコーディオンの状態をリセット
     $(window).resize(function() {
         if (!isMobileView()) {
-            // 550px以上の場合、アコーディオンを開いた状態にリセット
+            // 768px以上の場合、アコーディオンを開いた状態にリセット
             $('.time_schedule_container').addClass('accordion-open');
             $('.time_schedule_container .hidden').addClass('show');
             $('.schedule__wrap').addClass('opened');
@@ -58,7 +58,7 @@ $(document).ready(function() {
             $('.exhibitor__list').addClass('opened');
             $('.exhibitor__continue').hide();
         } else {
-            // 550px未満に戻った場合、アコーディオンを閉じた状態に
+            // 768px未満に戻った場合、アコーディオンを閉じた状態に
             $('.time_schedule_container').removeClass('accordion-open');
             $('.time_schedule_container .hidden').removeClass('show');
             $('.schedule__wrap').removeClass('opened');

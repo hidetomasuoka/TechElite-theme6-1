@@ -1123,8 +1123,8 @@ h2.title.exhibitor__title{
 
 .schedule__wrap {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 20px;
   max-height: 450px;
@@ -1158,6 +1158,8 @@ h2.title.exhibitor__title{
   margin-top: 30px;
   padding: 0 8px;
   height: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .schedule__wrap__padbox__box {
