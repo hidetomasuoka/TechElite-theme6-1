@@ -17,7 +17,7 @@
                     東京国際フォーラム  ホールE2
                 </div>
                 <div class="apply">
-                    <a href="#" target="_blank"><span class="apply__title">事前申し込みはこちら（無料）</span><img src="../img/LINE_Brand_icon.png" alt=""></a>
+                    <a href="#" target="_blank"><span class="apply__title">事前申し込みはこちら（無料）</span><img src="./img/LINE_Brand_icon.png" alt="" width="57" height="57"></a>
                 </div>
             </div>
         </section>
@@ -52,21 +52,22 @@
                             <tbody>
                                 <tr>
                                     <td class="summary__detail__table__column__date"><span class="box">開催日程</span></td>
-                                    <td class="summary__detail__table__value__date">2023年3月4日（土）<br class="sp">開場10:00 閉場18:00（受付開始9:30-）</td>
+                                    <td class="summary__detail__table__value__date">　2023年3月4日（土）<br class="sp">開場10:00 閉場18:00（受付開始9:30-）</td>
                                 </tr>
                                 <tr>
                                     <td class="summary__detail__table__column__venue"><span class="box">会場</span></td>
-                                    <td class="summary__detail__table__value__venue">東京国際フォーラム ホールE2</td>
+                                    <td class="summary__detail__table__value__venue">　東京国際フォーラム ホールE2</td>
                                 </tr>
                                 <tr>
                                     <td class="summary__detail__table__column__contents"><span class="box">イベント内容</span></td>
                                     <td class="summary__detail__table__value__contents">
-                                        企業ブース出展：60ブース<br>ビジネス系セミナー：12枠
+                                        　企業ブース出展：60ブース<br>　ビジネス系セミナー：12枠
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="summary__detail__table__column__target"><span class="box">対象者</span></td>
-                                    <td class="summary__detail__table__value__target">経営者 / フリーランス / <br class="sp">独立志望の会社員</td>
+                                    <td class="summary__detail__table__value__target">
+                                    　経営者 / フリーランス / <br class="sp">独立志望の会社員</td>
                                 </tr>
                                 <tr>
                                     <td class="summary__detail__table__column__access">
@@ -118,36 +119,34 @@
                     イベント内容
                 </div>
                 <div class="contents__wrap">
-                    <div class="contents__wrap__inner">
-                        <div class="contents__wrap__box">
-                            <div class="contents__wrap__box__title">
-                                フリーランスに特化した企業エリア
-                            </div>
-                            <div class="contents__wrap__box__detail">
-                                <div class="contents__wrap__box__detail__top">
-                                    出会いたい企業にきっと出会える
-                                </div>
-                                <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
-                                <div class="contents__wrap__box__detail__appeal">
-                                    <span class="number">60</span>ブースの企業エリア
-                                </div>
-                                <img src="./img/contents1.png" alt="サミットの様子1" class="scenery">
-                            </div>
+                    <div class="contents__wrap__box">
+                        <div class="contents__wrap__box__title">
+                            フリーランスに特化した企業エリア
                         </div>
-                        <div class="contents__wrap__box">
-                            <div class="contents__wrap__box__title">
-                                各業界の著名人が登壇
+                        <div class="contents__wrap__box__detail">
+                            <div class="contents__wrap__box__detail__top">
+                                出会いたい企業にきっと出会える
                             </div>
-                            <div class="contents__wrap__box__detail">
-                                <div class="contents__wrap__box__detail__top">
-                                    ここでしか聞けない話が聞ける
-                                </div>
-                                <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
-                                <div class="contents__wrap__box__detail__appeal">
-                                    豪華セミナーを開催
-                                </div>
-                                <img src="./img/contents2.png" alt="サミットの様子2" class="scenery">
+                            <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
+                            <div class="contents__wrap__box__detail__appeal">
+                                <span class="number">60</span>ブースの企業エリア
                             </div>
+                            <img src="./img/contents1.png" alt="サミットの様子1" class="scenery">
+                        </div>
+                    </div>
+                    <div class="contents__wrap__box">
+                        <div class="contents__wrap__box__title">
+                            各業界の著名人が登壇
+                        </div>
+                        <div class="contents__wrap__box__detail">
+                            <div class="contents__wrap__box__detail__top">
+                                ここでしか聞けない話が聞ける
+                            </div>
+                            <img src="./img/ribbon.svg" alt="リボン" class="ribbon">
+                            <div class="contents__wrap__box__detail__appeal">
+                                豪華セミナーを開催
+                            </div>
+                            <img src="./img/contents2.png" alt="サミットの様子2" class="scenery">
                         </div>
                     </div>
                 </div>
@@ -516,5 +515,7 @@
                 </div>
             </div>
         </section>
+     </main>
+
 
 <?php include 'footer.php'; ?>
