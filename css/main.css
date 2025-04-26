@@ -773,7 +773,7 @@ h2.title.exhibitor__title{
 /* モバイル表示では表示する */
 @media (max-width: 768px) {
   .summary {
-    padding: 40px 0;
+    padding: 0;
   }
 
   .summary__detail__table td {
@@ -2260,4 +2260,16 @@ h2.title.exhibitor__title{
   position: relative;
   left: -5px;
   top: -15px;
+}
+
+@media (max-width: 768px) {
+  h2.title.overview__title,
+  h2.title.summary__title,
+  h2.title.freelance__title,
+  h2.title.event__title,
+  h2.title.exhibitor__title {
+    font-size: 26px;
+    padding: 15px 0 0 0;
+    letter-spacing: 0.8px;
+  }
 }
