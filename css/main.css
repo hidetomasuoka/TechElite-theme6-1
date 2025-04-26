@@ -551,6 +551,52 @@ h2.title.exhibitor__title{
   margin-left: 17px;
 }
 
+/* モバイル対応の設定 */
+@media (max-width: 768px) {
+  .overview {
+    padding: 0;
+  }
+
+  .overview__desc {
+    display: none;
+  }
+
+  .overview__detail {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 15px 10px;
+    max-width: 295px;
+    height: auto;
+  }
+
+  .overview__detail br {
+    display: none;
+  }
+
+  .overview__detail br.sp {
+    display: inline;
+  }
+}
+
+/* 390px以下の画面サイズ用の設定 */
+@media (max-width: 390px) {
+  .overview {
+    padding: 0;
+  }
+
+  .overview__detail {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 15px 10px;
+    max-width: 295px;
+    height: auto;
+  }
+
+  .overview__detail br.sp {
+    display: inline;
+  }
+}
+
 /* 6.3 Summary
  * =================================================================== */
 .summary {
@@ -726,17 +772,64 @@ h2.title.exhibitor__title{
 
 /* モバイル表示では表示する */
 @media (max-width: 768px) {
-  .summary__detail .sp {
-    display: block;
-    margin-top: 20px;
-    width: 100%;
+  .summary {
+    padding: 40px 0;
   }
-  
-  /* モバイル表示ではテーブル内の地図を非表示 */
+
+  .summary__detail__table td {
+    font-size: 14px;
+    padding: 10px 5px;
+  }
+
+  .summary__detail__table__column {
+    width: 100px;
+    padding-right: 10px;
+  }
+
+  .summary__detail__table__column .box {
+    font-size: 15px;
+    width: 90px;
+    height: 40px;
+    padding: 5px 2px;
+  }
+
+  .summary__detail__table__column__date,
+  .summary__detail__table__column__venue,
+  .summary__detail__table__column__contents,
+  .summary__detail__table__column__target,
+  .summary__detail__table__column__targets,
+  .summary__detail__table__column__access {
+    width: 100px;
+    padding: 10px 5px;
+  }
+
+  .summary__detail__table__value__date,
+  .summary__detail__table__value__venue,
+  .summary__detail__table__value__contents,
+  .summary__detail__table__value__target {
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 10px 5px;
+  }
+
+  .summary__detail__table__access {
+    display: block;
+  }
+
+  .summary__detail__table__access .station {
+    width: 100%;
+    padding: 10px 5px;
+  }
+
   .summary__detail__table__access .map {
     display: none;
   }
-  
+
+  .summary__detail .sp {
+    display: block;
+    margin-top: 20px;
+  }
+
   .summary__detail .sp iframe {
     width: 100%;
     height: 300px;
@@ -1858,7 +1951,19 @@ h2.title.exhibitor__title{
   }
   
   .overview__detail {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 15px 10px;
+    max-width: 295px;
+    height: auto;
+  }
+  
+  .overview__detail br {
+    display: none;
+  }
+  
+  .overview__detail br.sp {
+    display: inline;
   }
   
   /* Summary */
