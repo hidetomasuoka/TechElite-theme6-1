@@ -3,7 +3,7 @@
             <div class="kv__logo">
                 <a href="#"><img src="../img/stocksun_logo.png" alt=""></a>
             </div>
-            <div class="limited-width">
+            <div class="limited-width>
                 <div class="kv__subtitle">
                     日本最大規模のフリーランスイベント
                 </div>
