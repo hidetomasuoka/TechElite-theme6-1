@@ -1704,6 +1704,12 @@ h2.title.exhibitor__title{
     aspect-ratio: 390/466;
   }
   
+  .kv__logo {
+    position: relative;
+    left: 10px;
+    top: 10px;
+  }
+  
   .kv__logo img {
     width: 76.605px;
     height: 19.933px;

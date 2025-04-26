@@ -3,7 +3,7 @@
             <div class="kv__logo">
                 <a href="#"><img src="../img/stocksun_logo.png" alt=""></a>
             </div>
-            <div class="limited-width>
+            <div class="limited-width-kv">
                 <div class="kv__subtitle">
                     日本最大規模のフリーランスイベント
                 </div>
@@ -23,7 +23,7 @@
         </section>
     <div class="back2">
             <section class="overview">
-                <div class="limited-width">
+                <div class="limited-width-overview">
                     <h2 class="title overview__title">
                         Freelance Summit
                     </h2>
@@ -40,7 +40,7 @@
                 </div>
             </section>
             <section class="summary">
-                <div class="limited-width">
+                <div class="limited-width-summary">
                     <h2 class="title summary__title">
                         Event Summary
                     </h2>
@@ -111,7 +111,7 @@
             </section>
         </div>
         <section class="contents">
-            <div class="limited-width">
+            <div class="limited-width-contents">
                 <h2 class="title contents__title">
                     Contents
                 </h2>
@@ -158,7 +158,7 @@
 
 
         <section class="pickup">
-            <div class="limited-width">
+            <div class="limited-width-pickup">
                 <h2 class="title pickup__title">
                     Pick Up
                 </h2>
@@ -214,7 +214,7 @@
         </div>  
     </section>   
     <section class="exhibitor">
-            <div class="limited-width">
+            <div class="limited-width-exhibitor">
                 <h2 class="title exhibitor__title">
                     About Exhibitors
                 </h2>
@@ -251,7 +251,7 @@
             </div>
         </section>
         <section class="schedule">
-            <div class="limited-width">
+            <div class="limited-width-schedule">
                 <h2 class="title schedule__title">
                     Time Schedule
                 </h2>
