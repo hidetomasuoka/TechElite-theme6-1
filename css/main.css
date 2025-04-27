@@ -574,6 +574,8 @@ h2.title.exhibitor__title{
   }
 
   .overview__detail br.sp {
+    width: 345px;
+    height: 200px;
     display: inline;
   }
 }
