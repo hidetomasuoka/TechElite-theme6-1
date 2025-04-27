@@ -1281,26 +1281,24 @@ h2.title.exhibitor__title{
   background-size: cover;
   text-align: center;
   padding: 60px 0;
-  height: 1520px;
 }
 
-.schedule__title {
+.schedule .title {
   color: var(--color-primary);
 }
 
-.schedule__subtitle {
+.schedule .subtitle {
   color: var(--color-white);
 }
 
-.schedule__subtitle::before, 
-.schedule__subtitle::after {
+.schedule .subtitle::before, .schedule .subtitle::after {
   background-color: var(--color-white);
 }
 
 .schedule__wrap {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
   margin-top: 20px;
   max-height: 450px;
@@ -1320,89 +1318,87 @@ h2.title.exhibitor__title{
   pointer-events: none;
 }
 
-.schedule__wrap--opened {
+.schedule__wrap.opened {
   max-height: 3000px;
   height: auto;
 }
 
-.schedule__wrap--opened::after {
+.schedule__wrap.opened::after {
   display: none;
 }
 
-.schedule__padbox {
+.schedule__wrap__padbox {
   width: 33.333%;
   margin-top: 30px;
   padding: 0 8px;
   height: auto;
-  display: flex;
-  justify-content: center;
 }
 
-.schedule__box {
+.schedule__wrap__padbox__box {
   background-color: rgba(241, 251, 255, 0.6);
   border-radius: 5px;
   padding: 20px;
   position: relative;
 }
 
-.schedule__box--mc {
+.schedule__wrap__padbox__box.mc {
   height: 168px;
 }
 
-.schedule__box--mc .schedule__contents,
-.schedule__box--mc .schedule__contents {
+.schedule__wrap__padbox__box__mc .schedule__readbox__wrap__box__contents,
+.schedule__wrap__padbox__box.mc .schedule__readbox__wrap__box__contents {
   justify-content: center;
 }
 
-.schedule__time {
+.schedule__wrap__padbox__box .time {
   position: absolute;
   left: -4px;
   top: 10px;
 }
 
-.schedule__start {
+.schedule__wrap__padbox__box .start {
   position: absolute;
   left: 5px;
   top: 11px;
   font-weight: 700;
 }
 
-.schedule__contents {
+.schedule__wrap__padbox__box__contents {
   display: block;
   width: 100%;
   min-height: 200px;
 }
 
-.schedule__image {
+.schedule__wrap__padbox__box__contents__image {
   height: 134px;
 }
 
-.schedule__image img {
+.schedule__wrap__padbox__box__contents__image img {
   height: 134px;
 }
 
-.schedule__image--long2 {
+.schedule__wrap__padbox__box__contents__image img.long2 {
   height: auto;
   max-height: 110px;
   margin-top: 19px;
   max-width: 100%;
 }
 
-.schedule__image--long3 {
+.schedule__wrap__padbox__box__contents__image img.long3 {
   height: auto;
   max-height: 110px;
   margin-top: 25px;
   max-width: 100%;
 }
 
-.schedule__image--longmc {
+.schedule__wrap__padbox__box__contents__image img.longmc {
   height: auto;
   max-height: 110px;
   margin-top: 19px;
   max-width: 100%;
 }
 
-.schedule__content-title {
+.schedule__wrap__padbox__box__contents__title {
   font-size: 1.3rem;
   font-weight: 700;
   margin-top: 10px;
@@ -1419,7 +1415,7 @@ h2.title.exhibitor__title{
   z-index: 10;
 }
 
-.schedule__continue-btn {
+.schedule__continue__btn {
   display: inline-block;
   padding: 10px 30px;
   background-color: transparent;
@@ -1437,13 +1433,13 @@ h2.title.exhibitor__title{
   transition: all 0.3s ease;
 }
 
-.schedule__continue-btn:hover {
+.schedule__continue__btn:hover {
   background-color: transparent;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.schedule__seisei-title {
+.schedule__wrap__padbox__box__contents__title__seisei {
   font-size: 20px;
   font-weight: 700;
   margin-top: 10px;
@@ -1455,6 +1451,57 @@ h2.title.exhibitor__title{
   padding: 0 0px;
   line-height: 125%;
   letter-spacing: 1.6px;
+}
+
+/* モバイル対応の設定 */
+@media (max-width: 768px) {
+  .schedule {
+    padding: 30px 0;
+  }
+  
+  .schedule__wrap {
+    margin-top: 30px;
+    display: block;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+  
+  .schedule__wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    height: 40px;
+    width: 100%;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
+    background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
+  }
+  
+  .schedule__wrap.opened {
+    max-height: none;
+    height: auto;
+  }
+  
+  .schedule__wrap.opened::after {
+    display: none;
+  }
+  
+  .schedule__wrap__padbox {
+    width: 100%;
+  }
+  
+  .schedule__wrap__padbox__box__contents__title {
+    height: auto;
+    margin-top: 30px;
+    font-size: 1.05rem;
+  }
+  
+  .schedule__continue {
+    margin-top: 10px;
+  }
 }
 
 /* 6.8 FAQ
@@ -1894,79 +1941,29 @@ h2.title.exhibitor__title{
     z-index: 3;
     height: 40px;
     width: 100%;
-    background: -webkit-linear-gradient(
-      top,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.9) 50%,
-      rgba(255, 255, 255, 0.9) 50%,
-      #000 100%
-    );
-    background: linear-gradient(
-      top,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.9) 50%,
-      rgba(255, 255, 255, 0.9) 50%,
-      #000 100%
-    );
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
+    background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #000 100%);
   }
 
-  .schedule__wrap--opened {
+  .schedule__wrap.opened {
     max-height: none;
     height: auto;
   }
 
-  .schedule__wrap--opened::after {
+  .schedule__wrap.opened::after {
     display: none;
   }
 
-  .schedule__padbox {
-    width: 48%;
-    margin-top: 15px;
+  .schedule__wrap__padbox {
+    width: 100%;
   }
 
-  .schedule__box {
-    padding: 15px 10px;
+  .schedule__wrap__padbox__box__contents__title {
+    height: auto;
+    margin-top: 30px;
+    font-size: 1.05rem;
   }
-
-  .schedule__box--mc {
-    height: 117px;
-  }
-
-  .schedule__contents {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: flex-start;
-    min-height: auto;
-  }
-
-  .schedule__image {
-    height: 87px;
-    margin-left: 7px;
-  }
-
-  .schedule__image img {
-    height: 87px;
-  }
-
-  .schedule__image--long2 {
-    max-width: 156px;
-  }
-
-  .schedule__image--long3 {
-    max-width: 186px;
-  }
-
-  .schedule__image--longmc {
-    max-width: 156px;
-    margin-top: 0;
-  }
-
-  .schedule__content-title {
-    font-size: 0.9rem;
-    margin-top: 20px;
-  }
-
+  
   .schedule__continue {
     margin-top: 10px;
   }
