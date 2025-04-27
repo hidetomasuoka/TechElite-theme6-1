@@ -1797,10 +1797,16 @@ h2.title.exhibitor__title{
     height: 20px;
   }
   
-  .logo-pebank {
+  .pickup__image img.logo-pebank,
+  .pickup__list__box__image img.logo-pebank {
     width: 154px;
     height: 12.682px;
   }
+  .pickup__image img,.pickup__list__box__image img {
+    width: 177.857px;
+    height: 20px;
+  }
+
   
   .logo-creava {
     width: 77px;
