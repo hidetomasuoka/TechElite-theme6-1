@@ -737,7 +737,7 @@ h2.title.exhibitor__title{
 }
 
 .summary__detail__table__access .station ul {
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .summary__detail__table__access .station ul li {
@@ -2202,7 +2202,7 @@ h2.title.exhibitor__title{
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 768px) {
   .kv__date {
     font-size: 23.592px;
     margin-top: 20px;
