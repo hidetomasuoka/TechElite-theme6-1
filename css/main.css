@@ -1492,11 +1492,27 @@ h2.title.exhibitor__title{
   .schedule__wrap__padbox {
     width: 100%;
   }
+
+  .schedule__wrap__padbox__box {
+    height: 103px;
+  }
   
   .schedule__wrap__padbox__box__contents__title {
     height: auto;
     margin-top: 30px;
     font-size: 1.05rem;
+  }
+
+  .schedule__wrap__padbox__box__contents__image img {
+    height: 87px;
+  }
+
+  .schedule__wrap__padbox__box__contents {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: auto;
   }
   
   .schedule__continue {
@@ -1958,11 +1974,20 @@ h2.title.exhibitor__title{
     width: 100%;
   }
 
+  .schedule__wrap__padbox__box {
+    height: 103px;
+  }
+  
   .schedule__wrap__padbox__box__contents__title {
     height: auto;
     margin-top: 30px;
     font-size: 1.05rem;
   }
+  
+  .schedule__wrap__padbox__box__contents__image img {
+    height: 87px;
+  }
+
   
   .schedule__continue {
     margin-top: 10px;
